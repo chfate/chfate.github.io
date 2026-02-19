@@ -1,11 +1,68 @@
 <!DOCTYPE html>
 <html lang="el">
 <head>
-  <meta charset="UTF-8">
-  <title>Το πρώτο μου site!</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Το Portfolio Σου</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 </head>
 <body>
-  <h1>Γεια σου κόσμε! 👋</h1>
-  <p>Αυτό το σαιτ θα γινει τουμπανο με τον καιρο</p>
+
+  <!-- Hero Section: Fullscreen Video Background -->
+  <section class="hero">
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="videos/hero-video.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Όνομα Επώνυμο</h1>
+      <p>Level Designer / Motion Graphics / [Η δουλειά σου]</p>
+      <!-- Προαιρετικά κουμπί scroll down -->
+      <a href="#projects" class="scroll-down">↓ Δες Projects</a>
+    </div>
+  </section>
+
+  <!-- Projects Grid -->
+  <section id="projects" class="projects">
+    <h2>Selected Works</h2>
+    <div class="projects-grid">
+
+      <!-- Παράδειγμα ενός project item -->
+      <a href="projects/project-1.html" class="project-item">
+        <div class="video-wrapper">
+          <video class="project-video" muted loop playsinline preload="metadata">
+            <source src="videos/project-1-preview.mp4" type="video/mp4">
+          </video>
+          <img class="poster" src="images/project-1-poster.jpg" alt="Project 1">
+        </div>
+        <div class="project-info">
+          <h3>Project Title 1</h3>
+          <p>Level Design • Unreal Engine • 2025</p>
+        </div>
+      </a>
+
+      <!-- Επανάλαβε για 4–8 projects -->
+      <a href="projects/project-2.html" class="project-item">
+        <!-- Ίδιο structure -->
+        <div class="video-wrapper">
+          <video class="project-video" muted loop playsinline preload="metadata">
+            <source src="videos/project-2-preview.mp4" type="video/mp4">
+          </video>
+          <img class="poster" src="images/project-2-poster.jpg" alt="Project 2">
+        </div>
+        <div class="project-info">
+          <h3>Project Title 2</h3>
+          <p>Motion Graphics • After Effects • 2024</p>
+        </div>
+      </a>
+
+      <!-- ... πρόσθεσε κι άλλα ... -->
+
+    </div>
+  </section>
+
+  <script src="script.js"></script>
 </body>
 </html>

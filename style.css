@@ -1,0 +1,159 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #000;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* Hero Fullscreen Video */
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: -2;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4); /* σκούρο overlay για readability */
+  z-index: -1;
+}
+
+.hero-content {
+  z-index: 1;
+  max-width: 900px;
+  padding: 0 20px;
+}
+
+.hero h1 {
+  font-size: 5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.8rem;
+  opacity: 0.9;
+  margin-bottom: 2rem;
+}
+
+.scroll-down {
+  font-size: 1.5rem;
+  color: #fff;
+  text-decoration: none;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+
+.scroll-down:hover { opacity: 1; }
+
+/* Projects Section */
+.projects {
+  padding: 120px 5%;
+  background: #000;
+  text-align: center;
+}
+
+.projects h2 {
+  font-size: 3.5rem;
+  margin-bottom: 60px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.project-item {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.project-item:hover {
+  transform: translateY(-12px);
+}
+
+.video-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  aspect-ratio: 16 / 9;
+  background: #111;
+}
+
+.project-video,
+.poster {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.4s ease;
+}
+
+.poster {
+  z-index: 2;
+  opacity: 1;
+}
+
+.project-video {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.project-item:hover .poster {
+  opacity: 0;
+}
+
+.project-item:hover .project-video {
+  opacity: 1;
+}
+
+.project-info {
+  margin-top: 16px;
+}
+
+.project-info h3 {
+  font-size: 1.6rem;
+  margin-bottom: 8px;
+}
+
+.project-info p {
+  font-size: 1rem;
+  opacity: 0.7;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero h1 { font-size: 3.5rem; }
+  .hero p  { font-size: 1.4rem; }
+  .projects { padding: 80px 5%; }
+}
