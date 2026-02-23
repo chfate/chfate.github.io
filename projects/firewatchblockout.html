@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Forbidden Hike | Christos Moiras</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+
+  <style>
+    .project-page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 80px 5% 140px;
+    }
+
+    .project-hero {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .project-hero h1 {
+      font-size: 4.2rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .project-hero p {
+      font-size: 1.4rem;
+      opacity: 0.85;
+    }
+
+    .section {
+      margin-bottom: 80px;
+    }
+
+    .section h2 {
+      font-size: 2.6rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 2px solid #333;
+      padding-bottom: 0.8rem;
+    }
+
+    .section h3 {
+      font-size: 1.8rem;
+      margin: 2rem 0 1rem;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+    }
+
+    .video-embed {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 12px;
+      margin: 2rem 0;
+    }
+
+    .video-embed iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 2rem;
+      color: #aaa;
+      text-decoration: none;
+      font-size: 1.1rem;
+    }
+
+    .back-link:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    .narrative-image, .reference-image {
+      margin: 2rem 0;
+      text-align: center;
+    }
+
+    .narrative-image img, .reference-image img {
+      max-width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Back link -->
+  <a href="../index.html#projects" class="back-link">← Back to Portfolio</a>
+
+  <main class="project-page">
+
+    <section class="project-hero">
+      <h1>The Forbidden Hike</h1>
+      <p>School Project • 3 weeks • Unity • 2025</p>
+    </section>
+
+    <!-- 1. Summary -->
+    <section class="section">
+      <h2>Summary</h2>
+      <p>Inspired by Firewatch, you are tasked with keeping the area safe from fires and any other dangers that might arise. What begins as an afternoon adventure soon takes a wrong turn…</p>
+      <p>This level places strong emphasis on narrative, much like Firewatch. The player is not only guided through the environment but also receives context about the area and its story. It is designed as a tutorial that introduces basic mechanics such as jumping, crouching, and interacting while establishing the mood for the rest of the game. In designing the level, I aimed to showcase some level-design techniques and to connect the fiction with the mechanics, creating a more believable and cohesive experience.</p>
+    </section>
+
+    <!-- 2. Narrative Context -->
+    <section class="section">
+      <h2>Narrative Context</h2>
+      <p>In pre-production I always start by asking questions to define the level characteristics.</p>
+      <div class="narrative-image">
+        <img src="../images/narrative-context-forest-mist.jpg" alt="Isolated misty forest – Narrative Context">
+      </div>
+    </section>
+
+    <!-- 3. References and Inspirations -->
+    <section class="section">
+      <h2>References and Inspirations</h2>
+      <ul>
+        <li><strong>My main inspiration came from my home country Greece and its vastly unexplored environments.</strong> I wanted to showcase real life locations to achieve realism.</li>
+      </ul>
+      <div class="reference-image">
+        <img src="../images/reference.jpg" alt="Greek natural landscape inspiration">
+      </div>
+    </section>
+
+    <!-- 4. Mechanics / Features -->
+    <section class="section">
+      <h2>Mechanics / Features</h2>
+
+      <h3><strong>Mechanics:</strong></h3>
+      <ul>
+        <li>Jump</li>
+        <li>Crouch</li>
+        <li>Interact</li>
+      </ul>
+
+      <h3><strong>Features:</strong></h3>
+      <ul>
+        <li>
+          <strong>Narrative Driven Guidance:</strong><br>
+          In this level, beyond providing guiding methods like leading lines, logs and trees, I also aimed to direct the player through the voice on the radio. The voice not only guides but also warns the player as they explore, something I found particularly interesting to design and integrate.
+        </li>
+        <li>
+          <strong>Experience:</strong><br>
+          Narrative plays a key role in shaping the world and the emotions the player experiences throughout the level. It begins with a calm atmosphere and a pleasant conversation, gradually becoming more mysterious as the story unfolds.
+        </li>
+        <li>
+          <strong>Emotions:</strong><br>
+          The design intentionally plays with the player’s emotional journey. It begins with a sense of adventure—calm, curious, and eager to discover what happens next. Slowly, mystery begins to unfold. Tension rises. Fear, suspense, and adrenaline take over.
+        </li>
+      </ul>
+    </section>
+
+    <!-- 5. Top Down Layout -->
+<section class="section">
+  <h2>Top Down Layout</h2>
+  
+  <div class="topdown-images">
+    <img src="../images/top1.jpg" alt="Top-down layout of The Forbidden Hike – View 1">
+    <img src="../images/top2.jpg" alt="Top-down layout of The Forbidden Hike – View 2">
+  </div>
+</section>
+
+    <!-- 6. Level Walkthrough -->
+    <section class="section">
+      <h2>Level Walkthrough</h2>
+
+      <h3><strong>Beat 1 (Start)</strong></h3>
+      <ul>
+        <li>The player is informed through the radio to go look for a potential fire. <strong>(Objective/Goal Started)</strong></li>
+        <li>He is in the watchtower and can see the whole playable area. <strong>(Vista)</strong></li>
+        <li>Through the narrative guidance from the radio, he chooses the shortcut to reach his goal. <strong>(Player Guidance)</strong></li>
+        <li>The voice foreshadows the jump, so the player is prepared to take it <strong>(Teach Mechanic/Tutorial)</strong>. Also, not punishing the experience if the player fails the jump. He can try again. <strong>(Safety Net)</strong></li>
+        <li>After the jump he can’t backtrack, meaning the player must push forward. <strong>(One-way valve)</strong></li>
+      </ul>
+
+      <h3><strong>Beat 2 (Middle)</strong></h3>
+      <ul>
+        <li>The player now sees the objective visually (smoke) and progresses to the gameplay section inside the Forest. <strong>(Sees smoke, tension rising)</strong></li>
+        <li>He sees a locked gate and must find the key. He is informed that the key can be found at the old canoe rental building. <strong>(Player Engagement)</strong></li>
+        <li>He now sees the building and with visual indication (light flicker) he is drawn there to investigate. <strong>(Attract the player's attention / Frame the area)</strong></li>
+        <li>He finds out that the building has been breached so someone is at the area. <strong>(Player Engagement)</strong></li>
+        <li>To progress, he must climb to the roof and enter the open hatch that leads to the key. <strong>(The framing that was used before was to showcase the trashcans meaning they can be used for traversal. (Affordances))</strong></li>
+        <li>The player reaches the gate area and now can open it. <strong>(Backtrack)</strong></li>
+      </ul>
+
+      <h3><strong>Beat 3 (End)</strong></h3>
+      <ul>
+        <li>The gate is now opened, and the player sees the canoe storage area. Props are scattered everywhere. <strong>(Player Engagement - Tension)</strong></li>
+        <li>The voice from the radio suddenly stops responding. <strong>(Player Engagement – Tension/Isolation)</strong></li>
+        <li>The player sees a backpack scattered on the floor implying that someone was being chased. <strong>(Player Engagement – Tension)</strong></li>
+        <li>He progresses through a tiny opening by crouching. <strong>(Contrast the emotional state of the player / Teach Mechanic. He feels someone is there and now must crawl through a tiny space)</strong></li>
+        <li>He progresses through a more open forest and sees a camp site. He then discovers blood, guns and other things. He hears a gunshot. <strong>(Player Engagement)</strong></li>
+      </ul>
+
+      <div class="video-embed">
+        <iframe src="https://www.youtube.com/embed/R1nFcMKSNNU" frameborder="0" allowfullscreen></iframe>
+      </div>
+
+      <div class="gallery">
+        <img src="../images/walk1.jpg" alt="Beat 1 - Watchtower Vista">
+      </div>
+    </section>
+
+    <!-- 7. Final Thoughts -->
+    <section class="section">
+      <h2>Final Thoughts</h2>
+      <ul>
+        <li>
+          <strong>Play with verticality.</strong> The player starts at a high elevation and gradually descends. This is to showcase the emotional state of the avatar and the dark turn that the story takes.
+        </li>
+      
+         
+        </li>
+        <li>
+          Trees and logs help structure leading lines. Also mushrooms work for the dialogue Triggers. After the player crawls through the tiny space, he can see mushrooms upside down meaning that communication has been lost.
+        </li>
+      </ul>
+
+      <div class="gallery" style="margin-top: 2rem;">
+        <!-- Βάλε εδώ screenshots αν θες -->
+      </div>
+
+      <p style="margin-top: 2rem; opacity: 0.85;">
+        Overall, this project taught me the importance of iteration, real-world inspiration, and subtle environmental storytelling to enhance emotional impact.
+      </p>
+    </section>
+
+  </main>
+</body>
+</html>

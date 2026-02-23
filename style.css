@@ -281,3 +281,46 @@ body {
   width: 24px;
   height: 24px;
 }
+.autoplay-video .video-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  background: #111;
+}
+
+.autoplay-video .project-video {
+  position: absolute;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  opacity: 1 !important;          /* πάντα ορατό */
+  transition: none;                /* χωρίς fade */
+}
+
+/* Ακύρωσε το hover effect για αυτό το project (ή γενικά αν θες) */
+.autoplay-video:hover .project-video {
+  opacity: 1 !important;
+}
+
+/* Optional: ελαφρύ scale στο hover για feedback */
+.autoplay-video:hover {
+  transform: translateY(-12px);
+}
+.topdown-images {
+  display: flex;
+  flex-direction: column;        /* μία κάτω από την άλλη */
+  align-items: center;           /* κεντράρισμα οριζόντια */
+  gap: 2rem;                     /* απόσταση μεταξύ των εικόνων */
+  margin-top: 2rem;
+}
+
+.topdown-images img {
+  max-width: 100%;               /* δεν ξεπερνάει το container */
+  width: 100%;                   /* γεμίζει το διαθέσιμο πλάτος */
+  max-width: 900px;              /* προαιρετικό: περιορισμός πλάτους για μεγάλες οθόνες */
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+}
