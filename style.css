@@ -113,7 +113,7 @@ body {
   opacity: 1;
 }
 
-/* Projects Sections (κοινά για levels, mods, prototypes) */
+/* Projects Sections */
 .projects-section {
   padding: 120px 5%;
   text-align: center;
@@ -195,14 +195,12 @@ body {
   opacity: 0.7;
 }
 
-/* ────────────────────────────────────────────────
-   Ειδική ρύθμιση ΜΟΝΟ για το mods section
-───────────────────────────────────────────────── */
+/* Μόνο για mods: μονόστηλο */
 .mods-section .projects-grid {
-  grid-template-columns: 1fr;          /* μόνο μία στήλη */
-  max-width: 900px;                    /* πιο στενό για καλύτερη αναγνωσιμότητα */
+  grid-template-columns: 1fr;
+  max-width: 900px;
   margin: 0 auto;
-  gap: 3.5rem;                         /* μεγαλύτερο κάθετο διάστημα */
+  gap: 3.5rem;
 }
 
 /* About */
@@ -240,21 +238,19 @@ body {
 
 /* Responsive */
 @media (max-width: 768px) {
-  .hero h1 {
-    font-size: 3.8rem;
-  }
-  .hero h2 {
-    font-size: 2rem;
-  }
+  .hero h1 { font-size: 3.8rem; }
+  .hero h2 { font-size: 2rem; }
   .nav-container {
     flex-direction: column;
     gap: 1rem;
   }
-  .projects-section {
-    padding: 80px 5%;
-  }
+  .projects-section { padding: 80px 5%; }
   .mods-section .projects-grid {
-    max-width: 100%;               /* σε μικρές οθόνες παίρνει όλο το πλάτος */
+    max-width: 100%;
     gap: 2.8rem;
+  }
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
   }
 }
