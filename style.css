@@ -250,3 +250,34 @@ body {
   .mods-section .projects-grid { max-width: 100%; gap: 2.8rem; }
   .projects-grid { grid-template-columns: 1fr; gap: 2.5rem; }
 }
+
+.youtube-link-wrapper {
+  margin-top: 4rem;           /* απόσταση από το τελευταίο mod */
+  text-align: center;
+}
+
+.youtube-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 28px;
+  background: #c4302b;        /* κόκκινο YouTube */
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(196, 48, 43, 0.3);
+}
+
+.youtube-button:hover {
+  background: #e53935;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(196, 48, 43, 0.4);
+}
+
+.youtube-button svg {
+  width: 24px;
+  height: 24px;
+}
