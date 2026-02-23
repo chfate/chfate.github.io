@@ -3,64 +3,134 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Το Portfolio Σου</title>
+  <title>Christos Moiras | Level Design & Game Modding Portfolio</title>
   <link rel="stylesheet" href="style.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 </head>
 <body>
 
+  <!-- Navigation (προαιρετικό – smooth scroll links) -->
+  <nav class="main-nav">
+    <div class="nav-container">
+      <a href="#projects" class="nav-link">Levels</a>
+      <a href="#mods" class="nav-link">Mods</a>
+      <a href="#small-games" class="nav-link">Prototypes</a>
+      <a href="#about" class="nav-link">About</a>
+    </div>
+  </nav>
+
   <!-- Hero Section: Fullscreen Video Background -->
   <section class="hero">
     <video class="hero-video" autoplay muted loop playsinline>
-      <source src="videos/hero-video.mp4" type="video/mp4">
-      Your browser does not support the video tag.
+      <source src="videos/hero-loop.mp4" type="video/mp4">
+      Ο browser σου δεν υποστηρίζει video.
     </video>
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <h1>Christos Moiras</h1>
-      <p>Game Designer / Level Designer / </p>
-      <!-- Προαιρετικά κουμπί scroll down -->
+      <h2>Level Designer & Game Modder</h2>
+      <p>Level Blockouts • Mods • Games </p>
       <a href="#projects" class="scroll-down">↓ Check Projects</a>
     </div>
   </section>
 
-  <!-- Projects Grid -->
-  <section id="projects" class="projects">
-    <h2>Selected Works</h2>
+  <!-- Level Blockout Projects -->
+  <section id="projects" class="projects-section">
+    <h2>Level Blockout Projects</h2>
+    <p class="section-subtitle"> focus on pacing, flow & readability</p>
     <div class="projects-grid">
 
-      <!-- Παράδειγμα ενός project item -->
-      <a href="projects/project-1.html" class="project-item">
+      <!-- Παράδειγμα item – πρόσθεσε όσα θες -->
+      <a href="projects/level-1.html" class="project-item">
         <div class="video-wrapper">
           <video class="project-video" muted loop playsinline preload="metadata">
-            <source src="videos/project-1-preview.mp4" type="video/mp4">
+            <source src="videos/level-1-preview.mp4" type="video/mp4">
           </video>
-          <img class="poster" src="images/project-1-poster.jpg" alt="Project 1">
+          <img class="poster" src="images/level-1-poster.jpg" alt="Level Blockout 1">
         </div>
         <div class="project-info">
-          <h3>Project Title 1</h3>
-          <p>Level Design • Unreal Engine • 2025</p>
+          <h3>The Forbidden Hike</h3>
+          <p>Firewatch Inspired Level Blockout </p>
         </div>
       </a>
 
-      <!-- Επανάλαβε για 4–8 projects -->
-      <a href="projects/project-2.html" class="project-item">
-        <!-- Ίδιο structure -->
-        <div class="video-wrapper">
-          <video class="project-video" muted loop playsinline preload="metadata">
-            <source src="videos/project-2-preview.mp4" type="video/mp4">
-          </video>
-          <img class="poster" src="images/project-2-poster.jpg" alt="Project 2">
-        </div>
-        <div class="project-info">
-          <h3>Project Title 2</h3>
-          <p>Motion Graphics • After Effects • 2024</p>
-        </div>
-      </a>
-
-      <!-- ... πρόσθεσε κι άλλα ... -->
+      <!-- Επανάλαβε structure για 4–8 levels -->
+      <!-- <a href="..." class="project-item"> ... </a> -->
 
     </div>
+  </section>
+
+  <!-- Large Mods Section -->
+  <section id="mods" class="projects-section mods-section">
+    <h2>Mods</h2>
+    <p class="section-subtitle">Significant overhauls, new content & systems for existing games</p>
+    <div class="projects-grid">
+
+     <a href="projects/mod-1.html" class="project-item">
+  <div class="video-wrapper">
+    <!-- Αφαίρεσε το <video> εντελώς -->
+    <img class="poster" src="images/mod-1-main.jpg" alt="Skyrim Enhanced World Mod">
+    <!-- Δεν χρειάζεται πια .project-video -->
+  </div>
+  <div class="project-info">
+    <h3>Witcher III : Revenge Of Ofir </h3>
+    <p>Team Project • RedKit • Coming Soon</p>
+  </div>
+</a>
+
+      <a href="projects/mod-1.html" class="project-item">
+        <div class="video-wrapper">
+          <video class="project-video" muted loop playsinline preload="metadata">
+            <source src="videos/mod-1-preview.mp4" type="video/mp4">
+          </video>
+          <img class="poster" src="images/mod-1-poster.jpg" alt="Large Mod 1">
+        </div>
+        <div class="project-info">
+          <h3>Witcher III : Revenge Of Ofir</h3>
+          <p>Team Project • RedKit • Coming Soon •</p>
+        </div>
+      </a>
+
+
+    </div>
+  </section>
+
+  <!-- Small Games & Prototypes -->
+  <section id="small-games" class="projects-section small-games-section">
+    <h2>Small Games & Prototypes</h2>
+    <p class="section-subtitle">Game jams, experiments & solo dev prototypes</p>
+    <div class="projects-grid">
+
+      <a href="projects/proto-1.html" class="project-item">
+        <div class="video-wrapper">
+          <video class="project-video" muted loop playsinline preload="metadata">
+            <source src="videos/proto-1-preview.mp4" type="video/mp4">
+          </video>
+          <img class="poster" src="images/proto-1-poster.jpg" alt="Prototype 1">
+        </div>
+        <div class="project-info">
+          <h3>Escape the Void</h3>
+          <p>Unity • Solo • Horror Puzzle • 2025 Game Jam</p>
+        </div>
+      </a>
+
+      <!-- Πρόσθεσε 4–8 μικρά projects -->
+
+    </div>
+  </section>
+
+  <!-- About Section (προαιρετικό) -->
+  <section id="about" class="about-section">
+    <h2>About Me</h2>
+    <p>Είμαι level designer με έμφαση σε blockouts, iteration και player experience. Έχω δουλέψει εκτενώς με Unreal Engine, Unity, Hammer και mod tools (Creation Kit κλπ.). Παθιασμένος με modding communities και γρήγορα prototyping.</p>
+    <div class="tools">
+      <span>Unreal Engine 5</span>
+      <span>Unity</span>
+      <span>Blender</span>
+      <span>World Machine</span>
+      <span>Substance Painter</span>
+    </div>
+    <!-- Προσθέστε email, links (ArtStation, itch.io, Discord κλπ.) -->
   </section>
 
   <script src="script.js"></script>
