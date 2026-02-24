@@ -101,6 +101,13 @@
       color: #e0c080;
     }
 
+    .section h4 {
+      font-size: 1.8rem;
+      margin: 2rem 0 1rem;
+      color: #ff9800;
+      text-align: center;
+    }
+
     ul {
       list-style: none;
       padding-left: 0;
@@ -121,30 +128,46 @@
       font-size: 1.5rem;
     }
 
-    .gallery {
+    .gallery, .abandoned-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
       gap: 1.5rem;
       margin-top: 2rem;
     }
 
-    .gallery img {
+    .gallery img, .abandoned-grid img {
       width: 100%;
       border-radius: 12px;
       box-shadow: 0 8px 30px rgba(0,0,0,0.7);
       transition: transform 0.3s;
     }
 
-    .gallery img:hover {
+    .gallery img:hover, .abandoned-grid img:hover {
       transform: scale(1.03);
     }
 
-    .gallery figcaption {
+    .gallery figcaption, .abandoned-grid figcaption {
       text-align: center;
       font-size: 0.95rem;
       opacity: 0.8;
       margin-top: 0.5rem;
       font-style: italic;
+      color: #d4a76a;
+    }
+
+    .contribution-figure {
+      margin: 1.5rem 0;
+      text-align: center;
+    }
+
+    .contribution-img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: contain;
+      border-radius: 12px;
+      box-shadow: 0 10px 35px rgba(0,0,0,0.6);
+      display: block;
+      margin: 0 auto;
     }
 
     .links-section {
@@ -215,8 +238,8 @@
 
     <section class="section">
       <h2>Overview</h2>
-      <p>A large-scale content expansion for The Witcher 3: Wild Hunt, bringing the eastern empire of Ofir to life with new explorable regions, quests, characters, systems, and rich lore. Developed collaboratively by a 25-member team using RedKit.</p>
-      <p>Status: In active development • Estimated full release: Late 2025 / Early 2026</p>
+      <p>Witcher III: Revenge of Ofir is an ambitious fan-made expansion that transports players to the mysterious eastern empire of Ofir. This complete overhaul delivers a brand-new experience, featuring an entirely new explorable region, original quests, new characters, expanded systems, and deeply integrated rich lore. The mod stands shoulder-to-shoulder with the official DLCs in scope, quality, and ambition, offering a worthy continuation of The Witcher 3’s world.</p>
+      <p>Status: In active development • Estimated full release: 2026</p>
     </section>
 
     <section class="section">
@@ -225,12 +248,9 @@
 
       <h3>Level Design Tasks I Handled</h3>
       <ul>
-        <li>Blockout and multiple iterations of key explorable zones in the Ofir region</li>
-        <li>Designing gameplay flow, pacing, readability and natural player guidance</li>
+        <li>Blockout and multiple iterations of key explorable zones in the Ofir region inside RedKit</li>
         <li>Implementation of leading lines, landmarks, vistas and environmental storytelling techniques</li>
-        <li>Verticality design, layering and one-way valves to support narrative progression</li>
-        <li>Close collaboration with environment artists and narrative designers to integrate story beats into the spatial experience</li>
-        <li>Regular playtesting sessions and iterative refinement based on team and playtester feedback</li>
+        <li>Researching, finding references and implementing them inside the engine</li>
       </ul>
 
       <p class="important-note">
@@ -238,18 +258,38 @@
       </p>
     </section>
 
-    <!-- ΝΕΟ Section: Level Design Contributions (κάτω από My Role) -->
+    <!-- Level Design Contributions -->
     <section class="section">
       <h2>Level Design Contributions</h2>
       <p>Within the project, I personally led the design and iteration of two major areas:</p>
 
-      <h3>Abandoned Village</h3>
-      <ul>
-        <li>Full blockout and multiple iterations of the abandoned village zone</li>
-        <li>Created atmospheric pacing with decaying structures, overgrown paths, and hidden loot spots</li>
-        <li>Designed verticality (ruined towers, collapsed roofs) and environmental storytelling through props and lighting</li>
-        <li>Ensured smooth player flow and readability while maintaining a sense of desolation and danger</li>
-      </ul>
+      <h3>Abandoned Village POI</h3>
+      <p>I was tasked with creating one of the many Points of Interest in the game: the Abandoned Village.</p>
+      <p>First, I asked questions to define the story of this place. I came up with the idea that this village was once a bustling trade hotspot, but a sudden attack by ghouls forced the inhabitants to flee. Now it stands empty and overrun by monsters.</p>
+      <p>My main goal was to make the abandoned feeling stand out, so I added dried vegetation (dead trees, grass, and bushes) to emphasize isolation. I also integrated half-buried houses in the sand to make the location feel more realistic and unique.</p>
+      <p>After implementing the level space, I added props to reinforce the fiction: half-buried wagons outside the village (breadcrumbing the player to approach), a half-buried well in the middle of the trade area, and decoration props to show the active trade that existed before the abandonment.</p>
+
+      <!-- Paper prototypes + grid -->
+      <figure class="contribution-figure">
+        <img class="contribution-img" src="../images/paper.jpg" alt="Paper Prototype – Abandoned Village">
+        <figcaption>Paper Prototype</figcaption>
+      </figure>
+
+      <figure class="contribution-figure">
+        <img class="contribution-img" src="../images/paper2.jpg" alt="Engine Prototype – Abandoned Village">
+        <figcaption>Engine Prototype</figcaption>
+      </figure>
+
+      <!-- Grid με τις 6 φωτογραφίες a–f δίπλα-δίπλα -->
+      <h4>Final Result</h4>
+      <div class="gallery abandoned-grid">
+        <img src="../images/a.jpg" alt="Abandoned Village final result 1">
+        <img src="../images/b.jpg" alt="Abandoned Village final result 2">
+        <img src="../images/c.jpg" alt="Abandoned Village final result 3">
+        <img src="../images/d.jpg" alt="Abandoned Village final result 4">
+        <img src="../images/e.jpg" alt="Abandoned Village final result 5">
+        <img src="../images/f.jpg" alt="Abandoned Village final result 6">
+      </div>
 
       <h3>Main Village – House Interiors</h3>
       <ul>
@@ -286,15 +326,7 @@
           <img src="../images/witcher-oasis.jpg" alt="Oasis hub">
           <figcaption>Exploration hub with leading lines and readability</figcaption>
         </figure>
-        <figure>
-          <img src="../images/witcher-abandoned-village.jpg" alt="Abandoned Village">
-          <figcaption>Abandoned Village – my full blockout and iteration</figcaption>
-        </figure>
-        <figure>
-          <img src="../images/witcher-main-village-interior.jpg" alt="Main Village House Interior">
-          <figcaption>Main Village house interiors – my design</figcaption>
-        </figure>
-        <!-- Πρόσθεσε όσα screenshots θες από τα δικά σου levels -->
+        <!-- Πρόσθεσε περισσότερα screenshots σου -->
       </div>
     </section>
 
