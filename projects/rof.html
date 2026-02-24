@@ -7,82 +7,118 @@
   <link rel="stylesheet" href="../style.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 
-  <!-- tsParticles CDN (ελαφριά έκδοση) -->
-  <script src="https://cdn.jsdelivr.net/npm/@tsparticles/all@3/tsparticles.all.bundle.min.js"></script>
-
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-      position: relative;
-      min-height: 100vh;
       background: #0d0d0d;
+      color: #e0e0e0;
+      font-family: 'Inter', sans-serif;
       overflow-x: hidden;
     }
 
-    #tsparticles {
-      position: fixed;
+    /* Hero με logo.jpg + Ken Burns effect */
+    .mod-hero {
+      position: relative;
+      height: 100vh;
+      width: 100%;
+      background: url('../images/logo.jpg') center/cover no-repeat fixed;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .mod-hero::before {
+      content: "";
+      position: absolute;
       inset: 0;
-      z-index: -2;
-      pointer-events: none;
+      background: rgba(0, 0, 0, 0.60);
+      z-index: 1;
+      animation: kenBurns 25s infinite alternate ease-in-out;
+    }
+
+    @keyframes kenBurns {
+      0% {
+        transform: scale(1.0) translate(0, 0);
+      }
+      100% {
+        transform: scale(1.12) translate(-3%, -3%);
+      }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1000px;
+      padding: 0 40px;
+    }
+
+    .hero-content h1 {
+      font-size: 5.5rem;
+      margin-bottom: 0.8rem;
+      text-shadow: 0 0 30px rgba(139, 69, 19, 0.8);
+    }
+
+    .hero-content .status {
+      font-size: 1.6rem;
+      color: #d4a76a;
+      margin-bottom: 2rem;
     }
 
     .mod-page {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 80px 5% 140px;
+      padding: 120px 5% 140px;
       position: relative;
       z-index: 1;
     }
 
-    .mod-hero {
-      text-align: center;
-      margin-bottom: 60px;
-      position: relative;
-    }
-
-    .mod-hero h1 {
-      font-size: 4.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .mod-hero .status {
-      font-size: 1.3rem;
-      color: #ff9800;
-      margin-bottom: 1rem;
-    }
-
     .section {
-      margin-bottom: 90px;
-      background: rgba(17, 17, 17, 0.75);
-      padding: 2rem;
+      margin-bottom: 100px;
+      background: rgba(17, 17, 17, 0.85);
+      padding: 2.5rem;
       border-radius: 12px;
-      backdrop-filter: blur(6px);
-      border: 1px solid #333;
+      border: 1px solid #444;
     }
 
     .section h2 {
       font-size: 2.8rem;
       margin-bottom: 1.5rem;
-      border-bottom: 2px solid #444;
+      color: #d4a76a;
+      border-bottom: 2px solid #8b4513;
       padding-bottom: 0.8rem;
     }
 
     .section h3 {
       font-size: 2rem;
       margin: 2rem 0 1rem;
+      color: #e0c080;
     }
 
-    .features-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem;
-      margin-top: 1.5rem;
+    ul {
+      list-style: none;
+      padding-left: 0;
     }
 
-    .feature-card {
-      background: #111;
-      padding: 1.5rem;
-      border-radius: 12px;
-      border: 1px solid #333;
+    ul li {
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+      position: relative;
+      padding-left: 25px;
+    }
+
+    ul li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #d4a76a;
+      font-size: 1.5rem;
     }
 
     .gallery {
@@ -95,7 +131,7 @@
     .gallery img {
       width: 100%;
       border-radius: 12px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.7);
       transition: transform 0.3s;
     }
 
@@ -113,84 +149,79 @@
 
     .links-section {
       text-align: center;
-      margin-top: 4rem;
+      margin-top: 5rem;
     }
 
     .btn {
       display: inline-block;
       padding: 14px 32px;
-      background: #e53935;
+      background: #8b4513;
       color: white;
       text-decoration: none;
       border-radius: 50px;
       font-weight: 500;
-      margin: 0 1rem 1rem;
+      margin: 0.5rem;
       transition: all 0.3s;
     }
 
     .btn:hover {
-      background: #f44336;
-      transform: translateY(-3px);
+      background: #a0522d;
+      transform: translateY(-4px);
+      box-shadow: 0 10px 30px rgba(139, 69, 19, 0.4);
     }
 
     .back-link {
-      display: inline-block;
-      margin: 2rem 5%;
-      color: #aaa;
+      position: absolute;
+      top: 20px;
+      left: 5%;
+      z-index: 10;
+      color: #fff;
+      background: rgba(0,0,0,0.6);
+      padding: 10px 20px;
+      border-radius: 8px;
       text-decoration: none;
       font-size: 1.1rem;
     }
 
     .back-link:hover {
-      color: #fff;
-      text-decoration: underline;
-    }
-
-    .role-highlight {
-      font-weight: bold;
-      color: #4caf50;
+      background: rgba(139, 69, 19, 0.8);
     }
 
     .important-note {
       font-style: italic;
       opacity: 0.9;
-      background: rgba(255, 193, 7, 0.1);
-      padding: 1rem;
+      background: rgba(210, 166, 106, 0.1);
+      padding: 1.2rem;
       border-radius: 8px;
-      border-left: 4px solid #ff9800;
+      border-left: 4px solid #d4a76a;
+      margin-top: 1.5rem;
     }
   </style>
 </head>
 <body>
 
-  <!-- Particles container (άμμος/σκόνη) -->
-  <div id="tsparticles"></div>
-
   <a href="../index.html#mods" class="back-link">← Back to Portfolio</a>
+
+  <!-- Hero με logo.jpg + Ken Burns -->
+  <section class="mod-hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Witcher III: Revenge Of Ofir</h1>
+      <p class="status">Team Project • 25 Members • RedKit • In Development • 2025–2026</p>
+    </div>
+  </section>
 
   <main class="mod-page">
 
-    <!-- Hero -->
-    <section class="mod-hero">
-      <h1>Witcher III: Revenge Of Ofir</h1>
-      <p class="status">Team Project • 25 Members • RedKit • In Development • Expected 2025–2026</p>
-      <!-- Trailer -->
-      <div class="video-embed" style="max-width: 960px; margin: 2rem auto;">
-        <iframe src="https://www.youtube.com/embed/YOUR_TRAILER_VIDEO_ID_HERE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-    </section>
-
-    <!-- Overview -->
     <section class="section">
       <h2>Overview</h2>
-      <p>A large-scale content expansion for The Witcher 3: Wild Hunt, bringing the eastern empire of Ofir to life with new explorable regions, quests, characters, systems and lore. Developed by a team of 25 people using RedKit.</p>
+      <p>A large-scale content expansion for The Witcher 3: Wild Hunt, bringing the eastern empire of Ofir to life with new explorable regions, quests, characters, systems, and rich lore. Developed collaboratively by a 25-member team using RedKit.</p>
       <p>Status: In active development • Estimated full release: Late 2025 / Early 2026</p>
     </section>
 
-    <!-- My Role & Contributions -->
     <section class="section">
       <h2>My Role & Contributions</h2>
-      <p>This mod is a collaborative effort with a team of <span class="role-highlight">25 members</span>. My role was strictly <span class="role-highlight">Level Designer</span>. I focused exclusively on level design tasks and did not contribute to scripting, quest writing, dialogue, companions, combat mechanics, UI, asset creation, or any other areas.</p>
+      <p>This was a collaborative project with a team of 25 members. My role was strictly **Level Designer**. I focused exclusively on level design tasks and did not contribute to scripting, quest writing, dialogue, companions, combat mechanics, UI, asset creation, or other areas.</p>
 
       <h3>Level Design Tasks I Handled</h3>
       <ul>
@@ -203,102 +234,77 @@
       </ul>
 
       <p class="important-note">
-        All screenshots, videos and level layouts shown in this page represent <strong>only the areas and level design work I personally contributed</strong>. Quests, dialogue, characters, combat, scripting, new systems and all other content were created by other team members.
+        All screenshots and videos on this page showcase **only the level design work I personally contributed**. All other elements (quests, dialogue, characters, combat, scripting, new systems) were handled by other team members.
       </p>
     </section>
 
-    <!-- Key Features -->
+    <!-- ΝΕΟ Section: Level Design Contributions (κάτω από My Role) -->
     <section class="section">
-      <h2>Key Features</h2>
-      <div class="features-list">
-        <div class="feature-card">
-          <h3>New Region: Ofir</h3>
-          <p>Unique eastern empire aesthetic with deserts, bazaars, architecture and culture.</p>
-        </div>
-        <div class="feature-card">
-          <h3>Extended Story Content</h3>
-          <p>New main arc + side quests with branching choices and meaningful consequences.</p>
-        </div>
-        <div class="feature-card">
-          <h3>New Gameplay Systems</h3>
-          <p>Expanded crafting, alchemy, unique combat animations and dialogue expansions.</p>
-        </div>
-        <div class="feature-card">
-          <h3>Companions & Factions</h3>
-          <p>Recruitable companions from Ofir and new political factions.</p>
-        </div>
-      </div>
+      <h2>Level Design Contributions</h2>
+      <p>Within the project, I personally led the design and iteration of two major areas:</p>
+
+      <h3>Abandoned Village</h3>
+      <ul>
+        <li>Full blockout and multiple iterations of the abandoned village zone</li>
+        <li>Created atmospheric pacing with decaying structures, overgrown paths, and hidden loot spots</li>
+        <li>Designed verticality (ruined towers, collapsed roofs) and environmental storytelling through props and lighting</li>
+        <li>Ensured smooth player flow and readability while maintaining a sense of desolation and danger</li>
+      </ul>
+
+      <h3>Main Village – House Interiors</h3>
+      <ul>
+        <li>Designed and detailed interiors for multiple houses in the main village</li>
+        <li>Focused on functional and thematic interior layout (living spaces, storage, hidden compartments)</li>
+        <li>Integrated narrative elements through furniture, notes, and lighting to support quest hooks</li>
+        <li>Balanced scale, readability, and immersion to feel authentic to Ofir’s culture and architecture</li>
+      </ul>
     </section>
 
-    <!-- Gallery – only your work -->
+    <section class="section">
+      <h2>Key Features</h2>
+      <ul>
+        <li>New explorable region: Ofir with unique deserts, bazaars and eastern architecture</li>
+        <li>20+ hours of new quests with branching choices and multiple endings</li>
+        <li>Recruitable companions and new political factions</li>
+        <li>Expanded crafting, alchemy and combat systems</li>
+      </ul>
+    </section>
+
     <section class="section">
       <h2>Gallery – My Level Design Work</h2>
       <p>Selected screenshots from the zones I personally blockouted, iterated and refined.</p>
       <div class="gallery">
         <figure>
-          <img src="../images/witcher-level-bazaar-1.jpg" alt="Bazaar district blockout">
-          <figcaption>Early blockout → final iteration of central bazaar area</figcaption>
+          <img src="../images/witcher-bazaar.jpg" alt="Bazaar district blockout">
+          <figcaption>Central bazaar area – early blockout to final iteration</figcaption>
         </figure>
         <figure>
-          <img src="../images/witcher-level-desert-ruins.jpg" alt="Desert ruins verticality">
+          <img src="../images/witcher-desert-ruins.jpg" alt="Desert ruins verticality">
           <figcaption>Vertical descent sequence with vista framing</figcaption>
         </figure>
         <figure>
-          <img src="../images/witcher-level-oasis.jpg" alt="Oasis hub area">
+          <img src="../images/witcher-oasis.jpg" alt="Oasis hub">
           <figcaption>Exploration hub with leading lines and readability</figcaption>
         </figure>
-        <!-- Πρόσθεσε όσες εικόνες θες από τα δικά σου levels -->
+        <figure>
+          <img src="../images/witcher-abandoned-village.jpg" alt="Abandoned Village">
+          <figcaption>Abandoned Village – my full blockout and iteration</figcaption>
+        </figure>
+        <figure>
+          <img src="../images/witcher-main-village-interior.jpg" alt="Main Village House Interior">
+          <figcaption>Main Village house interiors – my design</figcaption>
+        </figure>
+        <!-- Πρόσθεσε όσα screenshots θες από τα δικά σου levels -->
       </div>
     </section>
 
-    <!-- Links -->
     <section class="section links-section">
       <h2>Links & Resources</h2>
-      <a href="https://www.youtube.com/playlist?list=YOUR_PLAYLIST_ID" target="_blank" class="btn">Development Videos & Progress</a>
-      <a href="https://www.nexusmods.com/witcher3/mods/YOUR_MOD_ID" target="_blank" class="btn">Nexus Mods Page (Coming Soon)</a>
-      <a href="https://discord.gg/your-discord-server" target="_blank" class="btn">Join the Project Discord</a>
+      <a href="https://www.youtube.com/playlist?list=YOUR_PLAYLIST_ID" target="_blank" class="btn">Development Videos</a>
+      <a href="https://www.nexusmods.com/witcher3/mods/YOUR_MOD_ID" target="_blank" class="btn">Nexus Mods (Coming Soon)</a>
+      <a href="https://discord.gg/your-discord-server" target="_blank" class="btn">Join Discord</a>
     </section>
 
   </main>
-
-  <!-- tsParticles config για άμμο/σκόνη -->
-  <script>
-    tsParticles.load("tsparticles", {
-      fullScreen: { enable: true, zIndex: -2 },
-      particles: {
-        number: { value: 60, density: { enable: true, area: 800 } },
-        color: { value: ["#e0c080", "#d4a76a", "#c68e52", "#b67c40", "#a56a30"] }, // αποχρώσεις άμμου
-        shape: { type: "circle" },
-        opacity: { 
-          value: { min: 0.2, max: 0.6 }, 
-          animation: { enable: true, speed: 0.8, minimumValue: 0.1, sync: false } 
-        },
-        size: { value: { min: 0.4, max: 3.5 } },
-        move: {
-          enable: true,
-          speed: { min: 0.2, max: 1.1 },
-          direction: "bottom",
-          outModes: { default: "out" },
-          straight: false,
-          attract: { enable: false },
-          trail: { enable: false }
-        },
-        twinkle: {
-          lines: { enable: false },
-          particles: { enable: true, opacity: 0.4, color: "#e0c080", frequency: 0.1 }
-        }
-      },
-      interactivity: {
-        events: {
-          onHover: { enable: false },
-          resize: true
-        }
-      },
-      detectRetina: true,
-      background: { color: "transparent" },
-      fpsLimit: 60
-    });
-  </script>
-
 </body>
 </html>
