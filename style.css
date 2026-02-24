@@ -324,3 +324,9 @@ body {
   border-radius: 12px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.6);
 }
+#tsparticles {
+  position: fixed;
+  inset: 0;
+  z-index: -2;               /* πίσω από όλα */
+  pointer-events: none;      /* δεν εμποδίζει κλικ */
+}
