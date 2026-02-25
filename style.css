@@ -46,10 +46,11 @@ body {
   color: #fff;
 }
 
-/* Hero */
+/* Hero – ΜΕΙΩΜΕΝΟ ύψος (70vh desktop, 80vh mobile) */
 .hero {
   position: relative;
-  height: 100vh;
+  height: 70vh; /* ← 70% της οθόνης – μικρότερο από 100vh */
+  min-height: 600px; /* ελάχιστο ύψος για να μην γίνει πολύ μικρό */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -57,6 +58,7 @@ body {
   overflow: hidden;
 }
 
+/* Το video καλύπτει το νέο μικρότερο hero */
 .hero-video {
   position: absolute;
   top: 50%;
@@ -70,6 +72,7 @@ body {
   z-index: -2;
 }
 
+/* Overlay μένει ίδιο */
 .hero-overlay {
   position: absolute;
   inset: 0;
@@ -77,6 +80,7 @@ body {
   z-index: -1;
 }
 
+/* Το κείμενο μέσα στο hero */
 .hero-content {
   z-index: 1;
   max-width: 900px;
@@ -111,6 +115,22 @@ body {
 
 .scroll-down:hover {
   opacity: 1;
+}
+
+/* Responsive για hero – σε mobile λίγο μεγαλύτερο */
+@media (max-width: 768px) {
+  .hero {
+    height: 80vh;
+    min-height: 500px;
+  }
+
+  .hero h1 {
+    font-size: 3.8rem;
+  }
+
+  .hero h2 {
+    font-size: 2rem;
+  }
 }
 
 /* Projects Sections */
@@ -149,7 +169,7 @@ body {
   box-shadow: 0 12px 30px rgba(0,0,0,0.6);
 }
 
-/* Video-wrapper: ΧΩΡΙΣ aspect-ratio & height → κολλάει ακριβώς στην εικόνα */
+/* Video-wrapper: χωρίς aspect-ratio & height – κολλάει στην εικόνα */
 .video-wrapper {
   position: relative;
   overflow: hidden;
@@ -157,10 +177,10 @@ body {
   width: 100%;
   max-width: 480px;
   margin: 0 auto;
-  background: transparent; /* χωρίς μαύρο φόντο */
+  background: transparent;
 }
 
-/* Εικόνα/video: ολόκληρη, χωρίς κενό */
+/* Εικόνα/video: ολόκληρη, χωρίς κενό πάνω/κάτω */
 .poster,
 .project-video {
   display: block;
@@ -187,16 +207,16 @@ body {
   opacity: 1;
 }
 
-/* ΤΙΤΛΟΙ (h3) ΠΟΛΥ ΠΙΟ ΠΑΝΩ – ΚΟΝΤΑ ΣΤΗΝ ΕΙΚΟΝΑ */
+/* Τίτλοι πολύ πιο πάνω – κολλητά στην εικόνα */
 .project-info {
-  margin-top: 0.4rem; /* ← Πολύ μικρό margin-top για να κολλήσει πάνω */
+  margin-top: 0.4rem !important;
   text-align: center;
 }
 
 .project-info h3 {
   font-size: 1.5rem;
-  margin-top: -0.8rem; /* ← Negative margin για να "τραβήξει" τον τίτλο ΠΟΛΥ ΠΙΟ ΠΑΝΩ */
-  margin-bottom: 0.2rem; /* μικρό κενό μεταξύ τίτλου και περιγραφής */
+  margin-top: -0.8rem !important; /* ← πολύ πιο πάνω */
+  margin-bottom: 0.3rem;
 }
 
 .project-info p {
@@ -212,48 +232,47 @@ body {
 
 /* About */
 .about-section {
-  padding: 100px 5%;
+  padding: 120px 5%;
   max-width: 900px;
   margin: 0 auto;
   text-align: center;
+  background: linear-gradient(to bottom, #0a0a0a, #000);
 }
 
 .about-section h2 {
-  font-size: 3.2rem;
+  font-size: 3.5rem;
   margin-bottom: 1.5rem;
+  text-shadow: 0 0 20px rgba(255,255,255,0.1);
 }
 
 .about-section p {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   max-width: 700px;
-  margin: 0 auto 2rem;
+  margin: 0 auto 2.5rem;
 }
 
 .tools {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1rem;
+  gap: 1.2rem;
 }
 
 .tools span {
   background: #222;
-  padding: 0.6rem 1.2rem;
+  padding: 0.7rem 1.4rem;
   border-radius: 30px;
-  font-size: 0.95rem;
+  font-size: 1rem;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-  .hero h1 { font-size: 3.8rem; }
-  .hero h2 { font-size: 2rem; }
-  .nav-container { flex-direction: column; gap: 1rem; }
   .projects-section { padding: 80px 5%; }
   .projects-grid { grid-template-columns: 1fr; gap: 2.5rem; }
 }
 
 .youtube-link-wrapper {
-  margin-top: 4rem;
+  margin-top: 3rem;
   text-align: center;
 }
 
