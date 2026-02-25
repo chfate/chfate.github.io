@@ -128,10 +128,11 @@ body {
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-  gap: 2.5rem;
-  max-width: 1400px;
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  gap: 3rem;
+  max-width: 1600px;
   margin: 0 auto;
+  justify-content: center;
 }
 
 .project-item {
@@ -139,72 +140,74 @@ body {
   color: inherit;
   display: block;
   transition: transform 0.35s ease;
+  max-width: 480px;
+  margin: 0 auto;
 }
 
 .project-item:hover {
   transform: translateY(-12px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.6);
 }
 
-/* Ενιαίο μέγεθος για ΟΛΑ τα video-wrappers & posters */
+/* Video-wrapper: ΧΩΡΙΣ aspect-ratio & height → κολλάει ακριβώς στην εικόνα */
 .video-wrapper {
   position: relative;
   overflow: hidden;
   border-radius: 12px;
-  aspect-ratio: 16 / 9;
   width: 100%;
-  max-width: 100%;
-  background: #111;
+  max-width: 480px;
   margin: 0 auto;
+  background: transparent; /* χωρίς μαύρο φόντο */
 }
 
+/* Εικόνα/video: ολόκληρη, χωρίς κενό */
 .poster,
 .project-video {
-  position: absolute;
-  inset: 0;
+  display: block;
   width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
+  height: auto !important;
+  object-fit: contain;
   object-position: center;
 }
 
-/* ΔΙΟΡΘΩΣΗ: Η poster ΜΕΝΕΙ ορατή στο hover */
+/* Poster μένει ορατή στο hover */
 .poster {
   z-index: 2;
   opacity: 1;
-  transition: none; /* χωρίς fade που προκαλεί εξαφάνιση */
+  transition: none;
 }
 
-/* ΑΚΥΡΩΣΗ του κρυψίματος poster στο hover */
 .project-item:hover .poster {
   opacity: 1 !important;
   visibility: visible !important;
 }
 
-/* Το video (αν υπάρχει) μπορεί να εμφανιστεί, αλλά στα Mods/Games δεν υπάρχει */
+/* Video (αν υπάρχει) */
 .project-item:hover .project-video {
   opacity: 1;
 }
 
+/* ΤΙΤΛΟΙ (h3) ΠΟΛΥ ΠΙΟ ΠΑΝΩ – ΚΟΝΤΑ ΣΤΗΝ ΕΙΚΟΝΑ */
 .project-info {
-  margin-top: 1.2rem;
+  margin-top: 0.4rem; /* ← Πολύ μικρό margin-top για να κολλήσει πάνω */
+  text-align: center;
 }
 
 .project-info h3 {
   font-size: 1.5rem;
-  margin-bottom: 0.4rem;
+  margin-top: -0.8rem; /* ← Negative margin για να "τραβήξει" τον τίτλο ΠΟΛΥ ΠΙΟ ΠΑΝΩ */
+  margin-bottom: 0.2rem; /* μικρό κενό μεταξύ τίτλου και περιγραφής */
 }
 
 .project-info p {
   font-size: 1rem;
   opacity: 0.7;
+  margin-top: 0;
 }
 
-/* Mods: single column */
+/* Mods: ίδιο grid με όλα */
 .mods-section .projects-grid {
-  grid-template-columns: 1fr;
-  max-width: 900px;
-  margin: 0 auto;
-  gap: 3.5rem;
+  /* Δεν υπάρχει override – δίπλα-δίπλα */
 }
 
 /* About */
@@ -246,7 +249,6 @@ body {
   .hero h2 { font-size: 2rem; }
   .nav-container { flex-direction: column; gap: 1rem; }
   .projects-section { padding: 80px 5%; }
-  .mods-section .projects-grid { max-width: 100%; gap: 2.8rem; }
   .projects-grid { grid-template-columns: 1fr; gap: 2.5rem; }
 }
 
@@ -279,10 +281,4 @@ body {
 .youtube-button svg {
   width: 24px;
   height: 24px;
-}
-
-/* Optional: ελαφρύ scale στο hover για feedback (χωρίς να κρύβει εικόνα) */
-.project-item:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.6);
 }
