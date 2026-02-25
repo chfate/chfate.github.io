@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Lab Run — A 4-week Unity school project focused on fast-paced arcade gameplay. By Christos Moiras."/>
+
+  <title>Lab Run | Christos Moiras</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+
+  <!-- Global Styles -->
+  <link rel="stylesheet" href="../style.css"/>
+  <link rel="stylesheet" href="../project-page.css"/>
+</head>
+
+<body class="project-page">
+
+  <!-- ===== BACK LINK ===== -->
+  <a href="../index.html#games" class="back-link">
+    <span class="back-arrow">←</span>
+    <span>Back to Portfolio</span>
+  </a>
+
+  <!-- ================= HERO ================= -->
+  <header class="project-hero">
+    <video class="project-hero-video" autoplay muted loop playsinline>
+      <source src="../videos/labrun.mp4" type="video/mp4"/>
+    </video>
+
+    <div class="project-hero-overlay"></div>
+
+    <div class="project-hero-content">
+      <h1>Lab Run</h1>
+      <p class="project-tagline">2D Endless Runner</p>
+
+      <div class="project-meta">
+        <span>School Project</span>
+        <span>4 Weeks</span>
+        <span>Unity</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= MAIN ================= -->
+  <main class="project-content">
+
+    <!-- ===== OVERVIEW ===== -->
+    <section class="project-section fade-in">
+      <h2>Overview</h2>
+      <p>
+        Lab Run is a 2D endless runner mobile game developed in Unity during a 4-week school project.<p>
+       <p> What's special : <p>
+       <li> 3 Unique Biomes - Each with distinct visuals & obstacles 
+        <li>Animal Fusion System -  Mix 2 animals for game-changing abilities 
+       <li> Procedural Obstacles -  Never the same run twice!  
+       <li> Collect Coins and Progress the  Skill Tree - Upgrade the animals
+        
+      </p>
+
+      <p>      </p>
+    </section>
+
+    <!-- ===== MY ROLE ===== -->
+    <section class="project-section fade-in">
+      <h2>My Role</h2>
+
+      <p>
+        In this project, I was a Game Designer and primarily responsible for:
+      </p>
+
+      <ul class="takeaways-list">
+        <li><strong>Prototyping:</strong> Implemented the core game mechanics and allowed the team to gain an early understanding of the game's overall look and feel.</li>
+        <li><strong>Level Design:</strong> I was responsible for creating the different levels in the game.</li>
+        <li><strong>Lighting:</strong> I was tasked to make the level feel alive by adding lighting and post process effects.</li>
+        <li><strong>Documentation:</strong> I helped shape the GDD for clear instructions so every team member can read it.
+        <li><strong>Sound Implementation:</strong> I integrated FMOD inside the project and helped with the sound design by making sound effects. 
+
+
+          </ul>
+
+
+<<h3 class="sub-gallery-title">During Production</h3>
+
+<div class="gallery-grid stage-group">
+  <img src="../images/L1.jpg" alt="Lab Run - Early prototype layout" loading="lazy"/>
+  <img src="../images/L2.jpg" alt="Lab Run - Mid production level iteration" loading="lazy"/>
+  <img src="../images/L3.jpg" alt="Lab Run - Gameplay refinement phase" loading="lazy"/>
+</div>
+
+<h3 class="sub-gallery-title">Final Product</h3>
+
+<div class="gallery-grid stage-group">
+  <img src="../images/L4.jpg" alt="Lab Run - Final environment" loading="lazy"/>
+  <img src="../images/L5.jpg" alt="Lab Run - Final gameplay look" loading="lazy"/>
+</div>  
+  </section>
+
+    <!-- ===== CONCLUSION ===== -->
+    <section class="project-section fade-in">
+      <h2>Conclusion</h2>
+
+      <p>
+        What really stood out to me was the importance of communication.
+This was my first experience working with other people on a game, and it gave me valuable insight into the skills and mindset needed in a real professional work environment.
+Giving and receiving feedback from teammates and mentors played a critical role in my growth — both as a game designer and as a collaborative team member.
+      </p>
+
+      <p>
+        Also, it helped my get out of my comfort zone and take iniative on speaking up and sharing my opinion with other team members.
+      </p>
+
+      <p>
+        Overall, Project Trash was a valuable experience in understanding production timelines,deadlines
+        and collaboration.
+      </p>
+    <section class="project-section project-links fade-in">
+  <div class="links-buttons">
+
+    <a href="https://futuregames.itch.io/projecttrash"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="btn btn-primary">
+       🎮 Play on itch.io
+    </a>
+
+    <a href="https://www.youtube.com/watch?v=DhRqxG2k_oM"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="btn btn-secondary">
+       ▶ Watch Trailer
+    </a>
+
+  </div>
+</section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="mailto:youremail@example.com">📧 Email</a>
+        <a href="https://www.linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+      </div>
+      <p class="copyright">© 2026 Christos Moiras</p>
+    </div>
+  </footer>
+
+  <script>
+    // Simple fade-in animation
+    document.addEventListener('DOMContentLoaded', () => {
+      const elements = document.querySelectorAll('.fade-in');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      elements.forEach(el => observer.observe(el));
+    });
+  </script>
+
+</body>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+
+    // ✅ Start hero video from 12 seconds
+    const heroVideo = document.querySelector('.project-hero-video');
+
+    if (heroVideo) {
+      heroVideo.addEventListener('loadedmetadata', () => {
+        heroVideo.currentTime = 12;
+      });
+
+      heroVideo.play().catch(() => {});
+    }
+
+    // ✅ Fade-in animation
+    const elements = document.querySelectorAll('.fade-in');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    elements.forEach(el => observer.observe(el));
+
+  });
+</script>
+</html>

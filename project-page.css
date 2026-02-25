@@ -1,6 +1,5 @@
 /* ============================================
    PROJECT PAGE STYLES
-   Shared CSS for all individual project pages
    ============================================ */
 
 /* ===== PROJECT HERO ===== */
@@ -18,8 +17,7 @@
 .project-hero-video,
 .project-hero-img {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -32,7 +30,7 @@
   background: linear-gradient(
     to bottom,
     rgba(0, 0, 0, 0.3) 0%,
-    rgba(0, 0, 0, 0.6) 60%,
+    rgba(0, 0, 0, 0.65) 60%,
     rgba(0, 0, 0, 0.9) 100%
   );
   z-index: -1;
@@ -50,127 +48,180 @@
   font-weight: 700;
   letter-spacing: -0.02em;
   margin-bottom: 0.8rem;
-  line-height: 1.1;
 }
 
 .project-tagline {
-  font-size: 
-/* ===== QUAKE / SILENT HILL THEME ===== */
-.quake-theme .project-hero-content h1 {
-  text-shadow: 0 0 30px rgba(92, 157, 255, 0.4);
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  font-weight: 400;
 }
 
-.quake-theme .stat-number {
-  color: #7db4ff;
+.project-meta {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.2rem;
 }
 
-.quake-theme .step-number {
-  color: #7db4ff;
-  border-color: rgba(92, 157, 255, 0.3);
+.project-meta span {
+  font-size: 0.85rem;
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-pill);
+  background: rgba(255,255,255,0.08);
+  color: var(--text-secondary);
 }
 
-.quake-theme .challenge-item {
-  border-left-color: #5c9dff;
+/* ===== CONTENT ===== */
+.project-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 4rem 5%;
 }
 
-.quake-theme .btn-primary {
-  background: #3a5f8a;
-  color: #fff;
+.project-section {
+  margin-bottom: 4.5rem;
 }
 
-.quake-theme .btn-primary:hover {
-  background: #5c9dff;
-  box-shadow: 0 8px 25px rgba(92, 157, 255, 0.4);
+.project-section h2 {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  margin-bottom: 1.5rem;
 }
 
+.project-section p {
+  margin-bottom: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
 
-/* ===== PREV/NEXT PROJECT NAVIGATION (updated) ===== */
+/* ===== GALLERY ===== */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.03);
+}
+
+/* ===== TAKEAWAYS LIST ===== */
+.takeaways-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.takeaways-list li {
+  background: var(--bg-card);
+  padding: 1.2rem 1.4rem;
+  border-radius: var(--radius);
+  color: var(--text-secondary);
+}
+
+.takeaways-list li strong {
+  color: var(--text-primary);
+}
+
+/* ===== CTA BUTTONS ===== */
+.links-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn {
+  padding: 12px 26px;
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #000;
+}
+
+.btn-primary:hover {
+  background: var(--accent-hover);
+  transform: translateY(-3px);
+}
+
+.btn-secondary {
+  background: rgba(255,255,255,0.08);
+  color: var(--text-primary);
+}
+
+.btn-secondary:hover {
+  background: rgba(255,255,255,0.18);
+}
+
+/* ===== PREV/NEXT NAV ===== */
 .project-nav {
   margin-top: 4rem;
   padding-top: 3rem;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
   display: flex;
   justify-content: space-between;
-  align-items: stretch;
   gap: 1.5rem;
 }
 
-/* Shared styles for prev and next */
 .prev-project,
 .next-project {
-  display: inline-flex;
-  flex-direction: column;
-  text-decoration: none;
-  padding: 1.5rem 2rem;
+  flex: 1;
+  padding: 1.5rem;
   border-radius: var(--radius);
   background: var(--bg-card);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  transition: all var(--transition);
-  flex: 0 1 auto;
-  max-width: 48%;
+  text-decoration: none;
+  transition: 0.3s;
 }
 
-.prev-project {
-  text-align: left;
-}
-
-.next-project {
-  text-align: right;
-  margin-left: auto;
-}
-
-.prev-project:hover {
-  background: rgba(255, 255, 255, 0.06);
-  transform: translateX(-5px);
-}
-
+.prev-project:hover,
 .next-project:hover {
-  background: rgba(255, 255, 255, 0.06);
-  transform: translateX(5px);
+  background: rgba(255,255,255,0.08);
+  transform: translateY(-4px);
 }
 
-.next-label {
-  font-size: 0.8rem;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-bottom: 0.3rem;
-}
-
-.next-title {
-  font-size: 1.15rem;
-  font-weight: 600;
-  color: var(--text-primary);
-}
-
-/* When only one nav link exists */
-.project-nav:has(.next-project:only-child) {
-  justify-content: flex-end;
-}
-
-.project-nav:has(.prev-project:only-child) {
-  justify-content: flex-start;
-}
-
-
-/* ===== RESPONSIVE — Prev/Next ===== */
+/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
+  .project-hero {
+    height: 80vh;
+  }
+
+  .project-content {
+    padding: 3rem 5%;
+  }
+
+  .gallery-grid img {
+    height: 180px;
+  }
+
   .project-nav {
     flex-direction: column;
-    gap: 1rem;
   }
+}
+/* ===== SUB GALLERY TITLES ===== */
+.sub-gallery-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 2.5rem 0 1.2rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
 
-  .prev-project,
-  .next-project {
-    max-width: 100%;
-    text-align: center;
-  }
-
-  .prev-project:hover {
-    transform: translateY(-3px);
-  }
-
-  .next-project:hover {
-    transform: translateY(-3px);
-  }
+.stage-group {
+  margin-bottom: 2rem;
 }

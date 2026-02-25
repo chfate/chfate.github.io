@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Project Trash — A 3-week Unity school project focused on fast-paced arcade gameplay. By Christos Moiras."/>
+
+  <title>Project Trash | Christos Moiras</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+
+  <!-- Global Styles -->
+  <link rel="stylesheet" href="../style.css"/>
+  <link rel="stylesheet" href="../project-page.css"/>
+</head>
+
+<body class="project-page">
+
+  <!-- ===== BACK LINK ===== -->
+  <a href="../index.html#games" class="back-link">
+    <span class="back-arrow">←</span>
+    <span>Back to Portfolio</span>
+  </a>
+
+  <!-- ================= HERO ================= -->
+  <header class="project-hero">
+    <video class="project-hero-video" autoplay muted loop playsinline>
+      <source src="../videos/trash.mp4" type="video/mp4"/>
+    </video>
+
+    <div class="project-hero-overlay"></div>
+
+    <div class="project-hero-content">
+      <h1>Project Trash</h1>
+      <p class="project-tagline">Fast-paced 3D Arcade Experience</p>
+
+      <div class="project-meta">
+        <span>School Project</span>
+        <span>3 Weeks</span>
+        <span>Unity</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= MAIN ================= -->
+  <main class="project-content">
+
+    <!-- ===== OVERVIEW ===== -->
+    <section class="project-section fade-in">
+      <h2>Overview</h2>
+      <p>
+        Project Trash is a 3D arcade-style game developed in Unity during a 3-week school project.<p>
+       <p> What's special : <p>
+       <li> One-hand control with clumsy and quirky physics 
+        <li>Sort trash correctly into recycle bins by throwing 
+       <li> 6 types of items: glass, metal, paper, plastic, hazardous and general waste 
+       <li> Constant flow of trash, increasing over time 
+        <li>Timed combo multiplier for consecutive correct sorts and to keep the fast pace 
+       <li> 10 mistakes and you’re fired... Game Over
+      </p>
+
+      <p>
+        The main focus of the project was to create a polished gameplay experience within a short development cycle,
+        emphasizing iteration, clarity, and responsiveness.
+      </p>
+    </section>
+
+    <!-- ===== MY ROLE ===== -->
+    <section class="project-section fade-in">
+      <h2>My Role</h2>
+
+      <p>
+        In this project, I was a Game Designer and primarily responsible for:
+      </p>
+
+      <ul class="takeaways-list">
+        <li><strong>Prototyping:</strong> Implemented the core game mechanics and allowed the team to gain an early understanding of the game's overall look and feel.</li>
+        <li><strong>VFX:</strong> I was responsible  for the VFX of the game as well as various feedback elements such as light indicators.</li>
+        <li><strong>Lighting:</strong> I was tasked to make the level feel alive by adding lighting and post process effects.</li>
+
+        <li><strong>Level Layout:</strong> I helped shape the structure and layout of the facility using basic shapes and Unity's ProBuilder tool.</li>
+             </ul>
+
+      <!-- Image Grid -->
+      <!-- Layout Evolution Grid -->
+<div class="gallery-grid" style="margin-top: 2rem;">
+
+  <img src="../images/P1.jpg" 
+       alt="Project Trash - Early blockout prototype layout" 
+       loading="lazy"/>
+
+  <img src="../images/P2.jpg" 
+       alt="Project Trash - Expanded layout iteration" 
+       loading="lazy"/>
+
+  <img src="../images/P3.jpg" 
+       alt="Project Trash - Facility structure refinement" 
+       loading="lazy"/>
+
+  
+
+  <img src="../images/P5.jpg" 
+       alt="Project Trash - Lighting and layout polish phase" 
+       loading="lazy"/>
+
+  <img src="../images/P6.jpg" 
+       alt="Project Trash - Environment detailing" 
+       loading="lazy"/>
+
+  <img src="../images/P7.jpg" 
+       alt="Project Trash - Near final layout version" 
+       loading="lazy"/>
+
+
+</div>
+    </section>
+
+    <!-- ===== CONCLUSION ===== -->
+    <section class="project-section fade-in">
+      <h2>Conclusion</h2>
+
+      <p>
+        What really stood out to me was the importance of communication.
+This was my first experience working with other people on a game, and it gave me valuable insight into the skills and mindset needed in a real professional work environment.
+Giving and receiving feedback from teammates and mentors played a critical role in my growth — both as a game designer and as a collaborative team member.
+      </p>
+
+      <p>
+        Also, it helped my get out of my comfort zone and take iniative on speaking up and sharing my opinion with other team members.
+      </p>
+
+      <p>
+        Overall, Project Trash was a valuable experience in understanding production timelines,deadlines
+        and collaboration.
+      </p>
+    <section class="project-section project-links fade-in">
+  <div class="links-buttons">
+
+    <a href="https://futuregames.itch.io/projecttrash"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="btn btn-primary">
+       🎮 Play on itch.io
+    </a>
+
+    <a href="https://www.youtube.com/watch?v=DhRqxG2k_oM"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="btn btn-secondary">
+       ▶ Watch Trailer
+    </a>
+
+  </div>
+</section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="mailto:youremail@example.com">📧 Email</a>
+        <a href="https://www.linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+      </div>
+      <p class="copyright">© 2026 Christos Moiras</p>
+    </div>
+  </footer>
+
+  <script>
+    // Simple fade-in animation
+    document.addEventListener('DOMContentLoaded', () => {
+      const elements = document.querySelectorAll('.fade-in');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      elements.forEach(el => observer.observe(el));
+    });
+  </script>
+
+</body>
+</html>

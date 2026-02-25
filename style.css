@@ -766,3 +766,40 @@ a.project-item:hover .project-media {
     transform: none;
   }
 }
+/* Βελτιωμένο hover για τα project items */
+.project-item {
+  transition: all 0.35s ease;
+  overflow: hidden;
+  border-radius: 8px;           /* αν δεν το έχεις ήδη */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+.project-item:hover {
+  transform: translateY(-8px) scale(1.04);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.22);
+}
+
+.video-wrapper,
+.project-media {
+  transition: all 0.4s ease;
+}
+
+.project-item:hover .project-media {
+  transform: scale(1.08);
+  filter: brightness(1.08) contrast(1.05);
+}
+
+/* Προαιρετικό: ελαφρύ overlay όταν κάνεις hover */
+.video-wrapper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 60%, rgba(0,0,0,0.4));
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.project-item:hover .video-wrapper::after {
+  opacity: 1;
+}
