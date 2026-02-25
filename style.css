@@ -59,8 +59,8 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;          /* ← ΠΡΟΣΘΕΣΕ ΑΥΤΟ */
 }
-
 body.menu-open {
   overflow: hidden;
 }
@@ -70,6 +70,11 @@ img, video {
   max-width: 100%;
 }
 
+/* Εξαίρεση για hero videos που είναι absolute positioned */
+.project-hero-video,
+.hero-video {
+  max-width: none;             /* ← override το 100% */
+}
 ::selection {
   background: var(--accent);
   color: var(--bg-primary);

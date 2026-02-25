@@ -3,17 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Silent Hill Mod | Christos Moiras</title>
+  <title>Quake Meets Silent Hill | Christos Moiras</title>
   <link rel="stylesheet" href="../style.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
-
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-
     body {
       background: #0a0f1a;
       color: #d0d8e0;
@@ -21,12 +19,15 @@
       overflow-x: hidden;
     }
 
-    /* Full-screen video hero */
+    /* Full-screen video hero – με flex για σιγουριά κεντραρίσματος */
     .hero {
       position: relative;
       height: 100vh;
       width: 100vw;
       overflow: hidden;
+      display: flex;               /* ← ΝΕΟ: flexbox για κεντράρισμα */
+      align-items: center;         /* ← ΝΕΟ */
+      justify-content: center;     /* ← ΝΕΟ */
     }
 
     .hero video {
@@ -37,6 +38,7 @@
       height: 100%;
       object-fit: cover;
       object-position: center;
+      z-index: 0;
     }
 
     .hero-overlay {
@@ -47,14 +49,13 @@
     }
 
     .hero-content {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      position: relative;          /* ← ΑΛΛΑΓΗ: relative αντί absolute */
       z-index: 2;
       text-align: center;
       padding: 0 20px;
       max-width: 900px;
+      width: 90%;                  /* ← ΝΕΟ: για καλύτερη προσαρμογή */
+      box-sizing: border-box;
     }
 
     .hero-content h1 {
@@ -162,7 +163,6 @@
   </style>
 </head>
 <body>
-
   <a href="../index.html#mods" class="back-link">← Back to Portfolio</a>
 
   <!-- Full-screen video hero με quake.mp4 -->
@@ -174,20 +174,19 @@
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <h1>Quake Meets Silent Hill</h1>
-      <p>Solo Project • TrenchBroom• Released • 2025</p>
+      <p>Solo Project • TrenchBroom • Released • 2025</p>
     </div>
   </section>
 
-  <!-- Περιεχόμενο με τα sections που ζήτησες -->
+  <!-- Περιεχόμενο με τα sections -->
   <div class="content">
-
     <section class="section">
       <h2>Overview</h2>
-      <p> After creating "Doom Meets Resident Evil" I wanted to push myself and tackle a bigger project in a different engine, this time in TrenchBroom. I started by building multiplayer maps to get comfortable with the software and once I got the hang of it, I decided to create a single-player mod set in the Silent Hill universe.
+      <p>After creating "Doom Meets Resident Evil" I wanted to push myself and tackle a bigger project in a different engine, this time in TrenchBroom. I started by building multiplayer maps to get comfortable with the software and once I got the hang of it, I decided to create a single-player mod set in the Silent Hill universe.
 TrenchBroom gave me a lot more creative freedom, so I took advantage of that to take on the challenging task of recreating not just the base version of Midwich Elementary School, but also its nightmarish Otherworld version, the one that really defined what made Silent Hill so iconic.
 I followed the same formula as my Doom mod: explore the school, solve puzzles, find ways to progress, and fight enemies.</p>
       <p>• Playtime: 25-30 minutes</p>
- <p>• Development Time : 8 weeks</p>
+      <p>• Development Time : 8 weeks</p>
     </section>
 
     <section class="section">
@@ -197,7 +196,6 @@ I followed the same formula as my Doom mod: explore the school, solve puzzles, f
         <li>Then, in TrenchBroom, I began building and connecting all the rooms inside the school.</li>
         <li>I placed key items, enemies, text messages, and sound triggers to create tension and control the pacing.</li>
         <li>I added lighting and the signature fog effect to really enhance the atmosphere.</li>
-
         <li>After completing the base version of the school, I created the Otherworld version, completely changing the layout and flow while introducing a new nightmarish aesthetic, new enemies, and fresh puzzles for the player to solve.</li>
         <li>Finally, I balanced combat encounters, exploration rewards and the placement of ammo boxes and health packs.</li>
       </ul>
@@ -206,20 +204,17 @@ I followed the same formula as my Doom mod: explore the school, solve puzzles, f
     <section class="section">
       <h2>Problems encountered and how i solved them</h2>
       <ul>
-        From a technical perspective, I ran into a lot of crashes because I added so many different sectors, walls, and props. This overloaded the engine, making the mod completely unplayable at times.
+        <li>From a technical perspective, I ran into a lot of crashes because I added so many different sectors, walls, and props. This overloaded the engine, making the mod completely unplayable at times.
 That forced me to constantly optimize and get creative: I lowered texture resolutions/densities, reduced the complexity and size of brushes, and made other adjustments to keep things stable.</li>
-        
       </ul>
     </section>
 
     <section class="section">
       <h2>Conclusion and Challenges</h2>
       <ul>
-        <li>This project really taught me the importance of balance and flow. At first, after exploring the base version of the school and then transitioning to the Otherworld version, it felt a bit boring. Through playtesting I decided to introduce completely different enemies, new weapons, and unique traps to make the second half feel fresh and truly distinct. </li>
-         <li>From a level design perspective, TrenchBroom gave me the freedom to work properly in a 3D environment. I took full advantage of that by adding variety in height, space, and shape. When everything came together, the project started feeling natural and cohesive. <li>
-<li> Overall, this was an incredibly valuable experience for me. I used every tool and technique I could to enhance the atmosphere. Lighting in particular played a huge role and made the spaces feel claustrophobic and oppressive, resulting in a much more immersive and cohesive horror experience.
- 
-        
+        <li>This project really taught me the importance of balance and flow. At first, after exploring the base version of the school and then transitioning to the Otherworld version, it felt a bit boring. Through playtesting I decided to introduce completely different enemies, new weapons, and unique traps to make the second half feel fresh and truly distinct.</li>
+        <li>From a level design perspective, TrenchBroom gave me the freedom to work properly in a 3D environment. I took full advantage of that by adding variety in height, space, and shape. When everything came together, the project started feeling natural and cohesive.</li>
+        <li>Overall, this was an incredibly valuable experience for me. I used every tool and technique I could to enhance the atmosphere. Lighting in particular played a huge role and made the spaces feel claustrophobic and oppressive, resulting in a much more immersive and cohesive horror experience.</li>
       </ul>
     </section>
 
@@ -230,20 +225,17 @@ That forced me to constantly optimize and get creative: I lowered texture resolu
         <img src="../images/S2.jpg" alt="Silent Hill screenshot 2">
         <img src="../images/S3.jpg" alt="Silent Hill screenshot 3">
         <img src="../images/S4.jpg" alt="Silent Hill screenshot 4">
-        <img src="../images/S5.jpg" alt="Silent Hill screenshot 1">
-        <img src="../images/S6.jpg" alt="Silent Hill screenshot 2">
-        <img src="../images/S7.jpg" alt="Silent Hill screenshot 3">
-        <img src="../images/S8.jpg" alt="Silent Hill screenshot 4">
-        <img src="../images/S9.jpg" alt="Silent Hill screenshot 1">
-        <img src="../images/S10.jpg" alt="Silent Hill screenshot 2">
-        <img src="../images/S11.jpg" alt="Silent Hill screenshot 3">
-        <img src="../images/S12.jpg" alt="Silent Hill screenshot 4">
-        <img src="../images/S13.jpg" alt="Silent Hill screenshot 2">
-        <img src="../images/S14.jpg" alt="Silent Hill screenshot 3">
-        <img src="../images/S15.jpg" alt="Silent Hill screenshot 4">
-
-
-        <!-- Πρόσθεσε τα δικά σου screenshots εδώ -->
+        <img src="../images/S5.jpg" alt="Silent Hill screenshot 5">
+        <img src="../images/S6.jpg" alt="Silent Hill screenshot 6">
+        <img src="../images/S7.jpg" alt="Silent Hill screenshot 7">
+        <img src="../images/S8.jpg" alt="Silent Hill screenshot 8">
+        <img src="../images/S9.jpg" alt="Silent Hill screenshot 9">
+        <img src="../images/S10.jpg" alt="Silent Hill screenshot 10">
+        <img src="../images/S11.jpg" alt="Silent Hill screenshot 11">
+        <img src="../images/S12.jpg" alt="Silent Hill screenshot 12">
+        <img src="../images/S13.jpg" alt="Silent Hill screenshot 13">
+        <img src="../images/S14.jpg" alt="Silent Hill screenshot 14">
+        <img src="../images/S15.jpg" alt="Silent Hill screenshot 15">
       </div>
     </section>
 
@@ -252,7 +244,6 @@ That forced me to constantly optimize and get creative: I lowered texture resolu
       <a href="https://www.youtube.com/watch?v=sL73CliVVi0&t=19s" target="_blank" class="btn">Watch Trailer</a>
       <a href="https://fate99.itch.io/quake-meets-silent-hill" target="_blank" rel="noopener noreferrer" class="btn">View on itch.io</a>
     </section>
-
   </div>
 
   <!-- Script: Ξεκινάει το βίντεο από τα 19 δευτερόλεπτα -->
@@ -265,6 +256,5 @@ That forced me to constantly optimize and get creative: I lowered texture resolu
       }
     });
   </script>
-
 </body>
 </html>
