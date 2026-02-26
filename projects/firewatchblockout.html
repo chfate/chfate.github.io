@@ -53,7 +53,6 @@
       margin-top: 4rem;
     }
 
-    /* Sequence arrows */
     .walkthrough-sequence li {
       position: relative;
       padding-bottom: 2.5rem;
@@ -177,27 +176,23 @@
     <li>The player is informed through the radio to go look for a potential fire. <strong>(Objective/Goal Started)</strong></li>
     <li>He is in the watchtower and can see the whole playable area. <strong>(Vista)</strong></li>
     <li>Through the narrative guidance from the radio, he chooses the shortcut to reach his goal. <strong>(Player Guidance)</strong></li>
-    <li>The voice foreshadows the jump, so the player is prepared to take it <strong>(Teach Mechanic/Tutorial)</strong>. Also, not punishing the experience if the player fails the jump. He can try again. <strong>(Safety Net)</strong></li>
+    <li>The voice foreshadows the jump, so the player is prepared to take it <strong>(Teach Mechanic/Tutorial)</strong>.</li>
     <li>After the jump he can't backtrack, meaning the player must push forward. <strong>(One-way valve)</strong></li>
   </ul>
 
   <h3 class="beat-heading">Beat 2 (Middle – Curiosity & Rising Tension)</h3>
   <ul class="takeaways-list walkthrough-sequence">
-    <li>The player now sees the objective visually (smoke) and progresses to the gameplay section inside the Forest. <strong>(Sees smoke, tension rising)</strong></li>
-    <li>He sees a locked gate and must find the key. He is informed that the key can be found at the old canoe rental building. <strong>(Player Engagement)</strong></li>
-    <li>He now sees the building and with visual indication (light flicker) he is drawn there to investigate. <strong>(Attract the player's attention / Frame the area)</strong></li>
-    <li>He finds out that the building has been breached so someone is at the area. <strong>(Player Engagement)</strong></li>
-    <li>To progress, he must climb to the roof and enter the open hatch that leads to the key. <strong>(The framing that was used before was to showcase the trashcans meaning they can be used for traversal. (Affordances))</strong></li>
-    <li>The player reaches the gate area and now can open it. <strong>(Backtrack)</strong></li>
+    <li>The player now sees the objective visually (smoke) and progresses inside the Forest. <strong>(Tension rising)</strong></li>
+    <li>He sees a locked gate and must find the key. <strong>(Player Engagement)</strong></li>
+    <li>Visual indication draws him to investigate the building. <strong>(Frame the area)</strong></li>
+    <li>He finds out that the building has been breached. <strong>(Unease)</strong></li>
   </ul>
 
   <h3 class="beat-heading">Beat 3 (End – Isolation & Unease)</h3>
   <ul class="takeaways-list walkthrough-sequence">
-    <li>The gate is now opened, and the player sees the canoe storage area. Props are scattered everywhere. <strong>(Player Engagement - Tension)</strong></li>
-    <li>The voice from the radio suddenly stops responding. <strong>(Player Engagement – Tension/Isolation)</strong></li>
-    <li>The player sees a backpack scattered on the floor implying that someone was being chased. <strong>(Player Engagement – Tension)</strong></li>
-    <li>He progresses through a tiny opening by crouching. <strong>(Contrast the emotional state of the player / Teach Mechanic. He feels someone is there and now must crawl through a tiny space)</strong></li>
-    <li>He progresses through a more open forest and sees a camp site. He then discovers blood, guns and other things. He hears a gunshot. <strong>(Player Engagement)</strong></li>
+    <li>The gate opens revealing scattered props. <strong>(Tension)</strong></li>
+    <li>The radio stops responding. <strong>(Isolation)</strong></li>
+    <li>Environmental storytelling escalates. <strong>(Emotional peak)</strong></li>
   </ul>
 </section>
 
@@ -206,12 +201,8 @@
   <h2>Final Thoughts</h2>
 
   <ul class="takeaways-list">
-    <li>
-      <strong>Play with verticality.</strong> The player starts at a high elevation and gradually descends. This is to showcase the emotional state of the avatar and the dark turn that the story takes.
-    </li>
-    <li>
-      Trees and logs help structure leading lines. Also mushrooms work for the dialogue Triggers. After the player crawls through the tiny space, he can see mushrooms upside down meaning that communication has been lost.
-    </li>
+    <li><strong>Play with verticality.</strong> The player starts elevated and gradually descends, reinforcing the emotional shift.</li>
+    <li>Environmental contrast and leading lines guide the player organically.</li>
   </ul>
 
   <p style="margin-top: 2rem;">
@@ -220,5 +211,49 @@
 </section>
 
 </main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-links">
+      <a href="mailto:chmoiras@hotmail.com">📧 Email</a>
+      <a href="https://www.linkedin.com/in/christos-moiras-bba16a2b1/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    </div>
+    <p class="copyright">© 2026 Christos Moiras</p>
+  </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const elements = document.querySelectorAll('.fade-in');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  elements.forEach(el => observer.observe(el));
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const elements = document.querySelectorAll('.fade-in');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  elements.forEach(el => observer.observe(el));
+});
+</script>
+
 </body>
 </html>
