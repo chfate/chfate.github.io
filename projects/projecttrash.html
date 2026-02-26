@@ -15,6 +15,49 @@
   <!-- Global Styles -->
   <link rel="stylesheet" href="../style.css"/>
   <link rel="stylesheet" href="../project-page.css"/>
+
+  <style>
+    /* LIGHTBOX */
+
+    .gallery-grid img {
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.02);
+    }
+
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      padding-top: 60px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.95);
+    }
+
+    .lightbox-content {
+      margin: auto;
+      display: block;
+      max-width: 90%;
+      max-height: 85%;
+      border-radius: 8px;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 25px;
+      right: 40px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: 300;
+      cursor: pointer;
+    }
+  </style>
 </head>
 
 <body class="project-page">
@@ -45,22 +88,48 @@
     </div>
   </header>
 
+  <!-- ✅ BUTTONS AT TOP -->
+  <section class="project-section project-links fade-in" style="padding-top: 60px; padding-bottom: 0;">
+    <div class="links-buttons">
+
+      <a href="https://futuregames.itch.io/projecttrash"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="btn btn-primary">
+         🎮 Play on itch.io
+      </a>
+
+      <a href="https://www.youtube.com/watch?v=DhRqxG2k_oM"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="btn btn-secondary">
+         ▶ Watch Trailer
+      </a>
+
+    </div>
+  </section>
+
   <!-- ================= MAIN ================= -->
   <main class="project-content">
 
     <!-- ===== OVERVIEW ===== -->
     <section class="project-section fade-in">
       <h2>Overview</h2>
+
       <p>
-        Project Trash is a 3D arcade-style game developed in Unity during a 3-week school project.<p>
-       <p> What's special : <p>
-       <li> One-hand control with clumsy and quirky physics 
-        <li>Sort trash correctly into recycle bins by throwing 
-       <li> 6 types of items: glass, metal, paper, plastic, hazardous and general waste 
-       <li> Constant flow of trash, increasing over time 
-        <li>Timed combo multiplier for consecutive correct sorts and to keep the fast pace 
-       <li> 10 mistakes and you’re fired... Game Over
+        Project Trash is a 3D arcade-style game developed in Unity during a 3-week school project.
       </p>
+
+      <p><strong>What's special:</strong></p>
+
+      <ul class="takeaways-list">
+        <li>One-hand control with clumsy and quirky physics</li>
+        <li>Sort trash correctly into recycle bins by throwing</li>
+        <li>6 types of items: glass, metal, paper, plastic, hazardous and general waste</li>
+        <li>Constant flow of trash, increasing over time</li>
+        <li>Timed combo multiplier for consecutive correct sorts</li>
+        <li>10 mistakes and you’re fired... Game Over</li>
+      </ul>
 
       <p>
         The main focus of the project was to create a polished gameplay experience within a short development cycle,
@@ -78,44 +147,27 @@
 
       <ul class="takeaways-list">
         <li><strong>Prototyping:</strong> Implemented the core game mechanics and allowed the team to gain an early understanding of the game's overall look and feel.</li>
-        <li><strong>VFX:</strong> I was responsible  for the VFX of the game as well as various feedback elements such as light indicators.</li>
-        <li><strong>Lighting:</strong> I was tasked to make the level feel alive by adding lighting and post process effects.</li>
+        <li><strong>VFX:</strong> Responsible for the VFX of the game and various feedback elements such as light indicators.</li>
+        <li><strong>Lighting:</strong> Added lighting and post process effects to bring the level to life.</li>
+        <li><strong>Level Layout:</strong> Helped shape the structure and layout of the facility using basic shapes and Unity's ProBuilder tool.</li>
+      </ul>
 
-        <li><strong>Level Layout:</strong> I helped shape the structure and layout of the facility using basic shapes and Unity's ProBuilder tool.</li>
-             </ul>
+      <!-- PRE PRODUCTION -->
+      <h3 class="sub-gallery-title">Pre‑Production</h3>
+      <div class="gallery-grid stage-group" style="margin-top: 1.5rem;">
+        <img src="../images/P1.jpg" alt="Early blockout prototype layout" loading="lazy"/>
+        <img src="../images/P2.jpg" alt="Expanded layout iteration" loading="lazy"/>
+        <img src="../images/P3.jpg" alt="Facility structure refinement" loading="lazy"/>
+        <img src="../images/P5.jpg" alt="Lighting and layout polish phase" loading="lazy"/>
+      </div>
 
-      <!-- Image Grid -->
-      <!-- Layout Evolution Grid -->
-<div class="gallery-grid" style="margin-top: 2rem;">
+      <!-- FINAL PRODUCT -->
+      <h3 class="sub-gallery-title" style="margin-top: 3rem;">Final Product</h3>
+      <div class="gallery-grid stage-group" style="margin-top: 1.5rem;">
+        <img src="../images/P6.jpg" alt="Final environment detailing" loading="lazy"/>
+        <img src="../images/P7.jpg" alt="Near final layout version" loading="lazy"/>
+      </div>
 
-  <img src="../images/P1.jpg" 
-       alt="Project Trash - Early blockout prototype layout" 
-       loading="lazy"/>
-
-  <img src="../images/P2.jpg" 
-       alt="Project Trash - Expanded layout iteration" 
-       loading="lazy"/>
-
-  <img src="../images/P3.jpg" 
-       alt="Project Trash - Facility structure refinement" 
-       loading="lazy"/>
-
-  
-
-  <img src="../images/P5.jpg" 
-       alt="Project Trash - Lighting and layout polish phase" 
-       loading="lazy"/>
-
-  <img src="../images/P6.jpg" 
-       alt="Project Trash - Environment detailing" 
-       loading="lazy"/>
-
-  <img src="../images/P7.jpg" 
-       alt="Project Trash - Near final layout version" 
-       loading="lazy"/>
-
-
-</div>
     </section>
 
     <!-- ===== CONCLUSION ===== -->
@@ -124,66 +176,59 @@
 
       <p>
         What really stood out to me was the importance of communication.
-This was my first experience working with other people on a game, and it gave me valuable insight into the skills and mindset needed in a real professional work environment.
-Giving and receiving feedback from teammates and mentors played a critical role in my growth — both as a game designer and as a collaborative team member.
+        This was my first experience working with other people on a game, and it gave me valuable insight into the skills and mindset needed in a real professional work environment.
       </p>
 
       <p>
-        Also, it helped my get out of my comfort zone and take iniative on speaking up and sharing my opinion with other team members.
+        Giving and receiving feedback from teammates and mentors played a critical role in my growth — both as a game designer and as a collaborative team member.
       </p>
 
       <p>
-        Overall, Project Trash was a valuable experience in understanding production timelines,deadlines
-        and collaboration.
+        Overall, Project Trash was a valuable experience in understanding production timelines, deadlines and collaboration.
       </p>
-    <section class="project-section project-links fade-in">
-  <div class="links-buttons">
 
-    <a href="https://futuregames.itch.io/projecttrash"
-       target="_blank"
-       rel="noopener noreferrer"
-       class="btn btn-primary">
-       🎮 Play on itch.io
-    </a>
-
-    <a href="https://www.youtube.com/watch?v=DhRqxG2k_oM"
-       target="_blank"
-       rel="noopener noreferrer"
-       class="btn btn-secondary">
-       ▶ Watch Trailer
-    </a>
-
-  </div>
-</section>
+    </section>
 
   </main>
 
-  <!-- ================= FOOTER ================= -->
-  <footer class="site-footer">
-    <div class="footer-content">
-      <div class="footer-links">
-        <a href="mailto:youremail@example.com">📧 Email</a>
-        <a href="https://www.linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
-      </div>
-      <p class="copyright">© 2026 Christos Moiras</p>
-    </div>
-  </footer>
+  <!-- LIGHTBOX STRUCTURE -->
+  <div id="lightbox" class="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+  </div>
 
   <script>
-    // Simple fade-in animation
-    document.addEventListener('DOMContentLoaded', () => {
-      const elements = document.querySelectorAll('.fade-in');
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.1 });
+  document.addEventListener("DOMContentLoaded", function () {
 
-      elements.forEach(el => observer.observe(el));
+    const images = document.querySelectorAll(".gallery-grid img");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const closeBtn = document.querySelector(".lightbox-close");
+
+    images.forEach(img => {
+      img.addEventListener("click", function () {
+        lightbox.style.display = "block";
+        lightboxImg.src = this.src;
+      });
     });
+
+    closeBtn.addEventListener("click", function () {
+      lightbox.style.display = "none";
+    });
+
+    lightbox.addEventListener("click", function (e) {
+      if (e.target === lightbox) {
+        lightbox.style.display = "none";
+      }
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") {
+        lightbox.style.display = "none";
+      }
+    });
+
+  });
   </script>
 
 </body>
