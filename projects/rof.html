@@ -3,194 +3,208 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Witcher III: Revenge Of Ofir — A large-scale fan expansion built in RedKit. Level Design contributions by Christos Moiras."/>
+  <meta name="description" content="Witcher III: Revenge Of Ofir — Level Design Contributions by Christos Moiras."/>
 
   <title>Witcher III: Revenge Of Ofir | Christos Moiras</title>
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 
-  <!-- Global Styles -->
   <link rel="stylesheet" href="../style.css"/>
   <link rel="stylesheet" href="../project-page.css"/>
+
+  <style>
+    /* LIGHTBOX */
+
+    .gallery-grid img {
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.02);
+    }
+
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      padding-top: 60px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.95);
+    }
+
+    .lightbox-content {
+      margin: auto;
+      display: block;
+      max-width: 90%;
+      max-height: 85%;
+      border-radius: 8px;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 25px;
+      right: 40px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: 300;
+      cursor: pointer;
+    }
+  </style>
 </head>
 
 <body class="project-page">
 
-  <!-- ===== BACK LINK ===== -->
-  <a href="../index.html#mods" class="back-link">
-    <span class="back-arrow">←</span>
-    <span>Back to Portfolio</span>
-  </a>
+<a href="../index.html#mods" class="back-link">
+  <span class="back-arrow">←</span>
+  <span>Back to Portfolio</span>
+</a>
 
-  <!-- ================= HERO ================= -->
-  <header class="project-hero">
-    <div class="project-hero-overlay"></div>
-
-    <div class="project-hero-content">
-      <h1>Witcher III: Revenge Of Ofir</h1>
-      <p class="project-tagline">Fan-Made Expansion Set in the Empire of Ofir</p>
-
-      <div class="project-meta">
-        <span>Team Project</span>
-        <span>25 Members</span>
-        <span>RedKit</span>
-        <span>2025–2026</span>
-      </div>
+<header class="project-hero">
+  <div class="project-hero-overlay"></div>
+  <div class="project-hero-content">
+    <h1>Witcher III: Revenge Of Ofir</h1>
+    <p class="project-tagline">Large-Scale Fan Expansion – Level Design Contributions</p>
+    <div class="project-meta">
+      <span>Team Project</span>
+      <span>25 Developers</span>
+      <span>RedKit</span>
+      <span>In Development</span>
     </div>
-  </header>
+  </div>
+</header>
 
-  <!-- ================= MAIN ================= -->
-  <main class="project-content">
+<main class="project-content">
 
-    <!-- ===== OVERVIEW ===== -->
-    <section class="project-section fade-in">
-      <h2>Overview</h2>
-      <p>
-        Witcher III: Revenge of Ofir is an ambitious fan-made expansion that transports players to the mysterious eastern empire of Ofir. This complete overhaul delivers a brand-new experience, featuring an entirely new explorable region, original quests, new characters, expanded systems, and deeply integrated rich lore. The mod stands shoulder-to-shoulder with the official DLCs in scope, quality, and ambition, offering a worthy continuation of The Witcher 3’s world.
-      </p>
-      <p>Status: In active development • Estimated full release: 2026</p>
-    </section>
+<section class="project-section fade-in">
+  <h2>Overview</h2>
+  <p>
+    Witcher III: Revenge of Ofir is an ambitious fan-made expansion that transports players to the mysterious eastern empire of Ofir. This complete overhaul delivers a brand-new experience, featuring an entirely new explorable region, original quests, new characters, expanded systems, and deeply integrated rich lore.
+  </p>
+</section>
 
-    <!-- ===== MY ROLE & CONTRIBUTIONS ===== -->
-    <section class="project-section fade-in">
-      <h2>My Role & Contributions</h2>
+<section class="project-section fade-in">
+  <h2>My Role</h2>
 
-      <p>
-        This was a collaborative project with a team of 25 members. My role was strictly <strong>Level Designer</strong>. I focused exclusively on level design tasks and did not contribute to scripting, quest writing, dialogue, companions, combat mechanics, UI, asset creation, or other areas.
-      </p>
+  <p>
+    I worked exclusively as a <strong>Level Designer</strong> within a 25-member team.
+    My responsibilities focused on creating POI's, implementing them inside the engine and doing constant research.
+  </p>
 
-      <h3>Level Design Tasks I Handled</h3>
-      <ul class="takeaways-list">
-        <li>Blockout and multiple iterations of key explorable zones in the Ofir region inside RedKit</li>
-        <li>Implementation of leading lines, landmarks, vistas and environmental storytelling techniques</li>
-        <li>Researching, finding references and implementing them inside the engine</li>
-      </ul>
+  <ul class="takeaways-list">
+    <li>Designing and implementing level layouts directly inside the engine</li>
+    <li>Researched existing Witcher lore and real-world references to ensure environmental authenticity and narrative consistency</li>
+    <li>Documenting and presenting design decisions clearly within the team environment</li>
+  </ul>
 
-      <p style="margin-top:1.5rem; font-style:italic; opacity:0.9;">
-        All screenshots and videos on this page showcase <strong>only the level design work I personally contributed</strong>. All other elements (quests, dialogue, characters, combat, scripting, new systems) were handled by other team members.
-      </p>
-    </section>
+  <p style="margin-top:1.5rem; font-style:italic; opacity:0.9;">
+    The sections below showcase the level design tasks I was directly responsible for.
+  </p>
+</section>
 
-    <!-- ===== LEVEL DESIGN CONTRIBUTIONS ===== -->
-    <section class="project-section fade-in">
-      <h2>Level Design Contributions</h2>
+<section class="project-section fade-in">
+  <h2>Contributions</h2>
 
-      <p>Within the project, I personally led the design and iteration of two major areas:</p>
+  <div style="margin-top:2.5rem;">
+    <h3>Abandoned Village – Point of Interest (POI)</h3>
 
-      <h3>Abandoned Village POI</h3>
+    <p>
+      One of my assigned tasks was to design an Abandoned Village Point of Interest (POI).
+      I began by asking key questions to define the level’s core characteristics and narrative context.
+      After defining the core level characteristics and asking the right narrative questions, 
+      I established the village as a small trade settlement that was suddenly attacked by ghouls,
+      forcing its inhabitants to flee and leaving the settlement abandoned.
+    </p>
 
-      <p>I was tasked with creating one of the many Points of Interest in the game: the Abandoned Village.</p>
-      <p>First, I asked questions to define the story of this place. I came up with the idea that this village was once a bustling trade hotspot, but a sudden attack by ghouls forced the inhabitants to flee. Now it stands empty and overrun by monsters.</p>
-      <p>My main goal was to make the abandoned feeling stand out, so I added dried vegetation (dead trees, grass, and bushes) to emphasize isolation. I also integrated half-buried houses in the sand to make the location feel more realistic and unique.</p>
-      <p>After implementing the level space, I added props to reinforce the fiction: half-buried wagons outside the village (breadcrumbing the player to approach), a half-buried well in the middle of the trade area, and decoration props to show the active trade that existed before the abandonment.</p>
+    <h4 style="margin-top:1.5rem;">Design Intent</h4>
+    <ul class="takeaways-list">
+      <li>Design a main combat arena</li>
+      <li>Communicate abandonment through environmental storytelling</li>
+      <li>Guide player using leading lines and visuals</li>
+    </ul>
 
-      <div class="gallery-grid" style="margin-top:2rem;">
-        <img src="../images/paper.jpg" alt="Paper Prototype – Abandoned Village" loading="lazy"/>
-        <img src="../images/paper2.jpg" alt="Engine Prototype – Abandoned Village" loading="lazy"/>
-      </div>
+    <h4 style="margin-top:1.5rem;">Design Solutions</h4>
+    <ul class="takeaways-list">
+      <li>Dried vegetation and dead trees to reinforce decay</li>
+      <li>Half-buried wagons placed as breadcrumbing elements</li>
+      <li>Half-buried houses to enhance abandonment</li>
+      <li>Central well used as a visual anchor</li>
+      <li>Prop placement to imply former trade activity</li>
+    </ul>
 
-      <h3 style="margin-top:3rem;">Final Result</h3>
+    <!-- ✅ CORRECT BLACK BOX -->
+    <h4 style="margin-top:2rem;">Intended Final Player Experience</h4>
+    <ul class="takeaways-list">
+      <li>
+        When entering the village, the player was meant to feel a sense of unease and aftermath.
+        The space should communicate that something violent happened recently, but without explicitly showing the event itself.
+        The goal was to create tension through environmental clues rather than direct exposition.
+      </li>
+    </ul>
 
-      <div class="gallery-grid" style="margin-top:2rem;">
-        <img src="../images/a.jpg" alt="Abandoned Village final result 1" loading="lazy"/>
-        <img src="../images/b.jpg" alt="Abandoned Village final result 2" loading="lazy"/>
-        <img src="../images/c.jpg" alt="Abandoned Village final result 3" loading="lazy"/>
-        <img src="../images/d.jpg" alt="Abandoned Village final result 4" loading="lazy"/>
-        <img src="../images/e.jpg" alt="Abandoned Village final result 5" loading="lazy"/>
-        <img src="../images/f.jpg" alt="Abandoned Village final result 6" loading="lazy"/>
-      </div>
-
-      <h3 style="margin-top:3rem;">Main Village – House Interiors</h3>
-
-      <ul class="takeaways-list">
-        <li>Designed and detailed interiors for multiple houses in the main village</li>
-        <li>Focused on functional and thematic interior layout (living spaces, storage, hidden compartments)</li>
-        <li>Integrated narrative elements through furniture, notes, and lighting to support quest hooks</li>
-        <li>Balanced scale, readability, and immersion to feel authentic to Ofir’s culture and architecture</li>
-      </ul>
-    </section>
-
-    <!-- ===== KEY FEATURES ===== -->
-    <section class="project-section fade-in">
-      <h2>Key Features</h2>
-
-      <ul class="takeaways-list">
-        <li>New explorable region: Ofir with unique deserts, bazaars and eastern architecture</li>
-        <li>20+ hours of new quests with branching choices and multiple endings</li>
-        <li>Recruitable companions and new political factions</li>
-        <li>Expanded crafting, alchemy and combat systems</li>
-      </ul>
-    </section>
-
-    <!-- ===== GALLERY ===== -->
-    <section class="project-section fade-in">
-      <h2>Gallery – My Level Design Work</h2>
-
-      <p>Selected screenshots from the zones I personally blockouted, iterated and refined.</p>
-
-      <div class="gallery-grid" style="margin-top:2rem;">
-        <img src="../images/witcher-bazaar.jpg" alt="Bazaar district blockout" loading="lazy"/>
-        <img src="../images/witcher-desert-ruins.jpg" alt="Desert ruins verticality" loading="lazy"/>
-        <img src="../images/witcher-oasis.jpg" alt="Oasis hub" loading="lazy"/>
-      </div>
-    </section>
-
-    <!-- ===== LINKS ===== -->
-    <section class="project-section project-links fade-in">
-      <div class="links-buttons">
-
-        <a href="https://www.youtube.com/playlist?list=YOUR_PLAYLIST_ID"
-           target="_blank"
-           class="btn btn-secondary">
-           ▶ Development Videos
-        </a>
-
-        <a href="https://www.nexusmods.com/witcher3/mods/YOUR_MOD_ID"
-           target="_blank"
-           class="btn btn-primary">
-           🎮 Nexus Mods (Coming Soon)
-        </a>
-
-        <a href="https://discord.gg/your-discord-server"
-           target="_blank"
-           class="btn btn-secondary">
-           💬 Join Discord
-        </a>
-
-      </div>
-    </section>
-
-  </main>
-
-  <!-- ================= FOOTER ================= -->
-  <footer class="site-footer">
-    <div class="footer-content">
-      <div class="footer-links">
-        <a href="mailto:chmoiras@hotmail.com">📧 Email</a>
-        <a href="https://www.linkedin.com/in/christos-moiras-bba16a2b1/" target="_blank">LinkedIn</a>
-      </div>
-      <p class="copyright">© 2026 Christos Moiras</p>
+    <h4 style="margin-top:2.5rem;">Pre-Production</h4>
+    <div class="gallery-grid" style="margin-top:1.5rem;">
+      <img src="../images/paper.jpg" alt="Paper Prototype – Abandoned Village" loading="lazy"/>
+      <img src="../images/paper2.jpg" alt="Engine Prototype – Abandoned Village" loading="lazy"/>
     </div>
-  </footer>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const elements = document.querySelectorAll('.fade-in');
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.1 });
+    <h4 style="margin-top:3rem;">Final Result</h4>
+    <div class="gallery-grid" style="margin-top:1.5rem;">
+      <img src="../images/a.jpg" alt="Abandoned Village final 1" loading="lazy"/>
+      <img src="../images/b.jpg" alt="Abandoned Village final 2" loading="lazy"/>
+      <img src="../images/c.jpg" alt="Abandoned Village final 3" loading="lazy"/>
+      <img src="../images/d.jpg" alt="Abandoned Village final 4" loading="lazy"/>
+      <img src="../images/e.jpg" alt="Abandoned Village final 5" loading="lazy"/>
+      <img src="../images/f.jpg" alt="Abandoned Village final 6" loading="lazy"/>
+    </div>
+  </div>
 
-      elements.forEach(el => observer.observe(el));
+</section>
+
+</main>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" class="lightbox">
+  <span class="lightbox-close">&times;</span>
+  <img class="lightbox-content" id="lightbox-img">
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const images = document.querySelectorAll(".gallery-grid img");
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+  const closeBtn = document.querySelector(".lightbox-close");
+
+  images.forEach(img => {
+    img.addEventListener("click", function () {
+      lightbox.style.display = "block";
+      lightboxImg.src = this.src;
     });
-  </script>
+  });
+
+  closeBtn.addEventListener("click", function () {
+    lightbox.style.display = "none";
+  });
+
+  lightbox.addEventListener("click", function (e) {
+    if (e.target === lightbox) {
+      lightbox.style.display = "none";
+    }
+  });
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
+      lightbox.style.display = "none";
+    }
+  });
+});
+</script>
 
 </body>
 </html>
