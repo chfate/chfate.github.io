@@ -3,296 +3,109 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Witcher III: Revenge Of Ofir — A large-scale fan expansion built in RedKit. Level Design contributions by Christos Moiras."/>
+
   <title>Witcher III: Revenge Of Ofir | Christos Moiras</title>
-  <link rel="stylesheet" href="../style.css"/>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      background: #0d0d0d;
-      color: #e0e0e0;
-      font-family: 'Inter', sans-serif;
-      overflow-x: hidden;
-    }
-
-    /* Hero με logo.jpg + Ken Burns effect */
-    .mod-hero {
-      position: relative;
-      height: 100vh;
-      width: 100%;
-      background: url('../images/logo.jpg') center/cover no-repeat fixed;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      overflow: hidden;
-    }
-
-    .mod-hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.60);
-      z-index: 1;
-      animation: kenBurns 25s infinite alternate ease-in-out;
-    }
-
-    @keyframes kenBurns {
-      0% {
-        transform: scale(1.0) translate(0, 0);
-      }
-      100% {
-        transform: scale(1.12) translate(-3%, -3%);
-      }
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 1000px;
-      padding: 0 40px;
-    }
-
-    .hero-content h1 {
-      font-size: 5.5rem;
-      margin-bottom: 0.8rem;
-      text-shadow: 0 0 30px rgba(139, 69, 19, 0.8);
-    }
-
-    .hero-content .status {
-      font-size: 1.6rem;
-      color: #d4a76a;
-      margin-bottom: 2rem;
-    }
-
-    .mod-page {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 120px 5% 140px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .section {
-      margin-bottom: 100px;
-      background: rgba(17, 17, 17, 0.85);
-      padding: 2.5rem;
-      border-radius: 12px;
-      border: 1px solid #444;
-    }
-
-    .section h2 {
-      font-size: 2.8rem;
-      margin-bottom: 1.5rem;
-      color: #d4a76a;
-      border-bottom: 2px solid #8b4513;
-      padding-bottom: 0.8rem;
-    }
-
-    .section h3 {
-      font-size: 2rem;
-      margin: 2rem 0 1rem;
-      color: #e0c080;
-    }
-
-    .section h4 {
-      font-size: 1.8rem;
-      margin: 2rem 0 1rem;
-      color: #ff9800;
-      text-align: center;
-    }
-
-    ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    ul li {
-      margin-bottom: 1rem;
-      font-size: 1.1rem;
-      position: relative;
-      padding-left: 25px;
-    }
-
-    ul li::before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      color: #d4a76a;
-      font-size: 1.5rem;
-    }
-
-    .gallery, .abandoned-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-
-    .gallery img, .abandoned-grid img {
-      width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.7);
-      transition: transform 0.3s;
-    }
-
-    .gallery img:hover, .abandoned-grid img:hover {
-      transform: scale(1.03);
-    }
-
-    .gallery figcaption, .abandoned-grid figcaption {
-      text-align: center;
-      font-size: 0.95rem;
-      opacity: 0.8;
-      margin-top: 0.5rem;
-      font-style: italic;
-      color: #d4a76a;
-    }
-
-    .contribution-figure {
-      margin: 1.5rem 0;
-      text-align: center;
-    }
-
-    .contribution-img {
-      width: 100%;
-      max-height: 400px;
-      object-fit: contain;
-      border-radius: 12px;
-      box-shadow: 0 10px 35px rgba(0,0,0,0.6);
-      display: block;
-      margin: 0 auto;
-    }
-
-    .links-section {
-      text-align: center;
-      margin-top: 5rem;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 14px 32px;
-      background: #8b4513;
-      color: white;
-      text-decoration: none;
-      border-radius: 50px;
-      font-weight: 500;
-      margin: 0.5rem;
-      transition: all 0.3s;
-    }
-
-    .btn:hover {
-      background: #a0522d;
-      transform: translateY(-4px);
-      box-shadow: 0 10px 30px rgba(139, 69, 19, 0.4);
-    }
-
-    .back-link {
-      position: absolute;
-      top: 20px;
-      left: 5%;
-      z-index: 10;
-      color: #fff;
-      background: rgba(0,0,0,0.6);
-      padding: 10px 20px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-size: 1.1rem;
-    }
-
-    .back-link:hover {
-      background: rgba(139, 69, 19, 0.8);
-    }
-
-    .important-note {
-      font-style: italic;
-      opacity: 0.9;
-      background: rgba(210, 166, 106, 0.1);
-      padding: 1.2rem;
-      border-radius: 8px;
-      border-left: 4px solid #d4a76a;
-      margin-top: 1.5rem;
-    }
-  </style>
+  <!-- Global Styles -->
+  <link rel="stylesheet" href="../style.css"/>
+  <link rel="stylesheet" href="../project-page.css"/>
 </head>
-<body>
 
-  <a href="../index.html#mods" class="back-link">← Back to Portfolio</a>
+<body class="project-page">
 
-  <!-- Hero με logo.jpg + Ken Burns -->
-  <section class="mod-hero">
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
+  <!-- ===== BACK LINK ===== -->
+  <a href="../index.html#mods" class="back-link">
+    <span class="back-arrow">←</span>
+    <span>Back to Portfolio</span>
+  </a>
+
+  <!-- ================= HERO ================= -->
+  <header class="project-hero">
+    <div class="project-hero-overlay"></div>
+
+    <div class="project-hero-content">
       <h1>Witcher III: Revenge Of Ofir</h1>
-      <p class="status">Team Project • 25 Members • RedKit • In Development • 2025–2026</p>
+      <p class="project-tagline">Fan-Made Expansion Set in the Empire of Ofir</p>
+
+      <div class="project-meta">
+        <span>Team Project</span>
+        <span>25 Members</span>
+        <span>RedKit</span>
+        <span>2025–2026</span>
+      </div>
     </div>
-  </section>
+  </header>
 
-  <main class="mod-page">
+  <!-- ================= MAIN ================= -->
+  <main class="project-content">
 
-    <section class="section">
+    <!-- ===== OVERVIEW ===== -->
+    <section class="project-section fade-in">
       <h2>Overview</h2>
-      <p>Witcher III: Revenge of Ofir is an ambitious fan-made expansion that transports players to the mysterious eastern empire of Ofir. This complete overhaul delivers a brand-new experience, featuring an entirely new explorable region, original quests, new characters, expanded systems, and deeply integrated rich lore. The mod stands shoulder-to-shoulder with the official DLCs in scope, quality, and ambition, offering a worthy continuation of The Witcher 3’s world.</p>
+      <p>
+        Witcher III: Revenge of Ofir is an ambitious fan-made expansion that transports players to the mysterious eastern empire of Ofir. This complete overhaul delivers a brand-new experience, featuring an entirely new explorable region, original quests, new characters, expanded systems, and deeply integrated rich lore. The mod stands shoulder-to-shoulder with the official DLCs in scope, quality, and ambition, offering a worthy continuation of The Witcher 3’s world.
+      </p>
       <p>Status: In active development • Estimated full release: 2026</p>
     </section>
 
-    <section class="section">
+    <!-- ===== MY ROLE & CONTRIBUTIONS ===== -->
+    <section class="project-section fade-in">
       <h2>My Role & Contributions</h2>
-      <p>This was a collaborative project with a team of 25 members. My role was strictly **Level Designer**. I focused exclusively on level design tasks and did not contribute to scripting, quest writing, dialogue, companions, combat mechanics, UI, asset creation, or other areas.</p>
+
+      <p>
+        This was a collaborative project with a team of 25 members. My role was strictly <strong>Level Designer</strong>. I focused exclusively on level design tasks and did not contribute to scripting, quest writing, dialogue, companions, combat mechanics, UI, asset creation, or other areas.
+      </p>
 
       <h3>Level Design Tasks I Handled</h3>
-      <ul>
+      <ul class="takeaways-list">
         <li>Blockout and multiple iterations of key explorable zones in the Ofir region inside RedKit</li>
         <li>Implementation of leading lines, landmarks, vistas and environmental storytelling techniques</li>
         <li>Researching, finding references and implementing them inside the engine</li>
       </ul>
 
-      <p class="important-note">
-        All screenshots and videos on this page showcase **only the level design work I personally contributed**. All other elements (quests, dialogue, characters, combat, scripting, new systems) were handled by other team members.
+      <p style="margin-top:1.5rem; font-style:italic; opacity:0.9;">
+        All screenshots and videos on this page showcase <strong>only the level design work I personally contributed</strong>. All other elements (quests, dialogue, characters, combat, scripting, new systems) were handled by other team members.
       </p>
     </section>
 
-    <!-- Level Design Contributions -->
-    <section class="section">
+    <!-- ===== LEVEL DESIGN CONTRIBUTIONS ===== -->
+    <section class="project-section fade-in">
       <h2>Level Design Contributions</h2>
+
       <p>Within the project, I personally led the design and iteration of two major areas:</p>
 
       <h3>Abandoned Village POI</h3>
+
       <p>I was tasked with creating one of the many Points of Interest in the game: the Abandoned Village.</p>
       <p>First, I asked questions to define the story of this place. I came up with the idea that this village was once a bustling trade hotspot, but a sudden attack by ghouls forced the inhabitants to flee. Now it stands empty and overrun by monsters.</p>
       <p>My main goal was to make the abandoned feeling stand out, so I added dried vegetation (dead trees, grass, and bushes) to emphasize isolation. I also integrated half-buried houses in the sand to make the location feel more realistic and unique.</p>
       <p>After implementing the level space, I added props to reinforce the fiction: half-buried wagons outside the village (breadcrumbing the player to approach), a half-buried well in the middle of the trade area, and decoration props to show the active trade that existed before the abandonment.</p>
 
-      <!-- Paper prototypes + grid -->
-      <figure class="contribution-figure">
-        <img class="contribution-img" src="../images/paper.jpg" alt="Paper Prototype – Abandoned Village">
-        <figcaption>Paper Prototype</figcaption>
-      </figure>
-
-      <figure class="contribution-figure">
-        <img class="contribution-img" src="../images/paper2.jpg" alt="Engine Prototype – Abandoned Village">
-        <figcaption>Engine Prototype</figcaption>
-      </figure>
-
-      <!-- Grid με τις 6 φωτογραφίες a–f δίπλα-δίπλα -->
-      <h4>Final Result</h4>
-      <div class="gallery abandoned-grid">
-        <img src="../images/a.jpg" alt="Abandoned Village final result 1">
-        <img src="../images/b.jpg" alt="Abandoned Village final result 2">
-        <img src="../images/c.jpg" alt="Abandoned Village final result 3">
-        <img src="../images/d.jpg" alt="Abandoned Village final result 4">
-        <img src="../images/e.jpg" alt="Abandoned Village final result 5">
-        <img src="../images/f.jpg" alt="Abandoned Village final result 6">
+      <div class="gallery-grid" style="margin-top:2rem;">
+        <img src="../images/paper.jpg" alt="Paper Prototype – Abandoned Village" loading="lazy"/>
+        <img src="../images/paper2.jpg" alt="Engine Prototype – Abandoned Village" loading="lazy"/>
       </div>
 
-      <h3>Main Village – House Interiors</h3>
-      <ul>
+      <h3 style="margin-top:3rem;">Final Result</h3>
+
+      <div class="gallery-grid" style="margin-top:2rem;">
+        <img src="../images/a.jpg" alt="Abandoned Village final result 1" loading="lazy"/>
+        <img src="../images/b.jpg" alt="Abandoned Village final result 2" loading="lazy"/>
+        <img src="../images/c.jpg" alt="Abandoned Village final result 3" loading="lazy"/>
+        <img src="../images/d.jpg" alt="Abandoned Village final result 4" loading="lazy"/>
+        <img src="../images/e.jpg" alt="Abandoned Village final result 5" loading="lazy"/>
+        <img src="../images/f.jpg" alt="Abandoned Village final result 6" loading="lazy"/>
+      </div>
+
+      <h3 style="margin-top:3rem;">Main Village – House Interiors</h3>
+
+      <ul class="takeaways-list">
         <li>Designed and detailed interiors for multiple houses in the main village</li>
         <li>Focused on functional and thematic interior layout (living spaces, storage, hidden compartments)</li>
         <li>Integrated narrative elements through furniture, notes, and lighting to support quest hooks</li>
@@ -300,9 +113,11 @@
       </ul>
     </section>
 
-    <section class="section">
+    <!-- ===== KEY FEATURES ===== -->
+    <section class="project-section fade-in">
       <h2>Key Features</h2>
-      <ul>
+
+      <ul class="takeaways-list">
         <li>New explorable region: Ofir with unique deserts, bazaars and eastern architecture</li>
         <li>20+ hours of new quests with branching choices and multiple endings</li>
         <li>Recruitable companions and new political factions</li>
@@ -310,33 +125,72 @@
       </ul>
     </section>
 
-    <section class="section">
+    <!-- ===== GALLERY ===== -->
+    <section class="project-section fade-in">
       <h2>Gallery – My Level Design Work</h2>
+
       <p>Selected screenshots from the zones I personally blockouted, iterated and refined.</p>
-      <div class="gallery">
-        <figure>
-          <img src="../images/witcher-bazaar.jpg" alt="Bazaar district blockout">
-          <figcaption>Central bazaar area – early blockout to final iteration</figcaption>
-        </figure>
-        <figure>
-          <img src="../images/witcher-desert-ruins.jpg" alt="Desert ruins verticality">
-          <figcaption>Vertical descent sequence with vista framing</figcaption>
-        </figure>
-        <figure>
-          <img src="../images/witcher-oasis.jpg" alt="Oasis hub">
-          <figcaption>Exploration hub with leading lines and readability</figcaption>
-        </figure>
-        <!-- Πρόσθεσε περισσότερα screenshots σου -->
+
+      <div class="gallery-grid" style="margin-top:2rem;">
+        <img src="../images/witcher-bazaar.jpg" alt="Bazaar district blockout" loading="lazy"/>
+        <img src="../images/witcher-desert-ruins.jpg" alt="Desert ruins verticality" loading="lazy"/>
+        <img src="../images/witcher-oasis.jpg" alt="Oasis hub" loading="lazy"/>
       </div>
     </section>
 
-    <section class="section links-section">
-      <h2>Links & Resources</h2>
-      <a href="https://www.youtube.com/playlist?list=YOUR_PLAYLIST_ID" target="_blank" class="btn">Development Videos</a>
-      <a href="https://www.nexusmods.com/witcher3/mods/YOUR_MOD_ID" target="_blank" class="btn">Nexus Mods (Coming Soon)</a>
-      <a href="https://discord.gg/your-discord-server" target="_blank" class="btn">Join Discord</a>
+    <!-- ===== LINKS ===== -->
+    <section class="project-section project-links fade-in">
+      <div class="links-buttons">
+
+        <a href="https://www.youtube.com/playlist?list=YOUR_PLAYLIST_ID"
+           target="_blank"
+           class="btn btn-secondary">
+           ▶ Development Videos
+        </a>
+
+        <a href="https://www.nexusmods.com/witcher3/mods/YOUR_MOD_ID"
+           target="_blank"
+           class="btn btn-primary">
+           🎮 Nexus Mods (Coming Soon)
+        </a>
+
+        <a href="https://discord.gg/your-discord-server"
+           target="_blank"
+           class="btn btn-secondary">
+           💬 Join Discord
+        </a>
+
+      </div>
     </section>
 
   </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="mailto:chmoiras@hotmail.com">📧 Email</a>
+        <a href="https://www.linkedin.com/in/christos-moiras-bba16a2b1/" target="_blank">LinkedIn</a>
+      </div>
+      <p class="copyright">© 2026 Christos Moiras</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const elements = document.querySelectorAll('.fade-in');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      elements.forEach(el => observer.observe(el));
+    });
+  </script>
+
 </body>
 </html>

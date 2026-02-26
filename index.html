@@ -3,229 +3,232 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Level Design Portfolio by Christos Moiras. Featuring level blockouts, game mods, and prototypes built in Unity, Unreal Engine, and classic modding tools."/>
+  <meta name="description" content="Level Design Portfolio by Christos Moiras. Featuring level blockouts, large-scale mod projects and collaborative game development work."/>
   <meta name="author" content="Christos Moiras"/>
+
   <!-- Open Graph -->
   <meta property="og:title" content="Christos Moiras | Level Design Portfolio"/>
-  <meta property="og:description" content="Level blockouts, game mods, and game prototypes."/>
+  <meta property="og:description" content="Blockouts, large-scale mods and team collaboration projects."/>
   <meta property="og:image" content="images/og-thumbnail.jpg"/>
   <meta property="og:url" content="https://christosmoiras.gr"/>
   <meta property="og:type" content="website"/>
-  <!-- Favicon -->
+
   <link rel="icon" type="image/png" href="images/favicon.png"/>
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+
   <title>Christos Moiras | Level Design Portfolio</title>
   <link rel="stylesheet" href="style.css"/>
 </head>
+
 <body>
 
-  <!-- ==================== NAVIGATION ==================== -->
-  <nav class="main-nav" role="navigation">
-    <div class="nav-container">
-      <a href="#" class="nav-logo">Christos Moiras</a>
+<!-- ==================== NAVIGATION ==================== -->
+<nav class="main-nav" role="navigation">
+  <div class="nav-container">
+    <a href="#" class="nav-logo">Christos Moiras</a>
 
-      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+    <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
 
-      <div class="nav-links">
-        <a href="#projects" class="nav-link">Level Blockouts</a>
-        <a href="#mods" class="nav-link">Mods</a>
-        <a href="#games" class="nav-link">Games</a>
-        <a href="#about" class="nav-link">About</a>
-        <a href="#contact" class="nav-link">Contact</a>
-        <a href="docs/ChristosMoiras_Resume.pdf" class="nav-link nav-cta" target="_blank" rel="noopener noreferrer">Resume ↗</a>
+    <div class="nav-links">
+      <a href="#level-design" class="nav-link">Level Design</a>
+      <a href="#mods" class="nav-link">Mods</a>
+      <a href="#team-collaboration" class="nav-link">Team Collaboration</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#contact" class="nav-link">Contact</a>
+      <a href="docs/ChristosMoiras_Resume.pdf" class="nav-link nav-cta" target="_blank" rel="noopener noreferrer">Resume ↗</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ==================== HERO ==================== -->
+<header class="hero">
+  <video class="hero-video" autoplay muted loop playsinline>
+    <source src="videos/hero-loop.mp4" type="video/mp4"/>
+  </video>
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <h1>Christos Moiras</h1>
+    <h2>Level Designer</h2>
+    <p>Player Guidance · Emotional Pacing · Large-Scale Projects</p>
+    <a href="#level-design" class="scroll-down">↓ View My Work</a>
+  </div>
+</header>
+
+<main>
+
+<!-- ===== LEVEL DESIGN ===== -->
+<section id="level-design" class="projects-section">
+  <h2 class="section-title fade-in">Level Design</h2>
+  <p class="section-subtitle fade-in">
+    Blockouts focused on player flow, spatial readability and gameplay pacing
+  </p>
+
+  <div class="projects-grid">
+    <a href="projects/firewatchblockout.html" class="project-item fade-in">
+      <div class="video-wrapper">
+        <video class="project-media" autoplay muted loop playsinline preload="metadata" poster="images/first-blockout-poster.jpg">
+          <source src="videos/first-blockout-preview.mp4" type="video/mp4"/>
+        </video>
+      </div>
+      <div class="project-info">
+        <h3>The Forbidden Hike</h3>
+        <p>Solo Project · Unity · Level Blockout</p>
+      </div>
+    </a>
+
+    <div class="project-item coming-soon fade-in">
+      <div class="video-wrapper">
+        <img class="project-media" src="images/coming-soon-blockout.jpg" alt="Coming Soon"/>
+        <span class="coming-soon-badge">Coming Soon</span>
+      </div>
+      <div class="project-info">
+        <h3>New Level Blockout</h3>
+        <p>Solo Project · Unreal Engine 5 · In Development</p>
       </div>
     </div>
-  </nav>
+  </div>
+</section>
 
-  <!-- ==================== HERO ==================== -->
-  <header class="hero">
-    <video class="hero-video" autoplay muted loop playsinline>
-      <source src="videos/hero-loop.mp4" type="video/mp4"/>
-    </video>
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <h1>Christos Moiras</h1>
-      <h2>Level Designer &amp; Game Modder</h2>
-      <p>· Level Blockouts · Mods · Games</p>
-      <a href="#projects" class="scroll-down" aria-label="Scroll to projects">↓ View My Work</a>
+<!-- ===== MODS ===== -->
+<section id="mods" class="projects-section">
+  <h2 class="section-title fade-in">Mods</h2>
+  <p class="section-subtitle fade-in">
+    Large-scale mod projects involving level design, iteration and technical problem solving
+  </p>
+
+  <div class="projects-grid">
+
+    <a href="projects/rof.html" class="project-item fade-in">
+      <div class="video-wrapper">
+        <img class="project-media" src="images/witcher-revenge-poster.jpg" alt="Witcher III: Revenge Of Ofir"/>
+      </div>
+      <div class="project-info">
+        <h3>Witcher III: Revenge Of Ofir</h3>
+        <p>Team Project · RedKit · In Development</p>
+      </div>
+    </a>
+
+    <a href="projects/doom.html" class="project-item fade-in">
+      <div class="video-wrapper">
+        <img class="project-media" src="images/doommeets.jpg" alt="Doom Meets Resident Evil"/>
+      </div>
+      <div class="project-info">
+        <h3>Doom Meets Resident Evil</h3>
+        <p>Solo Project · Ultimate Doom Builder · Released</p>
+      </div>
+    </a>
+
+    <a href="projects/quake.html" class="project-item fade-in">
+      <div class="video-wrapper">
+        <img class="project-media" src="images/quakemeets.jpg" alt="Quake Meets Silent Hill"/>
+      </div>
+      <div class="project-info">
+        <h3>Quake Meets Silent Hill</h3>
+        <p>Solo Project · TrenchBroom · Released</p>
+      </div>
+    </a>
+  </div>
+
+  <div class="section-cta fade-in">
+    <a href="https://www.youtube.com/@Chris-Fate" target="_blank" rel="noopener noreferrer" class="youtube-button">
+      Watch all my mods on YouTube
+    </a>
+  </div>
+</section>
+
+<!-- ===== TEAM COLLABORATION ===== -->
+<section id="team-collaboration" class="projects-section">
+  <h2 class="section-title fade-in">Team Collaboration</h2>
+  <p class="section-subtitle fade-in">
+    Collaborative projects developed within production constraints
+  </p>
+
+  <div class="projects-grid">
+
+    <a href="projects/projecttrash.html" class="project-item fade-in">
+      <div class="video-wrapper">
+        <img class="project-media" src="images/trash.jpg" alt="Project Trash"/>
+      </div>
+      <div class="project-info">
+        <h3>Project Trash</h3>
+        <p>Team Project · Unity · 3 Weeks</p>
+      </div>
+    </a>
+
+    <a href="projects/labrun.html" class="project-item fade-in">
+      <div class="video-wrapper">
+        <img class="project-media" src="images/labrun.jpg" alt="Lab Run"/>
+      </div>
+      <div class="project-info">
+        <h3>Lab Run</h3>
+        <p>Team Project · Unity · Academic Project</p>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section id="about" class="about-section">
+  <h2 class="section-title fade-in">About</h2>
+
+  <div class="about-content fade-in">
+    <div class="about-text">
+      <p>
+        I design gameplay spaces that guide players through pacing, spatial storytelling and emotional progression.
+        I focus on readable layouts, intentional player flow and creating meaningful gameplay beats.
+      </p>
     </div>
-  </header>
 
-  <!-- ==================== MAIN CONTENT ==================== -->
-  <main>
-
-    <!-- ===== LEVEL BLOCKOUTS ===== -->
-    <section id="projects" class="projects-section">
-      <h2 class="section-title fade-in">Level Blockouts</h2>
-      <p class="section-subtitle fade-in">Core level design work focused on pacing, player flow, and spatial readability</p>
-
-      <div class="projects-grid">
-        <a href="projects/firewatchblockout.html" class="project-item fade-in">
-          <div class="video-wrapper">
-            <video class="project-media" autoplay muted loop playsinline preload="metadata" poster="images/first-blockout-poster.jpg">
-              <source src="videos/first-blockout-preview.mp4" type="video/mp4"/>
-            </video>
-          </div>
-          <div class="project-info">
-            <h3>The Forbidden Hike</h3>
-            <p>Solo Project · Level Blockout · Unity</p>
-          </div>
-        </a>
-
-        <!-- NEW COMING SOON PROJECT -->
-        <div class="project-item coming-soon fade-in">
-          <div class="video-wrapper">
-            <img class="project-media" src="images/coming-soon-blockout.jpg" alt="Coming Soon"/>
-            <span class="coming-soon-badge">Coming Soon</span>
-          </div>
-          <div class="project-info">
-            <h3>New Level Blockout</h3>
-            <p>Solo Project · Level Blockout · Unreal Engine 5</p>
-          </div>
-        </div>
+    <div class="skills-group">
+      <h3>Tools</h3>
+      <div class="tags">
+        <span>Unreal Engine 5</span>
+        <span>Unity</span>
+        <span>RedKit</span>
+        <span>TrenchBroom</span>
       </div>
-    </section>
-
-    <!-- ===== MODS ===== -->
-    <section id="mods" class="projects-section">
-      <h2 class="section-title fade-in">Mods</h2>
-      <p class="section-subtitle fade-in">New content for existing games</p>
-
-      <div class="projects-grid">
-        <a href="projects/rof.html" class="project-item fade-in">
-          <div class="video-wrapper">
-            <img class="project-media" src="images/witcher-revenge-poster.jpg" alt="Witcher III: Revenge Of Ofir"/>
-          </div>
-          <div class="project-info">
-            <h3>Witcher III: Revenge Of Ofir</h3>
-            <p>Team Project · RedKit · Coming Soon</p>
-          </div>
-        </a>
-
-        <a href="projects/doom.html" class="project-item fade-in">
-          <div class="video-wrapper">
-            <img class="project-media" src="images/doommeets.jpg" alt="Doom Meets Resident Evil"/>
-          </div>
-          <div class="project-info">
-            <h3>Doom Meets Resident Evil</h3>
-            <p>Solo Project · Ultimate Doom Builder · Out Now</p>
-          </div>
-        </a>
-
-        <a href="projects/quake.html" class="project-item fade-in">
-          <div class="video-wrapper">
-            <img class="project-media" src="images/quakemeets.jpg" alt="Quake Meets Silent Hill"/>
-          </div>
-          <div class="project-info">
-            <h3>Quake Meets Silent Hill</h3>
-            <p>Solo Project · TrenchBroom · Out Now</p>
-          </div>
-        </a>
-      </div>
-
-      <!-- YouTube CTA -->
-      <div class="section-cta fade-in">
-        <a href="https://www.youtube.com/@Chris-Fate" target="_blank" rel="noopener noreferrer" class="youtube-button">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M21 5.9C20.7 4.8 19.9 4 18.8 3.7 17.3 3.2 12 3.2 12 3.2s-5.3 0-6.8.5C4.1 4 3.3 4.8 3 5.9 2.5 7.4 2.5 12 2.5 12s0 4.6.5 6.1c.3 1.1 1.1 1.9 2.2 2.2 1.5.5 6.8.5 6.8.5s5.3 0 6.8-.5c1.1-.3 1.9-1.1 2.2-2.2.5-1.5.5-6.1.5-6.1s0-4.6-.5-6.1zM10 15.5V8.5l6 3.5-6 3.5z"/>
-          </svg>
-          <span>Watch all my mods on YouTube</span>
-        </a>
-      </div>
-    </section>
-
-    <!-- ===== GAME PROJECTS ===== -->
-    <section id="games" class="projects-section">
-      <h2 class="section-title fade-in">Game Projects</h2>
-      <p class="section-subtitle fade-in">Original projects from concept to playable games</p>
-
-      <div class="projects-grid">
-        <!-- Αφαίρεση coming-soon + έγινε link -->
-        <a href="projects/projecttrash.html" class="project-item fade-in">
-          <div class="video-wrapper">
-            <img class="project-media" src="images/trash.jpg" alt="Project Trash"/>
-            <!-- Το badge αφαιρέθηκε εντελώς -->
-          </div>
-          <div class="project-info">
-            <h3>Project Trash</h3>
-            <p>Team Project · Unity · 3D Arcade</p>
-          </div>
-        </a>
-
-        <a href="projects/labrun.html" class="project-item fade-in">
-          <div class="video-wrapper">
-            <img class="project-media" src="images/labrun.jpg" alt="Lab Run"/>
-            <!-- Το badge αφαιρέθηκε εντελώς -->
-          </div>
-          <div class="project-info">
-            <h3>Lab Run</h3>
-            <p>Team Project · Unity · 2D Endless Runner</p>
-          </div>
-        </a>
-      </div>
-    </section>
-
-    <!-- ===== ABOUT ===== -->
-    <section id="about" class="about-section">
-      <h2 class="section-title fade-in">About Me</h2>
-
-      <div class="about-content fade-in">
-        <div class="about-text">
-          <p>I'm a level designer </p>
-          
-          
-        </div>
-
-        <div class="skills-group">
-          <h3>Tools</h3>
-          <div class="tags">
-            <span>Unreal Engine 5</span>
-            <span>Unity</span>
-            <span>RedKit</span>
-            
-          </div>
-        </div>
-
-        <div class="skills-group">
-          <h3>Design Focus</h3>
-          <div class="tags">
-            <span>Level Blockouts</span>
-            <span>Pacing &amp; Flow</span>
-            <span>Environmental Storytelling</span>
-            <span>Player Guidance</span>
-         
-         
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- ==================== FOOTER ==================== -->
-  <footer id="contact" class="site-footer">
-    <div class="footer-content">
-      <h2 class="footer-heading fade-in">Let's Connect</h2>
-      <p class="footer-text fade-in">Interested in working together? Feel free to reach out.</p>
-
-      <div class="footer-links fade-in">
-        <a href="mailto:chmoiras@hotmail.com">📧 Email</a>
-        <a href="https://www.linkedin.com/in/christos-moiras-bba16a2b1/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="https://www.youtube.com/@Chris-Fate" target="_blank" rel="noopener noreferrer">YouTube</a>
-        
-      </div>
-
-      <p class="copyright">© 2026 Christos Moiras. All rights reserved.</p>
     </div>
-  </footer>
 
-  <script src="script.js"></script>
+    <div class="skills-group">
+      <h3>Design Focus</h3>
+      <div class="tags">
+        <span>Level Blockouts</span>
+        <span>Pacing & Flow</span>
+        <span>Environmental Storytelling</span>
+        <span>Player Guidance</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ==================== FOOTER ==================== -->
+<footer id="contact" class="site-footer">
+  <div class="footer-content">
+    <h2 class="footer-heading fade-in">Let's Connect</h2>
+    <p class="footer-text fade-in">Interested in working together? Feel free to reach out.</p>
+
+    <div class="footer-links fade-in">
+      <a href="mailto:chmoiras@hotmail.com">📧 Email</a>
+      <a href="https://www.linkedin.com/in/christos-moiras-bba16a2b1/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="docs/ChristosMoiras_Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+    </div>
+
+    <p class="copyright">© 2026 Christos Moiras. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>

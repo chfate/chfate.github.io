@@ -1,210 +1,71 @@
-<style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  body {
-    background: #000;
-    color: #fff;
-    font-family: 'Inter', sans-serif;
-    overflow-x: hidden;
-  }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Doom Meets Resident Evil — A solo GZDoom mod fusing survival horror atmosphere with classic Doom gameplay. By Christos Moiras."/>
 
-  /* Full-screen video hero – με flex για σιγουριά κεντραρίσματος */
-  .hero {
-    position: relative;
-    height: 100vh;
-    width: 100vw;
-    overflow: hidden;
-    display: flex;               /* ← ΝΕΟ: flexbox για κεντράρισμα */
-    align-items: center;         /* ← ΝΕΟ */
-    justify-content: center;     /* ← ΝΕΟ */
-  }
+  <title>Doom Meets Resident Evil | Christos Moiras</title>
 
-  .hero video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    z-index: 0;
-  }
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 
-  .hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.65);
-    z-index: 1;
-  }
-
-  .hero-content {
-    position: relative;          /* ← ΑΛΛΑΓΗ: relative αντί absolute */
-    z-index: 2;
-    text-align: center;
-    padding: 0 20px;
-    max-width: 900px;
-    width: 90%;                  /* ← ΝΕΟ: για καλύτερη προσαρμογή σε μικρές οθόνες */
-    box-sizing: border-box;
-  }
-
-  .hero-content h1 {
-    font-size: 5rem;
-    margin-bottom: 1rem;
-    text-shadow: 0 0 20px #ff4444;
-  }
-
-  .hero-content p {
-    font-size: 1.8rem;
-    color: #ff9800;
-    margin-bottom: 2rem;
-  }
-
-  .back-link {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    z-index: 10;
-    color: #fff;
-    background: rgba(0,0,0,0.6);
-    padding: 10px 20px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-size: 1.1rem;
-  }
-
-  .back-link:hover {
-    background: rgba(255, 68, 68, 0.8);
-  }
-
-  /* Το υπόλοιπο περιεχόμενο */
-  .content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 80px 5%;
-    position: relative;
-    z-index: 2;
-    background: #0a0a0a;
-  }
-
-  .section {
-    margin-bottom: 100px;
-  }
-
-  .section h2 {
-    font-size: 2.8rem;
-    margin-bottom: 1.5rem;
-    color: #ff9800;
-  }
-
-  ul {
-    list-style: none;
-    padding-left: 0;
-  }
-
-  ul li {
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
-    position: relative;
-    padding-left: 25px;
-  }
-
-  ul li::before {
-    content: "•";
-    position: absolute;
-    left: 0;
-    color: #ff9800;
-    font-size: 1.5rem;
-    line-height: 1;
-  }
-
-  .arena-grid, .gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-  }
-
-  .arena-card, .gallery img {
-    background: #111;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 8px 25px rgba(255, 68, 68, 0.2);
-  }
-
-  .arena-card img, .gallery img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-  }
-
-  .arena-card .info {
-    padding: 1.2rem;
-  }
-
-  .main-feature-img {
-    width: 100%;
-    max-height: 600px;
-    object-fit: cover;
-    border-radius: 12px;
-    margin: 2rem 0;
-    box-shadow: 0 10px 30px rgba(255, 68, 68, 0.4);
-  }
-
-  .links-section {
-    text-align: center;
-    margin-top: 4rem;
-  }
-
-  .btn {
-    display: inline-block;
-    padding: 14px 32px;
-    background: #ff4444;
-    color: white;
-    text-decoration: none;
-    border-radius: 50px;
-    font-weight: 600;
-    margin: 0.5rem;
-    transition: all 0.3s;
-  }
-
-  .btn:hover {
-    background: #ff6666;
-    transform: translateY(-4px);
-    box-shadow: 0 10px 30px rgba(255, 68, 68, 0.4);
-  }
-  </style>
+  <!-- Global Styles -->
+  <link rel="stylesheet" href="../style.css"/>
+  <link rel="stylesheet" href="../project-page.css"/>
 </head>
-<body>
-  <a href="../index.html#mods" class="back-link">← Back to Portfolio</a>
 
-  <!-- Full-screen video hero -->
-  <section class="hero">
-    <video autoplay muted loop playsinline>
-      <source src="../videos/doom.mp4" type="video/mp4">
-      Your browser does not support the video tag.
+<body class="project-page">
+
+  <!-- ===== BACK LINK ===== -->
+  <a href="../index.html#mods" class="back-link">
+    <span class="back-arrow">←</span>
+    <span>Back to Portfolio</span>
+  </a>
+
+  <!-- ================= HERO ================= -->
+  <header class="project-hero">
+    <video class="project-hero-video" autoplay muted loop playsinline>
+      <source src="../videos/doom.mp4" type="video/mp4"/>
     </video>
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <h1>Doom Meets Resident Evil</h1>
-      <p>Solo Project • GZDoom / UDB • Released • 2025</p>
-    </div>
-  </section>
 
-  <!-- Το υπόλοιπο περιεχόμενο -->
-  <div class="content">
-    <section class="section">
+    <div class="project-hero-overlay"></div>
+
+    <div class="project-hero-content">
+      <h1>Doom Meets Resident Evil</h1>
+      <p class="project-tagline">Classic Doom Reimagined with Survival Horror</p>
+
+      <div class="project-meta">
+        <span>Solo Project</span>
+        <span>8 Weeks</span>
+        <span>GZDoom / UDB</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= MAIN ================= -->
+  <main class="project-content">
+
+    <!-- ===== OVERVIEW ===== -->
+    <section class="project-section fade-in">
       <h2>Overview</h2>
-      <p>After months of working with UDB (Ultimate Doom Builder) and creating smaller mods, I decided to challenge myself and aim higher. I wanted to build something unique. Α fusion of Resident Evil’s iconic survival horror atmosphere with Doom’s fast-paced gameplay. The result is a mod that gives the classic 1993 Doom a fresh and modern twist. Players once again explore the Raccoon City Police Station, searching for keys, solving environmental puzzles, fighting enemies, and slowly uncovering the mystery.</p>
-      <p>After release, the mod reached over 250 players, a number I’m genuinely proud of and honestly never expected. Seeing something I built get this attention has been one of the most rewarding parts of the project.</p>
-      <p><strong>•Playtime: 25–30 minutes</strong></p>
-      <p><strong>•Development Time : 8 weeks</strong></p>
+      <p>
+        After months of working with UDB (Ultimate Doom Builder) and creating smaller mods, I decided to challenge myself and aim higher. I wanted to build something unique. Α fusion of Resident Evil's iconic survival horror atmosphere with Doom's fast-paced gameplay. The result is a mod that gives the classic 1993 Doom a fresh and modern twist. Players once again explore the Raccoon City Police Station, searching for keys, solving environmental puzzles, fighting enemies, and slowly uncovering the mystery.
+      </p>
+      <p>
+        After release, the mod reached over 250 players, a number I'm genuinely proud of and honestly never expected. Seeing something I built get this attention has been one of the most rewarding parts of the project.
+      </p>
+      <p><strong>• Playtime: 25–30 minutes</strong></p>
+      <p><strong>• Development Time: 8 weeks</strong></p>
     </section>
-    <section class="section">
+
+    <!-- ===== WORKFLOW ===== -->
+    <section class="project-section fade-in">
       <h2>Workflow</h2>
-      <ul>
+
+      <ul class="takeaways-list">
         <li>I started by collecting references from the original Raccoon City Police Station to capture its authentic layout and atmosphere.</li>
         <li>Once I had a solid visual foundation, I moved to GZDoom and began blocking out the main areas of the map.</li>
         <li>After establishing the complete structure, I started placing gameplay elements specifically the key items required for the player to progress through the map.</li>
@@ -212,55 +73,109 @@
         <li>Finally, after several playtesting sessions I carefully adjusted and placed ammo, health packs, and other resources to balance the overall experience and pacing.</li>
       </ul>
     </section>
-    <section class="section">
+
+    <!-- ===== PROBLEMS ENCOUNTERED ===== -->
+    <section class="project-section fade-in">
       <h2>Problems encountered and how i solved them</h2>
-      <ul>
+
+      <ul class="takeaways-list">
         <li>One of the primary challenges I faced was GZDoom's 2.5D architecture, which prevents direct stacking of sectors for multi-story floors due to rendering glitches. My solution was to create a separate sector for the upper floor and use a teleporter to seamlessly transport the player there, effectively resolving multi-level navigation. That solved the problem of having floors and created a sense of verticality that proved vital for the player experience. This taught me a lot about engine limitations and how to think creatively to overcome them.</li>
       </ul>
-      <img class="main-feature-img" src="../images/main.jpg" alt="Main police station overview">
-      <div class="arena-grid">
+
+      <div class="gallery-grid" style="margin-top: 2rem;">
+        <img src="../images/main.jpg"
+             alt="Main police station overview"
+             loading="lazy"/>
       </div>
     </section>
-    <section class="section">
+
+    <!-- ===== PERSONAL EXPERIENCE ===== -->
+    <section class="project-section fade-in">
       <h2>Personal Experience and Challenges</h2>
-      <ul>
+
+      <ul class="takeaways-list">
         <li>This project was an extremely valuable experience for me. I set a clear deadline of 8 weeks and committed to it, which forced me to plan carefully and stay highly motivated throughout the entire development process.</li>
         <li>The strict timeline kept me constantly engaged and pushed me to improve the project every day. During development I was continuously researching new techniques, iterating on my designs, and learning game design and level design practices along the way.</li>
         <li>The greatest design challenge was maintaining consistent flow and pacing. I wanted to keep surprising the player with new elements, mechanics, and moments of tension throughout the entire experience. Playtesting and external feedback would have been extremely helpful, but since I was working solo, I had to rely entirely on self-experimentation and repeated self-playtesting to refine the balance and feel.</li>
       </ul>
     </section>
-    <section class="section">
+
+    <!-- ===== GALLERY ===== -->
+    <section class="project-section fade-in">
       <h2>Gallery</h2>
-      <div class="gallery">
-        <img src="../images/1.jpg" alt="Screenshot 1">
-        <img src="../images/2.jpg" alt="Screenshot 2">
-        <img src="../images/3.jpg" alt="Screenshot 3">
-        <img src="../images/4.jpg" alt="Screenshot 4">
-        <img src="../images/5.jpg" alt="Screenshot 5">
-        <img src="../images/6.jpg" alt="Screenshot 6">
-        <img src="../images/7.jpg" alt="Screenshot 7">
-        <img src="../images/8.jpg" alt="Screenshot 8">
-        <img src="../images/9.jpg" alt="Screenshot 9">
-        <img src="../images/10.jpg" alt="Screenshot 10">
-        <img src="../images/11.jpg" alt="Screenshot 11">
+
+      <div class="gallery-grid" style="margin-top: 2rem;">
+        <img src="../images/1.jpg" alt="Screenshot 1" loading="lazy"/>
+        <img src="../images/2.jpg" alt="Screenshot 2" loading="lazy"/>
+        <img src="../images/3.jpg" alt="Screenshot 3" loading="lazy"/>
+        <img src="../images/4.jpg" alt="Screenshot 4" loading="lazy"/>
+        <img src="../images/5.jpg" alt="Screenshot 5" loading="lazy"/>
+        <img src="../images/6.jpg" alt="Screenshot 6" loading="lazy"/>
+        <img src="../images/7.jpg" alt="Screenshot 7" loading="lazy"/>
+        <img src="../images/8.jpg" alt="Screenshot 8" loading="lazy"/>
+        <img src="../images/9.jpg" alt="Screenshot 9" loading="lazy"/>
+        <img src="../images/10.jpg" alt="Screenshot 10" loading="lazy"/>
+        <img src="../images/11.jpg" alt="Screenshot 11" loading="lazy"/>
       </div>
     </section>
-    <section class="section links-section">
-      <h2>Links</h2>
-      <a href="https://www.youtube.com/watch?v=2w9NB0xwKx8" target="_blank" rel="noopener noreferrer" class="btn">Watch Trailer</a>
-      <a href="https://www.youtube.com/watch?v=0a4Unqs_xBY" target="_blank" rel="noopener noreferrer" class="btn">Full Walkthrough</a>
-      <a href="https://fate99.itch.io/doom-meets-resident-evil" target="_blank" rel="noopener noreferrer" class="btn">Play on itch.io</a>
-    </section>
-  </div>
 
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const video = document.querySelector('.hero video');
-    if (video) {
-      video.currentTime = 6;
-      video.play().catch(() => {});
-    }
-  });
-</script>
+    <!-- ===== LINKS ===== -->
+    <section class="project-section project-links fade-in">
+      <div class="links-buttons">
+
+        <a href="https://fate99.itch.io/doom-meets-resident-evil"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="btn btn-primary">
+           🎮 Play on itch.io
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=2w9NB0xwKx8"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="btn btn-secondary">
+           ▶ Watch Trailer
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=0a4Unqs_xBY"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="btn btn-secondary">
+           ▶ Full Walkthrough
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="mailto:chmoiras@hotmail.com">📧 Email</a>
+        <a href="https://www.linkedin.com/in/christos-moiras-bba16a2b1/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
+      <p class="copyright">© 2026 Christos Moiras</p>
+    </div>
+  </footer>
+
+  <script>
+    // Simple fade-in animation
+    document.addEventListener('DOMContentLoaded', () => {
+      const elements = document.querySelectorAll('.fade-in');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      elements.forEach(el => observer.observe(el));
+    });
+  </script>
+
 </body>
 </html>
