@@ -15,6 +15,29 @@
   <link rel="stylesheet" href="../project-page.css"/>
 
   <style>
+    /* ---------- TASK SEPARATION ---------- */
+
+    .task-separator {
+      margin: 6rem 0 4rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .task-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--text-muted);
+      margin-bottom: 0.6rem;
+    }
+
+    .task-heading {
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    /* ---------- LIGHTBOX ---------- */
+
     .gallery-grid img {
       cursor: pointer;
       transition: transform 0.3s ease;
@@ -79,6 +102,7 @@
 
 <main class="project-content">
 
+<!-- ================= OVERVIEW ================= -->
 <section class="project-section fade-in">
   <h2>Overview</h2>
   <p>
@@ -86,6 +110,7 @@
   </p>
 </section>
 
+<!-- ================= MY ROLE ================= -->
 <section class="project-section fade-in">
   <h2>My Role</h2>
 
@@ -101,16 +126,18 @@
   </ul>
 
   <p style="margin-top:1.5rem; font-style:italic; opacity:0.9;">
-    The sections below showcase the level design tasks I was directly responsible for.
+    The sections below showcase the design tasks I was directly responsible for.
   </p>
 </section>
 
+<!-- ================= CONTRIBUTIONS ================= -->
 <section class="project-section fade-in">
   <h2>Contributions</h2>
 
-  <!-- ================= ABANDONED VILLAGE ================= -->
+  <!-- ================= TASK 01 ================= -->
   <div style="margin-top:2.5rem;">
-    <h3>Abandoned Village – Point of Interest (POI)</h3>
+    <div class="task-label">Task 01</div>
+    <h3 class="task-heading">Abandoned Village – Point of Interest (POI)</h3>
 
     <p>
       One of my assigned tasks was to design an Abandoned Village Point of Interest (POI).
@@ -156,27 +183,40 @@
     </div>
   </div>
 
-  <!-- ================= MAIN VILLAGE INTERIORS ================= -->
-  <div style="margin-top:5rem;">
-    <h3>Main Village – House Interior Design (18 Houses)</h3>
+  <!-- ================= SEPARATOR ================= -->
+  <div class="task-separator"></div>
+
+  <!-- ================= TASK 02 ================= -->
+  <div>
+    <div class="task-label">Task 02</div>
+    <h3 class="task-heading">Main Village – House Interior Design (18 Houses)</h3>
 
     <p>
       My second major task was designing and detailing <strong>18 individual house interiors</strong> within the main village.
       Wadi al-Salam is the main village situated by the lake. It is home primarily to workers but also hosts a variety of merchants and farmers.
-Having this in mind, I wanted the interiors to represent that time by having the houses being practical and at the same time stay true to detail and the way of life back then.<p> 
-<p><strong>My main goal was to create believable, immersive and realistic interiors that captured the way of living at that time.
+      Having this in mind, I wanted the interiors to represent that time by having the houses being practical and at the same time stay true to detail and the way of life back then.
+    </p> 
 
-    </p>
-
-    
+    <p><strong>
+      My main goal was to create believable, immersive and realistic interiors that captured the way of living at that time.
+    </strong></p>
 
     <h4 style="margin-top:1.5rem;">Design Intent</h4>
     <ul class="takeaways-list">
       <li>Recreating the way of life back then</li>
-      <li>Keeping the authenticity </li>
+      <li>Keeping the authenticity</li>
       <li>Creating interior variation while preserving overall cohesion</li>
       <li>Ensuring each house felt purposeful and narratively grounded</li>
     </ul>
+
+    <h4 style="margin-top:3rem;">Final Result</h4>
+    <div class="gallery-grid" style="margin-top:1.5rem;">
+      <img src="../images/i1.jpg" alt="Interior 1" loading="lazy"/>
+      <img src="../images/i2.jpg" alt="Interior 2" loading="lazy"/>
+      <img src="../images/i3.jpg" alt="Interior 3" loading="lazy"/>
+      <img src="../images/i4.jpg" alt="Interior 4" loading="lazy"/>
+      <img src="../images/i5.jpg" alt="Interior 5" loading="lazy"/>
+    </div>
   </div>
 
 </section>

@@ -991,4 +991,24 @@ a.project-item:hover .project-media {
   font-size: 1.1rem;
   opacity: 0.45;
 }
+/* Distinct separation between contribution tasks */
+.task-separator {
+  margin: 6rem 0 4rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.task-heading {
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  margin-bottom: 1rem;
+}
+
+.task-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
 
