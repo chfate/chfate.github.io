@@ -22,6 +22,62 @@
       display: block;
     }
 
+    /* ✅ IMAGE GRID */
+    .summary-gallery {
+      margin-top: 2.5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .summary-gallery img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      border-radius: 14px;
+      display: block;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .summary-gallery img:hover {
+      transform: scale(1.03);
+    }
+
+    /* ✅ LIGHTBOX */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease;
+      z-index: 9999;
+    }
+
+    .lightbox.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 85vh;
+      border-radius: 12px;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 30px;
+      right: 40px;
+      font-size: 2rem;
+      color: white;
+      cursor: pointer;
+    }
+
     .reference-image {
       width: 100%;
       max-width: 1100px;
@@ -111,6 +167,32 @@
   <p>
     Rather than relying only on narrative exposition, I focused on how verticality, visibility, environmental contrast and pacing could influence the player’s emotional state throughout the experience.
   </p>
+
+  <!-- ✅ IMAGES f1–f7 -->
+  <div class="summary-gallery">
+    <img src="../images/f1.jpg" alt="Image 1" loading="lazy">
+    <img src="../images/f2.jpg" alt="Image 2" loading="lazy">
+    <img src="../images/f3.jpg" alt="Image 3" loading="lazy">
+    <img src="../images/f4.jpg" alt="Image 4" loading="lazy">
+    <img src="../images/f5.jpg" alt="Image 5" loading="lazy">
+    <img src="../images/f6.jpg" alt="Image 6" loading="lazy">
+    <img src="../images/f7.jpg" alt="Image 7" loading="lazy">
+<img src="../images/f8.jpg" alt="Image 7" loading="lazy">
+  </div>
+
+</section>
+
+<!-- ===== NARRATIVE CONTEXT ===== -->
+<section class="project-section fade-in">
+  <h2>Narrative Context</h2>
+  <p>
+    In pre-production I always start by asking questions to define the level characteristics.
+  </p>
+
+  <img class="full-image"
+       src="../images/narrative-context-forest-mist.jpg"
+       alt="Narrative Context"
+       loading="lazy"/>
 </section>
 
 <!-- ===== NARRATIVE CONTEXT ===== -->
@@ -211,6 +293,75 @@
 </section>
 
 </main>
+<!-- ✅ LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-close" id="lightboxClose">&times;</span>
+  <img id="lightboxImg" src="" alt="">
+</div>
+
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-links">
+      <a href="mailto:chmoiras@hotmail.com">📧 Email</a>
+      <a href="https://www.linkedin.com/in/christos-moiras-bba16a2b1/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    </div>
+    <p class="copyright">© 2026 Christos Moiras</p>
+  </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+  /* Fade-in observer */
+  const elements = document.querySelectorAll('.fade-in');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  elements.forEach(el => observer.observe(el));
+
+  /* ✅ LIGHTBOX */
+  const images = document.querySelectorAll('.summary-gallery img');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const closeBtn = document.getElementById('lightboxClose');
+
+  images.forEach(img => {
+    img.addEventListener('click', () => {
+      lightbox.classList.add('active');
+      lightboxImg.src = img.src;
+    });
+  });
+
+  function closeLightbox() {
+    lightbox.classList.remove('active');
+    lightboxImg.src = "";
+  }
+
+  closeBtn.addEventListener('click', closeLightbox);
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+      closeLightbox();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === "Escape") {
+      closeLightbox();
+    }
+  });
+
+});
+</script>
+
+</body>
+</html>
 
 <!-- ================= FOOTER ================= -->
 <footer class="site-footer">
