@@ -4,24 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="description" content="The Forbidden Hike — A Firewatch inspired level blockout built in Unity. By Christos Moiras."/>
-
   <title>The Forbidden Hike | Christos Moiras</title>
-
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
-
   <link rel="stylesheet" href="../style.css"/>
   <link rel="stylesheet" href="../project-page.css"/>
-
   <style>
     .full-image {
       width: 100%;
       border-radius: 14px;
       margin-top: 2.5rem;
       display: block;
+      cursor: pointer;                /* ← για να φαίνεται clickable */
     }
-
     /* ✅ IMAGE GRID */
     .summary-gallery {
       margin-top: 2.5rem;
@@ -29,21 +25,24 @@
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 1.5rem;
     }
-
-    .summary-gallery img {
+    .summary-gallery img,
+    .reference-image,
+    .topdown-stack img {
       width: 100%;
-      aspect-ratio: 16 / 9;
-      object-fit: cover;
       border-radius: 14px;
       display: block;
-      cursor: pointer;
+      cursor: pointer;                /* ← για όλες */
       transition: transform 0.3s ease;
     }
-
-    .summary-gallery img:hover {
+    .summary-gallery img:hover,
+    .reference-image:hover,
+    .topdown-stack img:hover {
       transform: scale(1.03);
     }
-
+    .summary-gallery img {
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+    }
     /* ✅ LIGHTBOX */
     .lightbox {
       position: fixed;
@@ -57,18 +56,15 @@
       transition: opacity 0.3s ease;
       z-index: 9999;
     }
-
     .lightbox.active {
       opacity: 1;
       visibility: visible;
     }
-
     .lightbox img {
       max-width: 90%;
       max-height: 85vh;
       border-radius: 12px;
     }
-
     .lightbox-close {
       position: absolute;
       top: 30px;
@@ -77,43 +73,30 @@
       color: white;
       cursor: pointer;
     }
-
     .reference-image {
-      width: 100%;
       max-width: 1100px;
       margin: 2.5rem auto 0 auto;
-      display: block;
-      border-radius: 14px;
     }
-
     .topdown-stack {
       display: flex;
       flex-direction: column;
       gap: 3rem;
       margin-top: 3rem;
     }
-
     .topdown-stack img {
-      width: 100%;
       max-width: 1100px;
       margin: 0 auto;
-      border-radius: 14px;
-      display: block;
     }
-
     .beat-heading {
       margin-top: 3.5rem;
     }
-
     .design-focus-section {
       margin-top: 4rem;
     }
-
     .walkthrough-sequence li {
       position: relative;
       padding-bottom: 2.5rem;
     }
-
     .walkthrough-sequence li:not(:last-child)::after {
       content: "↓";
       position: absolute;
@@ -123,27 +106,40 @@
       font-size: 1.1rem;
       opacity: 0.45;
     }
+
+    /* Δίπλα-δίπλα Mechanics & Design Goals */
+    .mechanics-design-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3rem;
+      margin-top: 1.5rem;
+    }
+    .mechanics-column,
+    .design-goals-column {
+      flex: 1;
+      min-width: 280px;
+    }
+    @media (max-width: 700px) {
+      .mechanics-design-wrapper {
+        flex-direction: column;
+        gap: 2.5rem;
+      }
+    }
   </style>
 </head>
-
 <body class="project-page">
-
 <a href="../index.html#projects" class="back-link">
   <span class="back-arrow">←</span>
   <span>Back to Portfolio</span>
 </a>
-
 <header class="project-hero">
   <video class="project-hero-video" autoplay muted loop playsinline>
     <source src="../videos/first-blockout-preview.mp4" type="video/mp4"/>
   </video>
-
   <div class="project-hero-overlay"></div>
-
   <div class="project-hero-content">
     <h1>The Forbidden Hike</h1>
     <p class="project-tagline">A Firewatch Inspired Level Blockout</p>
-
     <div class="project-meta">
       <span>School Project</span>
       <span>3 Weeks</span>
@@ -151,40 +147,33 @@
     </div>
   </div>
 </header>
-
 <main class="project-content">
-
 <!-- ===== SUMMARY ===== -->
 <section class="project-section fade-in">
   <h2>Summary</h2>
   <p>
-   Inspired by Firewatch, you are tasked with keeping the area safe from fires and any other 
-dangers that might arise. What begins as an afternoon adventure soon takes a wrong 
+   Inspired by Firewatch, you are tasked with keeping the area safe from fires and any other
+dangers that might arise. What begins as an afternoon adventure soon takes a wrong
 turn…
-This level places strong emphasis on narrative, much like Firewatch. The player is not 
-only guided through the environment but also receives context about the area and its 
-story. It is designed as a tutorial that introduces basic mechanics such as jumping, 
+This level places strong emphasis on narrative, much like Firewatch. The player is not
+only guided through the environment but also receives context about the area and its
+story. It is designed as a tutorial that introduces basic mechanics such as jumping,
 crouching, and interacting while establishing the mood for the rest of the game.
   </p>
-
-  <p><strong>In designing the level, I aimed to showcase some level design techniques and to connect 
+  <p><strong>In designing the level, I aimed to showcase some level design techniques and to connect
 the fiction with the mechanics, creating a more believable and cohesive experience.</p>
- 
-  <!-- ✅ IMAGES f1–f7 -->
+  <!-- ✅ IMAGES f1–f8 -->
   <div class="summary-gallery">
-    <img src="../images/f1.jpg" alt="Image 1" loading="lazy">
-    <img src="../images/f2.jpg" alt="Image 2" loading="lazy">
-    <img src="../images/f3.jpg" alt="Image 3" loading="lazy">
-    <img src="../images/f4.jpg" alt="Image 4" loading="lazy">
-    <img src="../images/f5.jpg" alt="Image 5" loading="lazy">
-    <img src="../images/f6.jpg" alt="Image 6" loading="lazy">
-    <img src="../images/f7.jpg" alt="Image 7" loading="lazy">
-<img src="../images/f8.jpg" alt="Image 7" loading="lazy">
-
+    <img src="../images/f1.jpg" alt="Image 1" loading="lazy" class="lightbox-trigger">
+    <img src="../images/f2.jpg" alt="Image 2" loading="lazy" class="lightbox-trigger">
+    <img src="../images/f3.jpg" alt="Image 3" loading="lazy" class="lightbox-trigger">
+    <img src="../images/f4.jpg" alt="Image 4" loading="lazy" class="lightbox-trigger">
+    <img src="../images/f5.jpg" alt="Image 5" loading="lazy" class="lightbox-trigger">
+    <img src="../images/f6.jpg" alt="Image 6" loading="lazy" class="lightbox-trigger">
+    <img src="../images/f7.jpg" alt="Image 7" loading="lazy" class="lightbox-trigger">
+    <img src="../images/f8.jpg" alt="Image 8" loading="lazy" class="lightbox-trigger">
   </div>
-
-
-
+</section>
 
 <!-- ===== NARRATIVE CONTEXT ===== -->
 <section class="project-section fade-in">
@@ -192,8 +181,7 @@ the fiction with the mechanics, creating a more believable and cohesive experien
   <p>
     In pre-production I always start by asking questions to define the level characteristics.
   </p>
-
-  <img class="full-image"
+  <img class="full-image lightbox-trigger"
        src="../images/narrative-context-forest-mist.jpg"
        alt="Narrative Context"
        loading="lazy"/>
@@ -205,8 +193,7 @@ the fiction with the mechanics, creating a more believable and cohesive experien
   <ul class="takeaways-list">
     <li>My main inspiration came from my home country Greece and its vastly unexplored environments. I wanted to showcase real life locations to achieve realism.</li>
   </ul>
-
-  <img class="reference-image"
+  <img class="reference-image lightbox-trigger"
        src="../images/reference.jpg"
        alt="Greek landscape inspiration"
        loading="lazy"/>
@@ -215,41 +202,44 @@ the fiction with the mechanics, creating a more believable and cohesive experien
 <!-- ===== DESIGN GOALS ===== -->
 <section class="project-section fade-in design-focus-section">
   <h2>Mechanics / Design Goals</h2>
-
-  <h3>Mechanics:</h3>
-  <ul class="takeaways-list">
-    <li>Jump</li>
-    <li>Crouch</li>
-    <li>Interact</li>
-  </ul>
-
-  <h3>Design Goals:</h3>
-  <ul class="takeaways-list">
-    <li><strong>Emotional Pacing :</strong> Calm → Curiosity → Tension → Isolation.</li>
-    <li><strong>Narrative-Driven Guidance :</strong> In this level, beyond providing guiding methods like leading lines, logs and trees, I also 
-aimed to direct the player through the voice on the radio. The voice not only guides but 
-also warns the player as they explore, something I found particularly interesting to 
+  <div class="mechanics-design-wrapper">
+    <div class="mechanics-column">
+      <h3>Mechanics:</h3>
+      <ul class="takeaways-list">
+        <li>Jump</li>
+        <li>Crouch</li>
+        <li>Interact</li>
+      </ul>
+    </div>
+    <div class="design-goals-column">
+      <h3>Design Goals:</h3>
+      <ul class="takeaways-list">
+        <li><strong>Emotional Pacing :</strong> Calm → Curiosity → Tension → Isolation.</li>
+        <li><strong>Narrative-Driven Guidance :</strong> In this level, beyond providing guiding methods like leading lines, logs and trees, I also
+aimed to direct the player through the voice on the radio. The voice not only guides but
+also warns the player as they explore, something I found particularly interesting to
 design and integrate.</li>
-    <li><strong>Intended Experience :</strong> Narrative plays a key role in shaping the world and the emotions the player experiences 
-throughout the level. It begins with a calm atmosphere and a pleasant conversation, 
+        <li><strong>Intended Experience :</strong> Narrative plays a key role in shaping the world and the emotions the player experiences
+throughout the level. It begins with a calm atmosphere and a pleasant conversation,
 gradually becoming more mysterious as the story unfolds.
-</li>
-  </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
 </section>
 
 <!-- ===== TOP DOWN ===== -->
 <section class="project-section fade-in">
   <h2>Top Down Layout</h2>
   <div class="topdown-stack">
-    <img src="../images/top1.jpg" alt="Top Down Layout 1" loading="lazy"/>
-    <img src="../images/top2.jpg" alt="Top Down Layout 2" loading="lazy"/>
+    <img src="../images/top1.jpg" alt="Top Down Layout 1" loading="lazy" class="lightbox-trigger"/>
+    <img src="../images/top2.jpg" alt="Top Down Layout 2" loading="lazy" class="lightbox-trigger"/>
   </div>
 </section>
 
 <!-- ===== LEVEL WALKTHROUGH ===== -->
 <section class="project-section fade-in">
   <h2>Level Walkthrough</h2>
-
   <h3>Beat 1 (Safety)</h3>
   <ul class="takeaways-list walkthrough-sequence">
     <li>The player is informed through the radio to go look for a potential fire. (Objective/Goal Started)</li>
@@ -259,23 +249,20 @@ gradually becoming more mysterious as the story unfolds.
 The experience isn't punishing if the player fails the jump, they can simply try again. (Safety Net)</li>
     <li>After the jump, player is forced to move ahead. (One-way valve)</li>
   </ul>
-
   <h3 class="beat-heading">Beat 2 (Curiosity & Rising Tension)</h3>
   <ul class="takeaways-list walkthrough-sequence">
     <li>The player now visually spots the objective (smoke) and progresses into the Forest gameplay section. (Sees smoke, tension rising)</li>
     <li> Spotting a locked gate, the player must find the key. He is told it's at the old canoe rental building. (Player Engagement)</li>
     <li>He now sees the building and, with a visual indication (light flicker), is drawn there to investigate. (Attract the player's attention/Frame the area)</li>
     <li>The player discovers that the building has been breached. (Unease)</li>
-  <li>He must climb the trashcans to the roof and enter the open hatch to reach the key. (Affordances)(Previous framing highlighted the trashcans as climbable for traversal.)</li>
-   <li>The player arrives at the gate and unlocks it. (Backtrack)</li>
-
+    <li>He must climb the trashcans to the roof and enter the open hatch to reach the key. (Affordances)(Previous framing highlighted the trashcans as climbable for traversal.)</li>
+    <li>The player arrives at the gate and unlocks it. (Backtrack)</li>
   </ul>
-
   <h3 class="beat-heading">Beat 3 (Isolation & Unease)</h3>
   <ul class="takeaways-list walkthrough-sequence">
-    <li>The voice from the radio suddenly stops responding. (Player 
+    <li>The voice from the radio suddenly stops responding. (Player
 Engagement – Tension/Isolation)</li>
-    <li>The player sees a backpack scattered on the floor implying that 
+    <li>The player sees a backpack scattered on the floor implying that
 someone was being chased. (Player Engagement – Tension)</li>
     <li> He progresses through a tiny opening by crouching. (Contrast the player's emotional state/Teach Mechanic)
 <li>He progresses through a more open forest, spots a campsite, then discovers blood, guns, and other items. He hears a gunshot. (Player Engagement)
@@ -285,14 +272,11 @@ someone was being chased. (Player Engagement – Tension)</li>
 <!-- ===== FINAL THOUGHTS ===== -->
 <section class="project-section fade-in">
   <h2>Final Thoughts</h2>
-
   <ul class="takeaways-list">
-    <li>The player starts at a high elevation and gradually descends. 
-This is to showcase the emotional state of the avatar and the dark turn that the 
+    <li>The player starts at a high elevation and gradually descends.
+This is to showcase the emotional state of the avatar and the dark turn that the
 story takes.</li>
-   
   </ul>
-
   <p style="margin-top: 2rem;">
     This project showed me how crucial real life inspiration is, how emotions define the experience and the emotional impact Level Design can create. As I move forward with my first steps, my goal is to keep iterating and exploring creative methods to introduce new emotions and evoke them effectively.</p>
 </section>
@@ -300,10 +284,9 @@ story takes.</li>
 </main>
 <!-- ✅ LIGHTBOX -->
 <div class="lightbox" id="lightbox">
-  <span class="lightbox-close" id="lightboxClose">&times;</span>
+  <span class="lightbox-close" id="lightboxClose">×</span>
   <img id="lightboxImg" src="" alt="">
 </div>
-
 <footer class="site-footer">
   <div class="footer-content">
     <div class="footer-links">
@@ -313,10 +296,8 @@ story takes.</li>
     <p class="copyright">© 2026 Christos Moiras</p>
   </div>
 </footer>
-
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-
   /* Fade-in observer */
   const elements = document.querySelectorAll('.fade-in');
   const observer = new IntersectionObserver((entries) => {
@@ -327,29 +308,29 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }, { threshold: 0.1 });
-
   elements.forEach(el => observer.observe(el));
 
-  /* ✅ LIGHTBOX */
-  const images = document.querySelectorAll('.summary-gallery img');
+  /* ✅ LIGHTBOX για ΟΛΕΣ τις εικόνες με κλάση lightbox-trigger */
+  const triggerImages = document.querySelectorAll('.lightbox-trigger');
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightboxImg');
   const closeBtn = document.getElementById('lightboxClose');
 
-  images.forEach(img => {
+  triggerImages.forEach(img => {
     img.addEventListener('click', () => {
       lightbox.classList.add('active');
       lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
     });
   });
 
   function closeLightbox() {
     lightbox.classList.remove('active');
     lightboxImg.src = "";
+    lightboxImg.alt = "";
   }
 
   closeBtn.addEventListener('click', closeLightbox);
-
   lightbox.addEventListener('click', (e) => {
     if (e.target === lightbox) {
       closeLightbox();
@@ -361,46 +342,7 @@ document.addEventListener('DOMContentLoaded', () => {
       closeLightbox();
     }
   });
-
 });
 </script>
-
-</body>
-</html>
-
-
-
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const elements = document.querySelectorAll('.fade-in');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1 });
-
-  elements.forEach(el => observer.observe(el));
-});
-</script>
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const elements = document.querySelectorAll('.fade-in');
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1 });
-
-  elements.forEach(el => observer.observe(el));
-});
-</script>
-
 </body>
 </html>
