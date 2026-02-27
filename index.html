@@ -22,6 +22,40 @@
 
   <title>Christos Moiras | Level Design Portfolio</title>
   <link rel="stylesheet" href="style.css"/>
+
+  <!-- ✅ HERO IMAGE BACKGROUND -->
+  <style>
+  .hero {
+    position: relative;
+    background: url('images/f1.jpg') center center / cover no-repeat;
+    filter: brightness(1.15); /* ✅ Αυξάνει φωτεινότητα */
+  }
+
+  /* Slightly softer overlay */
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(0,0,0,0.55) 0%,
+      rgba(0,0,0,0.45) 40%,
+      rgba(0,0,0,0.65) 100%
+    );
+    z-index: 0;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero h1,
+  .hero h2,
+  .hero p {
+    text-shadow: 0 4px 20px rgba(0,0,0,0.7);
+  }
+</style>
+
 </head>
 
 <body>
@@ -38,10 +72,10 @@
     </button>
 
     <div class="nav-links">
-      <a href="#level-design" class="nav-link">Level Design</a>
+      <a href="#level-design" class="nav-link">Level Blockouts</a>
       <a href="#mods" class="nav-link">Mods</a>
-      <a href="#team-collaboration" class="nav-link">Team Collaboration</a>
-      <a href="#about" class="nav-link">About</a>
+      <a href="#team-collaboration" class="nav-link">Games</a>
+      <a href="#about" class="nav-link">About Me</a>
       <a href="#contact" class="nav-link">Contact</a>
       <a href="docs/ChristosMoiras_Resume.pdf" class="nav-link nav-cta" target="_blank" rel="noopener noreferrer">Resume ↗</a>
     </div>
@@ -50,9 +84,6 @@
 
 <!-- ==================== HERO ==================== -->
 <header class="hero">
-  <video class="hero-video" autoplay muted loop playsinline>
-    <source src="videos/hero-loop.mp4" type="video/mp4"/>
-  </video>
   <div class="hero-overlay"></div>
 
   <div class="hero-content">
@@ -188,9 +219,6 @@
         I focus on readable layouts, intentional player flow and creating meaningful gameplay beats.
       </p>
     </div>
-
-   
-        </div>
   </div>
 </section>
 
