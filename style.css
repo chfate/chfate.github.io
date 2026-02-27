@@ -105,7 +105,37 @@ a:focus:not(:focus-visible),
 button:focus:not(:focus-visible) {
   outline: none;
 }
+/* ===== HERO READABILITY IMPROVEMENT ===== */
 
+.hero p {
+  font-size: clamp(1.15rem, 2vw, 1.5rem);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  opacity: 0.95;
+  text-transform: uppercase;
+}
+
+.scroll-down {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  padding: 12px 28px;
+  border-radius: 40px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  opacity: 1;
+  transition: all 0.3s ease;
+  animation: none; /* αφαιρούμε το bounce */
+}
+
+.scroll-down:hover {
+  background: rgba(255, 255, 255, 0.18);
+  transform: translateY(-3px);
+}
 
 /* ===== 4. NAVIGATION ===== */
 .main-nav {
@@ -871,22 +901,7 @@ a.project-item:hover .project-media {
 .back-link:hover .back-arrow {
   transform: translateX(-3px);
 }
-/* ================= MODS CUSTOM LAYOUT ================= */
 
-#mods .projects-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-}
-
-/* Το 3ο mod να είναι centered κάτω */
-#mods .projects-grid .project-item:nth-child(3) {
-  grid-column: 1 / -1;        /* Πιάνει όλο το row */
-  max-width: 500px;           /* Όσο περίπου ένα κανονικό card */
-  justify-self: center;       /* Το κεντράρει */
-}
-#mods .projects-grid .project-item:nth-child(3) {
-  margin-top: 1rem;
 }
 /* ===================================================== */
 /* =============== PROJECT MEDIA CONSISTENCY =========== */
@@ -908,9 +923,7 @@ a.project-item:hover .project-media {
   display: block;
 }
 
-/* ===================================================== */
-/* ================= PREMIUM MODS LAYOUT =============== */
-/* ===================================================== */
+/* ================= CLEAN MODS LAYOUT ================= */
 
 #mods .projects-grid {
   display: grid;
@@ -918,13 +931,20 @@ a.project-item:hover .project-media {
   gap: 2.5rem;
 }
 
-/* Third mod centered κάτω από τα 2 */
-#mods .projects-grid .project-item:nth-child(3) {
+/* Witcher να πιάνει όλο το row */
+#mods .projects-grid .project-item:nth-child(1) {
   grid-column: 1 / -1;
-  max-width: 620px;     /* Ίδιο visual weight */
-  width: 100%;
-  justify-self: center;
-  margin-top: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #mods .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #mods .projects-grid .project-item:nth-child(1) {
+    grid-column: auto;
+  }
 }
 
 /* ===================================================== */
@@ -1012,4 +1032,8 @@ a.project-item:hover .project-media {
   margin-bottom: 0.5rem;
 }
 
+/* Move hero subtitle & CTA lower */
+.hero-content {
+  margin-top: 90px;
+}
 
