@@ -18,12 +18,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
   <title>Christos Moiras | Level Design Portfolio</title>
   <link rel="stylesheet" href="style.css"/>
-  <!-- ✅ HERO IMAGE BACKGROUND -->
+  <!-- ✅ HERO IMAGE BACKGROUND + ΝΕΟ για Featured -->
   <style>
   .hero {
     position: relative;
     background: url('images/f1.jpg') center center / cover no-repeat;
-    filter: brightness(1.15); /* ✅ Αυξάνει φωτεινότητα */
+    filter: brightness(1.15);
   }
   /* Slightly softer overlay */
   .hero-overlay {
@@ -46,7 +46,23 @@
   .hero p {
     text-shadow: 0 4px 20px rgba(0,0,0,0.7);
   }
-</style>
+
+  /* ΝΕΟ: Witcher στο Featured μεγαλύτερο */
+  #featured .projects-grid .project-item {
+    max-width: 720px;          /* μεγαλύτερο από τα κανονικά 620px */
+    transform: scale(1.08);    /* ελαφρύ zoom για να ξεχωρίζει */
+    margin: 0 auto 2rem;
+  }
+  #featured .projects-grid .project-item:hover {
+    transform: scale(1.12);    /* μεγαλύτερο hover */
+  }
+  @media (max-width: 780px) {
+    #featured .projects-grid .project-item {
+      max-width: 100%;
+      transform: scale(1.05);  /* μικρότερο zoom σε mobile */
+    }
+  }
+  </style>
 </head>
 <body>
 <!-- ==================== NAVIGATION ==================== -->
@@ -59,7 +75,7 @@
       <span></span>
     </button>
     <div class="nav-links">
-      <a href="#featured" class="nav-link">Featured</a> <!-- ← ΝΕΟ – Πρώτο -->
+      <a href="#featured" class="nav-link">Featured</a>
       <a href="#level-design" class="nav-link">Level Blockouts</a>
       <a href="#mods" class="nav-link">Mods</a>
       <a href="#team-collaboration" class="nav-link">Games</a>
@@ -88,11 +104,11 @@
   </div>
 </section>
 <main>
-<!-- ===== FEATURED (ΝΕΟ SECTION) ===== -->
+<!-- ===== FEATURED ===== -->
 <section id="featured" class="projects-section">
   <h2 class="section-title fade-in">Featured</h2>
   <p class="section-subtitle fade-in">
-    Highlighted Project 
+    Highlighted project 
   </p>
   <div class="projects-grid">
     <a href="projects/rof.html" class="project-item fade-in">
