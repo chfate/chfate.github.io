@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Μόνο ένας scroll listener
     window.addEventListener('scroll', updateActiveLink, { passive: true });
 
-    // Click → άμεσο active + flag προστασίας
+    // Click → άμεσο active + flag προστασίας + αφαίρεση από logo
     allNavLinks.forEach(link => {
       link.addEventListener('click', () => {
         if (!link.getAttribute('href').startsWith('#')) return;
@@ -115,6 +115,12 @@ document.addEventListener('DOMContentLoaded', () => {
         isScrollingFromClick = true;
         allNavLinks.forEach(l => l.classList.remove('active'));
         link.classList.add('active');
+
+        // Αφαίρεσε active από logo όταν πατάς section
+        const navLogo = document.querySelector('.nav-logo');
+        if (navLogo) {
+          navLogo.classList.remove('active');
+        }
 
         setTimeout(() => {
           isScrollingFromClick = false;
@@ -126,6 +132,26 @@ document.addEventListener('DOMContentLoaded', () => {
     // Αρχική εκτέλεση
     updateActiveLink();
   }
+
+  // ===== ΝΕΑ: Logo active ΜΟΝΟ όταν είμαστε στην κορυφή / χωρίς hash =====
+  const updateLogoActive = () => {
+    const navLogo = document.querySelector('.nav-logo');
+    if (!navLogo) return;
+
+    // Ενεργό ΜΟΝΟ αν δεν υπάρχει hash ΚΑΙ scrollY < 150px (κορυφή)
+    if (!window.location.hash && window.scrollY < 150) {
+      navLogo.classList.add('active');
+    } else {
+      navLogo.classList.remove('active');
+    }
+  };
+
+  // Τρέξε το αρχικά
+  updateLogoActive();
+
+  // Τρέξε το όταν σκρολάρεις ή αλλάζει hash
+  window.addEventListener('scroll', updateLogoActive, { passive: true });
+  window.addEventListener('hashchange', updateLogoActive);
 
   // ===== 5. VIDEO PERFORMANCE — Pause off-screen videos =====
   const videos = document.querySelectorAll('.project-media[autoplay]');

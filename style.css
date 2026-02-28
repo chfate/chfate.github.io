@@ -157,6 +157,22 @@ button:focus:not(:focus-visible) {
   font-size: 1.15rem;
   letter-spacing: 0.02em;
   white-space: nowrap;
+  position: relative; /* ← ΑΠΑΡΑΙΤΗΤΟ για το underline */
+}
+.nav-logo::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width var(--transition);
+}
+.nav-logo:hover::after,
+.nav-logo.active::after {
+  width: 100% !important;
+  background: var(--accent) !important;
 }
 /* Nav Links */
 .nav-links {
@@ -237,7 +253,6 @@ button:focus:not(:focus-visible) {
 .nav-toggle.active span:nth-child(3) {
   transform: rotate(-45deg) translate(5px, -5px);
 }
-
 
 /* ===== 5. HERO ===== */
 .hero {
@@ -1009,4 +1024,22 @@ a.project-item:hover .project-media {
   width: 100% !important;
   background: var(--accent) !important;
   transition: none;  /* προαιρετικό: να μην "τρεμοπαίζει" */
+}
+/* ================= ABOUT INTRO (Homepage) ================= */
+
+.about-intro {
+  padding: 80px 5% 40px;
+  text-align: center;
+  background: var(--bg-primary);
+}
+
+.about-intro-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-intro p {
+  font-size: 1.3rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
 }
