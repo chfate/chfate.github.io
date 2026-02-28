@@ -5,24 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="description" content="Level Design Portfolio by Christos Moiras. Featuring level blockouts, large-scale mod projects and collaborative game development work."/>
   <meta name="author" content="Christos Moiras"/>
-
   <!-- Open Graph -->
   <meta property="og:title" content="Christos Moiras | Level Design Portfolio"/>
   <meta property="og:description" content="Blockouts, large-scale mods and team collaboration projects."/>
   <meta property="og:image" content="images/og-thumbnail.jpg"/>
   <meta property="og:url" content="https://christosmoiras.gr"/>
   <meta property="og:type" content="website"/>
-
   <link rel="icon" type="image/png" href="images/favicon.png"/>
-
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
-
   <title>Christos Moiras | Level Design Portfolio</title>
   <link rel="stylesheet" href="style.css"/>
-
   <!-- ✅ HERO IMAGE BACKGROUND -->
   <style>
   .hero {
@@ -30,7 +25,6 @@
     background: url('images/f1.jpg') center center / cover no-repeat;
     filter: brightness(1.15); /* ✅ Αυξάνει φωτεινότητα */
   }
-
   /* Slightly softer overlay */
   .hero-overlay {
     position: absolute;
@@ -43,35 +37,29 @@
     );
     z-index: 0;
   }
-
   .hero-content {
     position: relative;
     z-index: 1;
   }
-
   .hero h1,
   .hero h2,
   .hero p {
     text-shadow: 0 4px 20px rgba(0,0,0,0.7);
   }
 </style>
-
 </head>
-
 <body>
-
 <!-- ==================== NAVIGATION ==================== -->
 <nav class="main-nav" role="navigation">
   <div class="nav-container">
     <a href="#" class="nav-logo">Christos Moiras</a>
-
     <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
       <span></span>
       <span></span>
       <span></span>
     </button>
-
     <div class="nav-links">
+      <a href="#featured" class="nav-link">Featured</a> <!-- ← ΝΕΟ – Πρώτο -->
       <a href="#level-design" class="nav-link">Level Blockouts</a>
       <a href="#mods" class="nav-link">Mods</a>
       <a href="#team-collaboration" class="nav-link">Games</a>
@@ -81,15 +69,13 @@
     </div>
   </div>
 </nav>
-
 <!-- ==================== HERO ==================== -->
 <header class="hero">
   <div class="hero-overlay"></div>
-
   <div class="hero-content">
     <h1>Christos Moiras</h1>
     <h2>Level Designer</h2>
-    
+   
     <a href="#level-design" class="scroll-down">↓ View My Work</a>
   </div>
 </header>
@@ -101,15 +87,31 @@
     </p>
   </div>
 </section>
-
 <main>
+<!-- ===== FEATURED (ΝΕΟ SECTION) ===== -->
+<section id="featured" class="projects-section">
+  <h2 class="section-title fade-in">Featured</h2>
+  <p class="section-subtitle fade-in">
+    Highlighted Project 
+  </p>
+  <div class="projects-grid">
+    <a href="projects/rof.html" class="project-item fade-in">
+      <div class="video-wrapper">
+        <img class="project-media" src="images/witcher-revenge-poster.jpg" alt="Witcher III: Revenge Of Ofir"/>
+      </div>
+      <div class="project-info">
+        <h3>Witcher III: Revenge Of Ofir</h3>
+        <p>Team Project · RedKit · In Development</p>
+      </div>
+    </a>
+  </div>
+</section>
 
 <!-- ===== LEVEL DESIGN ===== -->
 <section id="level-design" class="projects-section">
   <h2 class="section-title fade-in">Level Blockouts</h2>
   <p class="section-subtitle fade-in">
     Levels focused on player guidance, flow and emotional pacing</p>
-
   <div class="projects-grid">
     <a href="projects/firewatchblockout.html" class="project-item fade-in">
       <div class="video-wrapper">
@@ -122,7 +124,6 @@
         <p>Solo Project · Unity · Level Blockout</p>
       </div>
     </a>
-
     <div class="project-item coming-soon fade-in">
       <div class="video-wrapper">
         <img class="project-media" src="images/UE5.jpg" alt="Coming Soon"/>
@@ -142,9 +143,7 @@
   <p class="section-subtitle fade-in">
    Mods created for existing games that introduce new experiences
   </p>
-
   <div class="projects-grid">
-
     <a href="projects/rof.html" class="project-item fade-in">
       <div class="video-wrapper">
         <img class="project-media" src="images/witcher-revenge-poster.jpg" alt="Witcher III: Revenge Of Ofir"/>
@@ -154,7 +153,6 @@
         <p>Team Project · RedKit · In Development</p>
       </div>
     </a>
-
     <a href="projects/doom.html" class="project-item fade-in">
       <div class="video-wrapper">
         <img class="project-media" src="images/doommeets.jpg" alt="Doom Meets Resident Evil"/>
@@ -164,7 +162,6 @@
         <p>Solo Project · Ultimate Doom Builder · Released</p>
       </div>
     </a>
-
     <a href="projects/quake.html" class="project-item fade-in">
       <div class="video-wrapper">
         <img class="project-media" src="images/quakemeets.jpg" alt="Quake Meets Silent Hill"/>
@@ -175,7 +172,6 @@
       </div>
     </a>
   </div>
-
   <div class="section-cta fade-in">
     <a href="https://www.youtube.com/@Chris-Fate/videos" target="_blank" rel="noopener noreferrer" class="youtube-button">
       Watch all my projects on YouTube
@@ -189,9 +185,7 @@
   <p class="section-subtitle fade-in">
     Collaborative projects developed within production constraints
   </p>
-
   <div class="projects-grid">
-
     <a href="projects/projecttrash.html" class="project-item fade-in">
       <div class="video-wrapper">
         <img class="project-media" src="images/trash.jpg" alt="Project Trash"/>
@@ -201,7 +195,6 @@
         <p>Team Project · Unity · 3 Weeks</p>
       </div>
     </a>
-
     <a href="projects/labrun.html" class="project-item fade-in">
       <div class="video-wrapper">
         <img class="project-media" src="images/labrun.jpg" alt="Lab Run"/>
@@ -211,31 +204,26 @@
         <p>Team Project · Unity · 4 Weeks</p>
       </div>
     </a>
-
   </div>
 </section>
 
 <!-- ===== ABOUT ===== -->
 <section id="about" class="about-section">
   <h2 class="section-title fade-in">About Me</h2>
-
   <div class="about-content fade-in">
     <div class="about-text">
       <p>
        First of all, thank you for visiting my portfolio.
       </p>
- <p>
+      <p>
        For me it all started at the age of 5 when my father brought home an Xbox. From then on, my life has been shaped by experiencing games, and from a very young age, my goal has been to create something truly memorable that people from all over the world can enjoy.
       </p>
- </p> A few things about me : My favourite hobby is hiking and visiting nature. In my freetime i enjoy working out, doing outdoor activities and playing games. </p>
-</p> Favourite games : God Of War (2018), NieR:Automata™</p>
-</p> Favourite movies : Get Out, Spiderman 2, Sinners
-
-
+      <p> A few things about me : My favourite hobby is hiking and visiting nature. In my freetime i enjoy working out, doing outdoor activities and playing games. </p>
+      <p> Favourite games : God Of War (2018), NieR:Automata™</p>
+      <p> Favourite movies : Get Out, Spiderman 2, Sinners </p>
     </div>
   </div>
 </section>
-
 </main>
 
 <!-- ==================== FOOTER ==================== -->
@@ -243,17 +231,13 @@
   <div class="footer-content">
     <h2 class="footer-heading fade-in">CONTACT</h2>
     <p class="footer-text fade-in">Interested in working together? Feel free to reach out.</p>
-
     <div class="footer-links fade-in">
       <a href="mailto:chmoiras@hotmail.com">📧 Email</a>
       <a href="https://www.linkedin.com/in/christos-moiras-bba16a2b1/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-     
     </div>
-
     <p class="copyright">© 2026 Christos Moiras. All rights reserved.</p>
   </div>
 </footer>
-
 <script src="script.js"></script>
 </body>
 </html>
