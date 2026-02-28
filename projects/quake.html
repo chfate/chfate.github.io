@@ -4,39 +4,77 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="description" content="Quake Meets Silent Hill — A solo TrenchBroom mod recreating Midwich Elementary School in Quake's engine. By Christos Moiras."/>
-
   <title>Quake Meets Silent Hill | Christos Moiras</title>
-
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
-
   <!-- Global Styles -->
   <link rel="stylesheet" href="../style.css"/>
   <link rel="stylesheet" href="../project-page.css"/>
+  <style>
+    /* Lightbox styles */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.90);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease;
+      z-index: 9999;
+    }
+    .lightbox.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    .lightbox img {
+      max-width: 92%;
+      max-height: 88vh;
+      border-radius: 8px;
+      box-shadow: 0 0 40px rgba(0,0,0,0.6);
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 25px;
+      right: 35px;
+      font-size: 3rem;
+      color: #fff;
+      cursor: pointer;
+      opacity: 0.8;
+    }
+    .lightbox-close:hover {
+      opacity: 1;
+    }
+
+    /* Make gallery images clickable */
+    .gallery-grid img {
+      cursor: pointer;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .gallery-grid img:hover {
+      transform: scale(1.04);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+    }
+  </style>
 </head>
-
 <body class="project-page">
-
   <!-- ===== BACK LINK ===== -->
   <a href="../index.html#mods" class="back-link">
     <span class="back-arrow">←</span>
     <span>Back to Portfolio</span>
   </a>
-
   <!-- ================= HERO ================= -->
   <header class="project-hero">
-    <video class="project-hero-video" autoplay muted loop playsinline>
+    <video class="project-hero-video" autoplay muted loop playsinline id="heroVideo">
       <source src="../videos/quake.mp4" type="video/mp4"/>
     </video>
-
     <div class="project-hero-overlay"></div>
-
     <div class="project-hero-content">
       <h1>Quake Meets Silent Hill</h1>
       <p class="project-tagline">Silent Hill's Horror Reimagined in Quake</p>
-
       <div class="project-meta">
         <span>Solo Project</span>
         <span>8 Weeks</span>
@@ -44,30 +82,25 @@
       </div>
     </div>
   </header>
-
   <!-- ================= MAIN ================= -->
   <main class="project-content">
-<!-- ===== LINKS ===== -->
+    <!-- ===== LINKS ===== -->
     <section class="project-section project-links fade-in">
       <div class="links-buttons">
-
         <a href="https://fate99.itch.io/quake-meets-silent-hill"
            target="_blank"
            rel="noopener noreferrer"
            class="btn btn-primary">
            🎮 View on itch.io
         </a>
-
         <a href="https://www.youtube.com/watch?v=sL73CliVVi0&t=0s"
            target="_blank"
            rel="noopener noreferrer"
            class="btn btn-secondary">
            ▶ Watch Trailer
         </a>
-
       </div>
     </section>
-
     <!-- ===== OVERVIEW ===== -->
     <section class="project-section fade-in">
       <h2>Overview</h2>
@@ -79,11 +112,9 @@
       <p><strong>• Playtime: 25-30 minutes</strong></p>
       <p><strong>• Development Time: 8 weeks</strong></p>
     </section>
-
     <!-- ===== WORKFLOW ===== -->
     <section class="project-section fade-in">
       <h2>Workflow</h2>
-
       <ul class="takeaways-list">
         <li>I started by gathering references from Midwich Elementary School in the original Silent Hill game.</li>
         <li>Then, in TrenchBroom, I began building and connecting all the rooms inside the school.</li>
@@ -93,55 +124,45 @@
         <li>Finally, I balanced combat encounters, exploration rewards and the placement of ammo boxes and health packs.</li>
       </ul>
     </section>
-
     <!-- ===== PROBLEMS ENCOUNTERED ===== -->
     <section class="project-section fade-in">
       <h2>Problems encountered and how i solved them</h2>
-
       <ul class="takeaways-list">
-        <li>From a technical perspective, I ran into a lot of crashes because I added so many different sectors, walls, and props. This overloaded the engine, making the mod completely unplayable at times.
+        <li>Technically, frequent crashes occurred because of the large number of sectors, walls, and props placed throughout the level. This overloaded the engine, making the mod completely unplayable at times.
         That forced me to constantly optimize and get creative: I lowered texture resolutions/densities, reduced the complexity and size of brushes, and made other adjustments to keep things stable.</li>
       </ul>
     </section>
-
     <!-- ===== CONCLUSION AND CHALLENGES ===== -->
     <section class="project-section fade-in">
-      <h2>Conclusion and Challenges</h2>
-
+      <h2>Reflection and Challenges</h2>
       <ul class="takeaways-list">
         <li>This project really taught me the importance of balance and flow. At first, after exploring the base version of the school and then transitioning to the Otherworld version, it felt a bit boring. Through playtesting I decided to introduce completely different enemies, new weapons, and unique traps to make the second half feel fresh and truly distinct.</li>
         <li>From a level design perspective, TrenchBroom gave me the freedom to work properly in a 3D environment. I took full advantage of that by adding variety in height, space, and shape. When everything came together, the project started feeling natural and cohesive.</li>
-        <li>Overall, this was an incredibly valuable experience for me. I used every tool and technique I could to enhance the atmosphere. Lighting in particular played a huge role and made the spaces feel claustrophobic and oppressive, resulting in a much more immersive and cohesive horror experience.</li>
+        <li>Overall, this was an incredibly valuable experience for me. I used every tool and technique I could to enhance the atmosphere. Lighting in particular played a huge role and made the spaces feel claustrophobic resulting in a much more immersive and cohesive horror experience.</li>
       </ul>
     </section>
-
     <!-- ===== GALLERY ===== -->
     <section class="project-section fade-in">
-      <h2>Gallery</h2>
-
+      <h2>Screenshots</h2>
       <div class="gallery-grid" style="margin-top: 2rem;">
-        <img src="../images/S1.jpg" alt="Silent Hill screenshot 1" loading="lazy"/>
-        <img src="../images/S2.jpg" alt="Silent Hill screenshot 2" loading="lazy"/>
-        <img src="../images/S3.jpg" alt="Silent Hill screenshot 3" loading="lazy"/>
-        <img src="../images/S4.jpg" alt="Silent Hill screenshot 4" loading="lazy"/>
-        <img src="../images/S5.jpg" alt="Silent Hill screenshot 5" loading="lazy"/>
-        <img src="../images/S6.jpg" alt="Silent Hill screenshot 6" loading="lazy"/>
-        <img src="../images/S7.jpg" alt="Silent Hill screenshot 7" loading="lazy"/>
-        <img src="../images/S8.jpg" alt="Silent Hill screenshot 8" loading="lazy"/>
-        <img src="../images/S9.jpg" alt="Silent Hill screenshot 9" loading="lazy"/>
-        <img src="../images/S10.jpg" alt="Silent Hill screenshot 10" loading="lazy"/>
-        <img src="../images/S11.jpg" alt="Silent Hill screenshot 11" loading="lazy"/>
-        <img src="../images/S12.jpg" alt="Silent Hill screenshot 12" loading="lazy"/>
-        <img src="../images/S13.jpg" alt="Silent Hill screenshot 13" loading="lazy"/>
-        <img src="../images/S14.jpg" alt="Silent Hill screenshot 14" loading="lazy"/>
-        <img src="../images/S15.jpg" alt="Silent Hill screenshot 15" loading="lazy"/>
+        <img src="../images/S1.jpg" alt="Silent Hill screenshot 1" loading="lazy" class="lightbox-trigger"/>
+        <img src="../images/S2.jpg" alt="Silent Hill screenshot 2" loading="lazy" class="lightbox-trigger"/>
+        <img src="../images/S3.jpg" alt="Silent Hill screenshot 3" loading="lazy" class="lightbox-trigger"/>
+        <img src="../images/S4.jpg" alt="Silent Hill screenshot 4" loading="lazy" class="lightbox-trigger"/>
+        <img src="../images/S5.jpg" alt="Silent Hill screenshot 5" loading="lazy" class="lightbox-trigger"/>
+        <img src="../images/S6.jpg" alt="Silent Hill screenshot 6" loading="lazy" class="lightbox-trigger"/>
+        <img src="../images/S7.jpg" alt="Silent Hill screenshot 7" loading="lazy" class="lightbox-trigger"/>
+        <img src="../images/S8.jpg" alt="Silent Hill screenshot 8" loading="lazy" class="lightbox-trigger"/>
+        <img src="../images/S9.jpg" alt="Silent Hill screenshot 9" loading="lazy" class="lightbox-trigger"/>
+        <img src="../images/S10.jpg" alt="Silent Hill screenshot 10" loading="lazy" class="lightbox-trigger"/>
+        <img src="../images/S11.jpg" alt="Silent Hill screenshot 11" loading="lazy" class="lightbox-trigger"/>
+        <img src="../images/S12.jpg" alt="Silent Hill screenshot 12" loading="lazy" class="lightbox-trigger"/>
+        <img src="../images/S13.jpg" alt="Silent Hill screenshot 13" loading="lazy" class="lightbox-trigger"/>
+        <img src="../images/S14.jpg" alt="Silent Hill screenshot 14" loading="lazy" class="lightbox-trigger"/>
+        <img src="../images/S15.jpg" alt="Silent Hill screenshot 15" loading="lazy" class="lightbox-trigger"/>
       </div>
     </section>
-
-    
-
   </main>
-
   <!-- ================= FOOTER ================= -->
   <footer class="site-footer">
     <div class="footer-content">
@@ -153,9 +174,15 @@
     </div>
   </footer>
 
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <span class="lightbox-close" id="lightboxClose">×</span>
+    <img id="lightboxImg" src="" alt="">
+  </div>
+
   <script>
-    // Simple fade-in animation
     document.addEventListener('DOMContentLoaded', () => {
+      // Fade-in animation
       const elements = document.querySelectorAll('.fade-in');
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -165,10 +192,42 @@
           }
         });
       }, { threshold: 0.1 });
-
       elements.forEach(el => observer.observe(el));
+
+      // Skip first 18 seconds of hero video
+      const heroVideo = document.getElementById('heroVideo');
+      if (heroVideo) {
+        heroVideo.currentTime = 18;
+      }
+
+      // Lightbox for gallery images
+      const triggerImages = document.querySelectorAll('.lightbox-trigger');
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightboxImg');
+      const closeBtn = document.getElementById('lightboxClose');
+
+      triggerImages.forEach(img => {
+        img.addEventListener('click', () => {
+          lightbox.classList.add('active');
+          lightboxImg.src = img.src;
+          lightboxImg.alt = img.alt;
+        });
+      });
+
+      function closeLightbox() {
+        lightbox.classList.remove('active');
+        lightboxImg.src = "";
+        lightboxImg.alt = "";
+      }
+
+      closeBtn.addEventListener('click', closeLightbox);
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) closeLightbox();
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === "Escape") closeLightbox();
+      });
     });
   </script>
-
 </body>
 </html>

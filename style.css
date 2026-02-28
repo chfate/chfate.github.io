@@ -1,7 +1,6 @@
 /* ============================================
    CHRISTOS MOIRAS — LEVEL DESIGN PORTFOLIO
    ============================================ */
-
 /* ===== 1. CUSTOM PROPERTIES ===== */
 :root {
   /* Colors */
@@ -9,21 +8,17 @@
   --bg-secondary: #0a0a0a;
   --bg-card: #111111;
   --bg-tag: #1a1a1a;
-
   --text-primary: #ffffff;
   --text-secondary: #cccccc;
   --text-muted: #888888;
-
   --accent: #4da6ff;
   --accent-hover: #7dc0ff;
   --yt-red: #c4302b;
   --yt-red-hover: #e53935;
-
   /* Spacing */
   --nav-height: 64px;
   --section-padding: 120px 5%;
   --section-padding-mobile: 80px 5%;
-
   /* Effects */
   --radius: 12px;
   --radius-sm: 8px;
@@ -32,11 +27,9 @@
   --transition: 0.35s ease;
   --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.3);
   --shadow-card-hover: 0 16px 40px rgba(0, 0, 0, 0.6);
-
   /* Font */
   --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
-
 
 /* ===== 2. RESET & BASE ===== */
 *,
@@ -46,12 +39,10 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 html {
   scroll-behavior: smooth;
   scroll-padding-top: var(--nav-height);
 }
-
 body {
   font-family: var(--font);
   background: var(--bg-primary);
@@ -59,27 +50,24 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;          /* ← ΠΡΟΣΘΕΣΕ ΑΥΤΟ */
+  overflow-x: hidden;
 }
 body.menu-open {
   overflow: hidden;
 }
-
 img, video {
   display: block;
   max-width: 100%;
 }
-
 /* Εξαίρεση για hero videos που είναι absolute positioned */
 .project-hero-video,
 .hero-video {
-  max-width: none;             /* ← override το 100% */
+  max-width: none;
 }
 ::selection {
   background: var(--accent);
   color: var(--bg-primary);
 }
-
 /* Screen-reader only utility */
 .sr-only {
   position: absolute;
@@ -92,7 +80,6 @@ img, video {
   border: 0;
 }
 
-
 /* ===== 3. FOCUS / ACCESSIBILITY ===== */
 a:focus-visible,
 button:focus-visible {
@@ -100,13 +87,12 @@ button:focus-visible {
   outline-offset: 4px;
   border-radius: 4px;
 }
-
 a:focus:not(:focus-visible),
 button:focus:not(:focus-visible) {
   outline: none;
 }
-/* ===== HERO READABILITY IMPROVEMENT ===== */
 
+/* ===== HERO READABILITY IMPROVEMENT ===== */
 .hero p {
   font-size: clamp(1.15rem, 2vw, 1.5rem);
   font-weight: 500;
@@ -114,7 +100,6 @@ button:focus:not(:focus-visible) {
   opacity: 0.95;
   text-transform: uppercase;
 }
-
 .scroll-down {
   display: inline-block;
   margin-top: 1rem;
@@ -129,9 +114,8 @@ button:focus:not(:focus-visible) {
   border: 1px solid rgba(255, 255, 255, 0.15);
   opacity: 1;
   transition: all 0.3s ease;
-  animation: none; /* αφαιρούμε το bounce */
+  animation: none;
 }
-
 .scroll-down:hover {
   background: rgba(255, 255, 255, 0.18);
   transform: translateY(-3px);
@@ -154,11 +138,9 @@ button:focus:not(:focus-visible) {
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   transition: background var(--transition-fast);
 }
-
 .main-nav.scrolled {
   background: rgba(0, 0, 0, 0.95);
 }
-
 .nav-container {
   max-width: 1400px;
   width: 100%;
@@ -167,7 +149,6 @@ button:focus:not(:focus-visible) {
   justify-content: space-between;
   align-items: center;
 }
-
 /* Logo */
 .nav-logo {
   color: var(--text-primary);
@@ -177,14 +158,12 @@ button:focus:not(:focus-visible) {
   letter-spacing: 0.02em;
   white-space: nowrap;
 }
-
 /* Nav Links */
 .nav-links {
   display: flex;
   align-items: center;
   gap: 2.5rem;
 }
-
 .nav-link {
   color: var(--text-secondary);
   text-decoration: none;
@@ -194,7 +173,6 @@ button:focus:not(:focus-visible) {
   position: relative;
   transition: color var(--transition-fast);
 }
-
 .nav-link::after {
   content: '';
   position: absolute;
@@ -205,17 +183,15 @@ button:focus:not(:focus-visible) {
   background: var(--accent);
   transition: width var(--transition);
 }
-
 .nav-link:hover,
 .nav-link.active {
   color: var(--text-primary);
 }
-
 .nav-link:hover::after,
 .nav-link.active::after {
-  width: 100%;
+  width: 100% !important;
+  background: var(--accent) !important;
 }
-
 /* Resume CTA */
 .nav-cta {
   background: rgba(255, 255, 255, 0.08);
@@ -224,15 +200,12 @@ button:focus:not(:focus-visible) {
   border: 1px solid rgba(255, 255, 255, 0.12);
   transition: all var(--transition-fast);
 }
-
 .nav-cta:hover {
   background: rgba(255, 255, 255, 0.15);
 }
-
 .nav-cta::after {
   display: none;
 }
-
 /* Hamburger Toggle — hidden on desktop */
 .nav-toggle {
   display: none;
@@ -245,7 +218,6 @@ button:focus:not(:focus-visible) {
   padding: 8px;
   z-index: 1001;
 }
-
 .nav-toggle span {
   display: block;
   width: 24px;
@@ -255,16 +227,13 @@ button:focus:not(:focus-visible) {
   transition: all 0.3s ease;
   transform-origin: center;
 }
-
 /* Hamburger → X animation */
 .nav-toggle.active span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
-
 .nav-toggle.active span:nth-child(2) {
   opacity: 0;
 }
-
 .nav-toggle.active span:nth-child(3) {
   transform: rotate(-45deg) translate(5px, -5px);
 }
@@ -1036,4 +1005,8 @@ a.project-item:hover .project-media {
 .hero-content {
   margin-top: 90px;
 }
-
+.nav-link.active::after {
+  width: 100% !important;
+  background: var(--accent) !important;
+  transition: none;  /* προαιρετικό: να μην "τρεμοπαίζει" */
+}

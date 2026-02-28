@@ -4,39 +4,79 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="description" content="Doom Meets Resident Evil — A solo GZDoom mod fusing survival horror atmosphere with classic Doom gameplay. By Christos Moiras."/>
-
   <title>Doom Meets Resident Evil | Christos Moiras</title>
-
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
-
   <!-- Global Styles -->
   <link rel="stylesheet" href="../style.css"/>
   <link rel="stylesheet" href="../project-page.css"/>
+  <style>
+    /* Lightbox styles */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.90);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease;
+      z-index: 9999;
+    }
+    .lightbox.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    .lightbox img {
+      max-width: 92%;
+      max-height: 88vh;
+      border-radius: 8px;
+      box-shadow: 0 0 40px rgba(0,0,0,0.6);
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 25px;
+      right: 35px;
+      font-size: 3rem;
+      color: #fff;
+      cursor: pointer;
+      opacity: 0.8;
+    }
+    .lightbox-close:hover {
+      opacity: 1;
+    }
+
+    /* Make all project images clickable */
+    .gallery-grid img,
+    .project-section img {
+      cursor: pointer;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .gallery-grid img:hover,
+    .project-section img:hover {
+      transform: scale(1.04);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+    }
+  </style>
 </head>
-
 <body class="project-page">
-
   <!-- ===== BACK LINK ===== -->
   <a href="../index.html#mods" class="back-link">
     <span class="back-arrow">←</span>
     <span>Back to Portfolio</span>
   </a>
-
   <!-- ================= HERO ================= -->
   <header class="project-hero">
     <video class="project-hero-video" autoplay muted loop playsinline>
       <source src="../videos/doom.mp4" type="video/mp4"/>
     </video>
-
     <div class="project-hero-overlay"></div>
-
     <div class="project-hero-content">
       <h1>Doom Meets Resident Evil</h1>
       <p class="project-tagline">Classic Doom Reimagined with Survival Horror</p>
-
       <div class="project-meta">
         <span>Solo Project</span>
         <span>8 Weeks</span>
@@ -44,37 +84,31 @@
       </div>
     </div>
   </header>
-
   <!-- ================= MAIN ================= -->
   <main class="project-content">
-<!-- ===== LINKS ===== -->
-<section class="project-section project-links fade-in">
-  <div class="links-buttons">
-
-    <a href="https://fate99.itch.io/doom-meets-resident-evil"
-       target="_blank"
-       rel="noopener noreferrer"
-       class="btn btn-primary">
-       🎮 Play on itch.io
-    </a>
-
-    <a href="https://www.youtube.com/watch?v=2w9NB0xwKx8"
-       target="_blank"
-       rel="noopener noreferrer"
-       class="btn btn-secondary">
-       ▶ Watch Trailer
-    </a>
-
-    <a href="https://www.youtube.com/watch?v=0a4Unqs_xBY"
-       target="_blank"
-       rel="noopener noreferrer"
-       class="btn btn-secondary">
-       ▶ Full Walkthrough
-    </a>
-
-  </div>
-</section>
-
+    <!-- ===== LINKS ===== -->
+    <section class="project-section project-links fade-in">
+      <div class="links-buttons">
+        <a href="https://fate99.itch.io/doom-meets-resident-evil"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="btn btn-primary">
+           🎮 Play on itch.io
+        </a>
+        <a href="https://www.youtube.com/watch?v=2w9NB0xwKx8"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="btn btn-secondary">
+           ▶ Watch Trailer
+        </a>
+        <a href="https://www.youtube.com/watch?v=0a4Unqs_xBY"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="btn btn-secondary">
+           ▶ Full Walkthrough
+        </a>
+      </div>
+    </section>
     <!-- ===== OVERVIEW ===== -->
     <section class="project-section fade-in">
       <h2>Overview</h2>
@@ -87,11 +121,9 @@
       <p><strong>• Playtime: 25–30 minutes</strong></p>
       <p><strong>• Development Time: 8 weeks</strong></p>
     </section>
-
     <!-- ===== WORKFLOW ===== -->
     <section class="project-section fade-in">
       <h2>Workflow</h2>
-
       <ul class="takeaways-list">
         <li>I started by collecting references from the original Raccoon City Police Station to capture its authentic layout and atmosphere.</li>
         <li>Once I had a solid visual foundation, I moved to GZDoom and began blocking out the main areas of the map.</li>
@@ -100,56 +132,42 @@
         <li>Finally, after several playtesting sessions I carefully adjusted and placed ammo, health packs, and other resources to balance the overall experience and pacing.</li>
       </ul>
     </section>
-
     <!-- ===== PROBLEMS ENCOUNTERED ===== -->
     <section class="project-section fade-in">
       <h2>Problems encountered and how i solved them</h2>
-
       <ul class="takeaways-list">
         <li>One of the primary challenges I faced was GZDoom's 2.5D architecture, which prevents direct stacking of sectors for multi-story floors due to rendering glitches. My solution was to create a separate sector for the upper floor and use a teleporter to seamlessly transport the player there, effectively resolving multi-level navigation. That solved the problem of having floors and created a sense of verticality that proved vital for the player experience. This taught me a lot about engine limitations and how to think creatively to overcome them.</li>
       </ul>
-
-      <div class="gallery-grid" style="margin-top: 2rem;">
-        <img src="../images/main.jpg"
-             alt="Main police station overview"
-             loading="lazy"/>
+      
       </div>
     </section>
-
     <!-- ===== PERSONAL EXPERIENCE ===== -->
     <section class="project-section fade-in">
-      <h2>Personal Experience and Challenges</h2>
-
+      <h2>Reflection and Challenges</h2>
       <ul class="takeaways-list">
         <li>This project was an extremely valuable experience for me. I set a clear deadline of 8 weeks and committed to it, which forced me to plan carefully and stay highly motivated throughout the entire development process.</li>
         <li>The strict timeline kept me constantly engaged and pushed me to improve the project every day. During development I was continuously researching new techniques, iterating on my designs, and learning game design and level design practices along the way.</li>
-        <li>The greatest design challenge was maintaining consistent flow and pacing. I wanted to keep surprising the player with new elements, mechanics, and moments of tension throughout the entire experience. Playtesting and external feedback would have been extremely helpful, but since I was working solo, I had to rely entirely on self-experimentation and repeated self-playtesting to refine the balance and feel.</li>
+        <li>The greatest design challenge was maintaining consistent flow and pacing. I wanted to keep surprising the player with new elements, mechanics, and moments of tension throughout the entire experience. Playtesting and external feedback would have been extremely helpful, but since I was working solo, I had to rely entirely on self experimentation to refine the balance and feel.</li>
       </ul>
     </section>
-
     <!-- ===== GALLERY ===== -->
     <section class="project-section fade-in">
-      <h2>Gallery</h2>
-
+      <h2>Screenshots</h2>
       <div class="gallery-grid" style="margin-top: 2rem;">
-        <img src="../images/1.jpg" alt="Screenshot 1" loading="lazy"/>
-        <img src="../images/2.jpg" alt="Screenshot 2" loading="lazy"/>
-        <img src="../images/3.jpg" alt="Screenshot 3" loading="lazy"/>
-        <img src="../images/4.jpg" alt="Screenshot 4" loading="lazy"/>
-        <img src="../images/5.jpg" alt="Screenshot 5" loading="lazy"/>
-        <img src="../images/6.jpg" alt="Screenshot 6" loading="lazy"/>
-        <img src="../images/7.jpg" alt="Screenshot 7" loading="lazy"/>
-        <img src="../images/8.jpg" alt="Screenshot 8" loading="lazy"/>
-        <img src="../images/9.jpg" alt="Screenshot 9" loading="lazy"/>
-        <img src="../images/10.jpg" alt="Screenshot 10" loading="lazy"/>
-        <img src="../images/11.jpg" alt="Screenshot 11" loading="lazy"/>
+        <img src="../images/1.jpg" alt="Screenshot 1" loading="lazy" class="lightbox-trigger"/>
+        <img src="../images/2.jpg" alt="Screenshot 2" loading="lazy" class="lightbox-trigger"/>
+        <img src="../images/3.jpg" alt="Screenshot 3" loading="lazy" class="lightbox-trigger"/>
+        <img src="../images/4.jpg" alt="Screenshot 4" loading="lazy" class="lightbox-trigger"/>
+        <img src="../images/5.jpg" alt="Screenshot 5" loading="lazy" class="lightbox-trigger"/>
+        <img src="../images/6.jpg" alt="Screenshot 6" loading="lazy" class="lightbox-trigger"/>
+        <img src="../images/7.jpg" alt="Screenshot 7" loading="lazy" class="lightbox-trigger"/>
+        <img src="../images/8.jpg" alt="Screenshot 8" loading="lazy" class="lightbox-trigger"/>
+        <img src="../images/9.jpg" alt="Screenshot 9" loading="lazy" class="lightbox-trigger"/>
+        <img src="../images/10.jpg" alt="Screenshot 10" loading="lazy" class="lightbox-trigger"/>
+        <img src="../images/11.jpg" alt="Screenshot 11" loading="lazy" class="lightbox-trigger"/>
       </div>
     </section>
-
-    
-
   </main>
-
   <!-- ================= FOOTER ================= -->
   <footer class="site-footer">
     <div class="footer-content">
@@ -161,9 +179,15 @@
     </div>
   </footer>
 
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <span class="lightbox-close" id="lightboxClose">×</span>
+    <img id="lightboxImg" src="" alt="">
+  </div>
+
   <script>
-    // Simple fade-in animation
     document.addEventListener('DOMContentLoaded', () => {
+      // Fade-in animation
       const elements = document.querySelectorAll('.fade-in');
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -173,10 +197,36 @@
           }
         });
       }, { threshold: 0.1 });
-
       elements.forEach(el => observer.observe(el));
+
+      // Lightbox functionality
+      const triggerImages = document.querySelectorAll('.lightbox-trigger');
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightboxImg');
+      const closeBtn = document.getElementById('lightboxClose');
+
+      triggerImages.forEach(img => {
+        img.addEventListener('click', () => {
+          lightbox.classList.add('active');
+          lightboxImg.src = img.src;
+          lightboxImg.alt = img.alt;
+        });
+      });
+
+      function closeLightbox() {
+        lightbox.classList.remove('active');
+        lightboxImg.src = "";
+        lightboxImg.alt = "";
+      }
+
+      closeBtn.addEventListener('click', closeLightbox);
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) closeLightbox();
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === "Escape") closeLightbox();
+      });
     });
   </script>
-
 </body>
 </html>
