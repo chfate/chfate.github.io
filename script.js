@@ -138,8 +138,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLogo = document.querySelector('.nav-logo');
     if (!navLogo) return;
 
-    // Ενεργό ΜΟΝΟ αν δεν υπάρχει hash ΚΑΙ scrollY < 150px (κορυφή)
-    if (!window.location.hash && window.scrollY < 150) {
+    // Ενεργό όταν:
+    // - Δεν υπάρχει hash (δεν είμαστε σε section)
+    // - ΚΑΙ scrollY < 400px (έτσι μένει μπλε ακόμα και με λίγο scroll στο hero)
+    if (!window.location.hash && window.scrollY < 400) {
       navLogo.classList.add('active');
     } else {
       navLogo.classList.remove('active');
