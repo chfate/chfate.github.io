@@ -907,31 +907,7 @@ a.project-item:hover .project-media {
   display: block;
 }
 
-/* ================= CLEAN MODS LAYOUT ================= */
 
-#mods .projects-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2.5rem;
-}
-
-/* Witcher να πιάνει όλο το row */
-#mods .projects-grid .project-item:nth-child(1) {
-  grid-column: 1 / -1;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  #mods .projects-grid {
-    grid-template-columns: 1fr;
-  }
-
-  #mods .projects-grid .project-item:nth-child(1) {
-    grid-column: auto;
-  }
-}
-
-/* ===================================================== */
 /* ================= PREMIUM STAGGER EFFECT ============ */
 /* ===================================================== */
 
@@ -1039,7 +1015,10 @@ a.project-item:hover .project-media {
 }
 
 .about-intro p {
-  font-size: 1.3rem;
+  font-size: 1.20rem;
+max-width: 720px;
+margin: 0 auto;
   color: var(--text-secondary);
   line-height: 1.8;
 }
+
