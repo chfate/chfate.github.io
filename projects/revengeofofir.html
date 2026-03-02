@@ -91,6 +91,39 @@
       font-weight: 600;
       margin-bottom: 1rem;
     }
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.95);
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  box-sizing: border-box;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox-content {
+  max-width: 90%;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 25px;
+  right: 40px;
+  color: white;
+  font-size: 48px;
+  font-weight: 300;
+  cursor: pointer;
+  user-select: none;
+}
     /* ---------- LIGHTBOX ---------- */
     .gallery-grid img {
       cursor: pointer;
@@ -268,28 +301,67 @@ drinks and personal items</li>
   </p>
 </section>
 </main>
-
- <!-- FOOTER & SCRIPTS ίδια όπως πριν -->
-  <footer class="site-footer">
-    <div class="footer-content">
-      <div class="footer-links">
-        <span>📧 chmoiras@hotmail.com</span>
-        <a href="https://www.linkedin.com/in/christos-moiras/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      </div>
-      <p class="copyright">© 2026 Christos Moiras</p>
-    </div>
-  </footer>
-
-<!-- LIGHTBOX & fade-in scripts ίδια -->
-
-<div id="lightbox" class="lightbox">
-  <span class="lightbox-close">&times;</span>
-  <img class="lightbox-content" id="lightbox-img">
+<!-- ✅ LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-close" id="lightboxClose">×</span>
+  <img id="lightboxImg" src="" alt="">
 </div>
-
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-links">
+      <a href="mailto:chmoiras@hotmail.com">📧 Email</a>
+      <a href="https://www.linkedin.com/in/christos-moiras/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    </div>
+    <p class="copyright">© 2026 Christos Moiras</p>
+  </div>
+</footer>
 <script>
-// ... όλα τα scripts σου ίδια όπως τα είχες ...
-</script>
+document.addEventListener('DOMContentLoaded', () => {
+  /* Fade-in observer */
+  const elements = document.querySelectorAll('.fade-in');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  elements.forEach(el => observer.observe(el));
 
+  /* Lightbox – δουλεύει σε ΟΛΕΣ τις εικόνες μέσα σε .gallery-grid */
+  const galleryImages = document.querySelectorAll('.gallery-grid img');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const closeBtn = document.getElementById('lightboxClose');
+
+  galleryImages.forEach(img => {
+    img.style.cursor = 'pointer';           // για να φαίνεται clickable
+    img.addEventListener('click', () => {
+      lightbox.classList.add('active');
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt || 'Enlarged image';
+    });
+  });
+
+  function closeLightbox() {
+    lightbox.classList.remove('active');
+    lightboxImg.src = "";
+    lightboxImg.alt = "";
+  }
+
+  if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
+
+  if (lightbox) {
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === "Escape") closeLightbox();
+  });
+});
+</script>
 </body>
 </html>
