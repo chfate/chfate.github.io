@@ -10,167 +10,62 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="../style.css"/>
   <link rel="stylesheet" href="../project-page.css"/>
+  
   <style>
-.project-hero-content {
-  padding-top: 200px;
-}
-
-.project-hero {
-  position: relative;
-  background: url('../images/logo3.jpg') center center / cover no-repeat;
-  min-height: 80vh;
-}
-
-.project-hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.25) 0%,
-    rgba(0, 0, 0, 0.65) 50%,
-    rgba(0, 0, 0, 0.80) 100%
-  );
-  z-index: 1;
-}
-
-.project-hero-content {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  color: #ffffff;
-  text-shadow: 
-    0 2px 5px rgba(0,0,0,0.7),
-    0 4px 12px rgba(0,0,0,0.5);
-}
-
-.project-hero-content h1 {
-  font-size: 4.2rem;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  margin-bottom: 0.8rem;
-  text-shadow: 
-    0 3px 10px rgba(0,0,0,0.8),
-    0 6px 20px rgba(0,0,0,0.6);
-}
-
-.project-tagline {
-  font-size: 1.55rem;
-  font-weight: 500;
-  margin-bottom: 2.2rem;
-  opacity: 1;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.9);
-}
-
-.project-meta {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.5rem 2.2rem;
-  font-size: 1.1rem;
-  font-weight: 500;
-}
-
-.project-meta span {
-  /* Τίποτα εδώ πια — γυρίσαμε όπως ήταν πριν, χωρίς κουτάκια */
-  text-shadow: 0 1px 4px rgba(0,0,0,0.6);
-}
-
-    .task-separator {
-      margin: 6rem 0 4rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    .project-hero-content { padding-top: 200px; }
+    .project-hero {
+      position: relative;
+      background: url('../images/logo3.jpg') center center / cover no-repeat;
+      min-height: 80vh;
     }
-    .task-label {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      color: var(--text-muted);
-      margin-bottom: 0.6rem;
-    }
-    .task-heading {
-      font-size: 1.6rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
-    }
-.lightbox {
-  display: none;
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  background-color: rgba(0, 0, 0, 0.95);
-  align-items: center;
-  justify-content: center;
-  padding: 60px 20px;
-  box-sizing: border-box;
-}
-
-.lightbox.active {
-  display: flex;
-}
-
-.lightbox-content {
-  max-width: 90%;
-  max-height: 85vh;
-  object-fit: contain;
-  border-radius: 8px;
-}
-
-.lightbox-close {
-  position: absolute;
-  top: 25px;
-  right: 40px;
-  color: white;
-  font-size: 48px;
-  font-weight: 300;
-  cursor: pointer;
-  user-select: none;
-}
-    /* ---------- LIGHTBOX ---------- */
-    .gallery-grid img {
-      cursor: pointer;
-      transition: transform 0.3s ease;
-    }
-    .gallery-grid img:hover {
-      transform: scale(1.02);
-    }
-    .lightbox {
-      display: none;
-      position: fixed;
-      z-index: 9999;
-      padding-top: 60px;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.95);
-    }
-    .lightbox-content {
-      margin: auto;
-      display: block;
-      max-width: 90%;
-      max-height: 85%;
-      border-radius: 8px;
-    }
-    .lightbox-close {
+    .project-hero-overlay {
       position: absolute;
-      top: 25px;
-      right: 40px;
-      color: #fff;
-      font-size: 40px;
-      font-weight: 300;
-      cursor: pointer;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.65) 50%, rgba(0,0,0,0.80) 100%);
+      z-index: 1;
     }
-  </style>
+    .project-hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      color: #ffffff;
+      text-shadow: 0 2px 5px rgba(0,0,0,0.7), 0 4px 12px rgba(0,0,0,0.5);
+    }
+    .project-hero-content h1 {
+      font-size: 4.2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.8rem;
+    }
+    .project-tagline {
+      font-size: 1.55rem;
+      font-weight: 500;
+      margin-bottom: 2.2rem;
+      opacity: 1;
+    }
+    .project-meta {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem 2.2rem;
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+
+      </style>
 </head>
 <body class="project-page">
+
 <a href="../index.html#mods" class="back-link">
   <span class="back-arrow">←</span>
   <span>Back to Portfolio</span>
 </a>
+
 <header class="project-hero">
   <div class="project-hero-overlay"></div>
   <div class="project-hero-content">
     <h1>Witcher III: Revenge Of Ofir</h1>
-    <p class="project-tagline">A Large Scale Fan Expansion Mod in The Witcher III </p>
+    <p class="project-tagline">A Large Scale Fan Expansion Mod in The Witcher III</p>
     <div class="project-meta">
       <span>Team Project</span>
       <span>25 Developers</span>
@@ -180,80 +75,79 @@
   </div>
 </header>
 
-<!-- το υπόλοιπο περιεχόμενο παραμένει ακριβώς ίδιο όπως το είχες -->
-
 <main class="project-content">
-<!-- ================= OVERVIEW ================= -->
-<section class="project-section fade-in">
-  <h2>Overview</h2>
-  <p>
-    Witcher III: Revenge of Ofir is an ambitious fan made expansion that transports players to the mysterious eastern empire of Ofir. This complete overhaul delivers a brand new experience, featuring an entirely new explorable region, original quests, new characters, expanded systems, and deeply integrated rich lore.
-  </p>
-</section>
-<!-- ================= MY ROLE ================= -->
-<section class="project-section fade-in">
-  <h2>My Role</h2>
-  <p>
-    I'm working as a <strong>Level Designer</strong> within a 25 member team.
-    My main responsibilities involve creating POIs, implementing them in the engine and assisting with worldbuilding, focusing on how different areas connect seamlessly and how players are naturally guided through the open world.
-  </p>
-  <ul class="takeaways-list">
-    <li>Designing and implementing level layouts directly inside the engine</li>
-    <li>Researching existing Witcher lore and real world references to ensure environmental authenticity and narrative consistency</li>
-    <li>Documenting and presenting design decisions clearly within the team environment</li>
-  </ul>
-  <p style="margin-top:1.5rem; font-style:italic; opacity:0.9;">
-  
-<!-- ================= CONTRIBUTIONS ================= -->
-<section class="project-section fade-in">
-  <h2>Contributions So Far</h2>
-<p style="margin-top:1.5rem; font-style:italic; opacity:0.9;">
-    The sections below showcase the design tasks I was directly responsible for.
-  </p>
-  <!-- ================= TASK 01 ================= -->
-  <div style="margin-top:2.5rem;">
-    <div class="task-label">Task 01</div>
-    <h3 class="task-heading">Abandoned Village – Point of Interest (POI)</h3>
+
+  <!-- ================= OVERVIEW ================= -->
+  <section class="project-section fade-in">
+    <h2>Overview</h2>
     <p>
-      One of my assigned tasks was to design an Abandoned Village Point of Interest (POI). Just like in The Witcher 3, when Geralt defeats the monsters, the village gets liberated and repopulates with civillians.
-      I began by asking key questions to define the level’s core characteristics and narrative context.
-      After defining the core level characteristics and asking the right narrative questions,
-      I established the village as a small trade settlement that was suddenly attacked by ghouls,
-      forcing its inhabitants to flee and leaving the settlement abandoned.</p>
-    <h4 style="margin-top:1.5rem;">Design Intent</h4>
+      Witcher III: Revenge of Ofir is an ambitious fan made expansion that transports players to the mysterious eastern empire of Ofir. This complete overhaul delivers a brand new experience, featuring an entirely new explorable region, original quests, new characters, expanded systems, and deeply integrated rich lore.
+    </p>
+  </section>
+
+  <!-- ================= MY ROLE ================= -->
+  <section class="project-section fade-in">
+    <h2>My Role</h2>
+    <p>
+      I'm working as a <strong>Level Designer</strong> within a 25 member team. 
+      My main responsibilities involve creating POIs, implementing them in the engine and assisting with worldbuilding, focusing on how different areas connect seamlessly and how players are naturally guided through the open world.
+    </p>
     <ul class="takeaways-list">
-      <li>Design a main combat arena</li>
-      <li>Communicate abandonment through environmental storytelling</li>
-      <li>Player agency on how they approach this POI.</li>
-      <li>Guide player using leading lines and visuals</li>
+      <li>Designing and implementing level layouts directly inside the engine</li>
+      <li>Researching existing Witcher lore and real world references to ensure environmental authenticity and narrative consistency</li>
+      <li>Documenting and presenting design decisions clearly within the team environment</li>
     </ul>
-    <h4 style="margin-top:1.5rem;">Design Solutions</h4>
-    <ul class="takeaways-list">
-      <li>Dried vegetation and dead trees to reinforce decay</li>
-      <li>Half buried wagons placed as breadcrumbing elements</li>
-      <li>Half buried houses to enhance abandonment</li>
-      <li>Central well used as a visual anchor</li>
-      <li>Prop placement to imply former trade activity</li>
-      <li>Used crows as a visual anchor to attract the player from afar</li>
- <img src="../images/topdown.jpg" alt="Abandoned Village final 1" loading="lazy"/>
-    </ul>
-    <h4 style="margin-top:2rem;">Intended Final Player Experience</h4>
-    <ul class="takeaways-list">
-      <li>
-        When entering the village, the player was meant to feel a sense of unease and aftermath.
-        The space should communicate that something violent happened recently, but without explicitly showing the event itself.
-       
-      </li>
-    </ul>
-    <h4 style="margin-top:3rem;">Final Result</h4>
-    <div class="gallery-grid" style="margin-top:1.5rem;">
-      <img src="../images/ofir1.jpg" alt="Abandoned Village final 1" loading="lazy"/>
-      <img src="../images/ofir2.jpg" alt="Abandoned Village final 2" loading="lazy"/>
-      <img src="../images/c.jpg" alt="Abandoned Village final 3" loading="lazy"/>
-      <img src="../images/f.jpg" alt="Abandoned Village final 6" loading="lazy"/>
-      <img src="../images/ofir7.jpg" alt="Abandoned Village final 6" loading="lazy"/>
-    </div>
-  </div>
+  </section>
+
+  <!-- ================= CONTRIBUTIONS ================= -->
+  <section class="project-section fade-in">
+    <h2>Contributions So Far</h2>
+    <p style="margin-top:1.5rem; font-style:italic; opacity:0.9;">
+      The sections below showcase the design tasks I was directly responsible for.
+    </p>
+
+    <!-- ================= TASK 01 ================= -->
+    <div style="margin-top:2.5rem;">
+      <div class="task-label">Task 01</div>
+      <h3 class="task-heading">Abandoned Village – Point of Interest (POI)</h3>
+      <p>
+        One of my assigned tasks was to design an Abandoned Village Point of Interest (POI). Just like in The Witcher 3, when Geralt defeats the monsters, the village gets liberated and repopulates with civillians.
+        I began by asking key questions to define the level’s core characteristics and narrative context...
+      </p>
+
+      <h4 style="margin-top:1.5rem;">Design Intent</h4>
+      <ul class="takeaways-list">
+        <li>Design a main combat arena</li>
+        <li>Communicate abandonment through environmental storytelling</li>
+        <li>Player agency on how they approach this POI.</li>
+        <li>Guide player using leading lines and visuals</li>
+      </ul>
+
+      <h4 style="margin-top:1.5rem;">Design Solutions</h4>
+      <ul class="takeaways-list">
+        <li>Dried vegetation and dead trees to reinforce decay</li>
+        <li>Half buried wagons placed as breadcrumbing elements</li>
+        <li>Half buried houses to enhance abandonment</li>
+        <li>Central well used as a visual anchor</li>
+        <li>Prop placement to imply former trade activity</li>
+        <li>Used crows as a visual anchor to attract the player from afar</li>
+      </ul>
+
+      <h4 style="margin-top:2rem;">Intended Final Player Experience</h4>
+      <ul class="takeaways-list">
+        <li>When entering the village, the player was meant to feel a sense of unease and aftermath...</li>
+      </ul>
+
+      <h4 style="margin-top:3rem;">Final Result</h4>
+      <div class="gallery-grid" style="margin-top:1.5rem;">
+        <img src="../images/ofir1.jpg" alt="Abandoned Village final 1" loading="lazy"/>
+        <img src="../images/ofir2.jpg" alt="Abandoned Village final 2" loading="lazy"/>
+        <img src="../images/c.jpg" alt="Abandoned Village final 3" loading="lazy"/>
+        <img src="../images/f.jpg" alt="Abandoned Village final 6" loading="lazy"/>
+        <img src="../images/ofir7.jpg" alt="Abandoned Village final 6" loading="lazy"/>
+      </div>
+
+   
   <!-- ================= SEPARATOR ================= -->
   <div class="task-separator"></div>
   <!-- ================= TASK 02 ================= -->
@@ -361,6 +255,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.key === "Escape") closeLightbox();
   });
 });
+
+  // Αρχική θέση στο 50%
+  setTimeout(() => {
+    moveSlider(container.getBoundingClientRect().left + container.offsetWidth / 2);
+  }, 300);
+}});
 </script>
 </body>
 </html>
