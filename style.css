@@ -160,9 +160,10 @@ img, video {
 }
 
 .hero-tagline {
-  font-size: 1.2rem;
-  color: var(--text-secondary);
-  font-weight: 700;   /* ✅ bold */
+  font-size: clamp(1.4rem, 2.5vw, 1.8rem);  /* ✅ πιο μεγάλο */
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-top: 0.8rem;
 }
 
 .hero-icons {
