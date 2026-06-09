@@ -1,30 +1,34 @@
 /* ============================================
    CHRISTOS MOIRAS — PORTFOLIO SCRIPTS
    ============================================ */
+
 document.addEventListener('DOMContentLoaded', () => {
-  // ===== 1. SCROLL FADE-IN (Intersection Observer) =====
+
+  // ===== 1. SCROLL FADE-IN =====
   const fadeElements = document.querySelectorAll('.fade-in');
+
   if (fadeElements.length > 0 && 'IntersectionObserver' in window) {
     const fadeObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
-          fadeObserver.unobserve(entry.target); // animate once
+          fadeObserver.unobserve(entry.target);
         }
       });
     }, {
       threshold: 0.1,
       rootMargin: '0px 0px -50px 0px'
     });
+
     fadeElements.forEach(el => fadeObserver.observe(el));
   } else {
-    // Fallback: show everything if no IntersectionObserver
     fadeElements.forEach(el => el.classList.add('visible'));
   }
 
-  // ===== 2. MOBILE MENU TOGGLE =====
+  // ===== 2. MOBILE MENU =====
   const navToggle = document.querySelector('.nav-toggle');
   const navLinks = document.querySelector('.nav-links');
+
   if (navToggle && navLinks) {
     navToggle.addEventListener('click', () => {
       const isOpen = navLinks.classList.toggle('active');
@@ -33,7 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
       document.body.classList.toggle('menu-open', isOpen);
     });
 
-    // Close menu when clicking a nav link
     navLinks.querySelectorAll('.nav-link').forEach(link => {
       link.addEventListener('click', () => {
         navLinks.classList.remove('active');
@@ -43,7 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    // Close menu on Escape key
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && navLinks.classList.contains('active')) {
         navLinks.classList.remove('active');
@@ -57,6 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ===== 3. NAV BACKGROUND ON SCROLL =====
   const nav = document.querySelector('.main-nav');
+
   if (nav) {
     const updateNav = () => {
       if (window.scrollY > 50) {
@@ -65,11 +68,12 @@ document.addEventListener('DOMContentLoaded', () => {
         nav.classList.remove('scrolled');
       }
     };
+
     window.addEventListener('scroll', updateNav, { passive: true });
-    updateNav(); // run on load
+    updateNav();
   }
 
-  // ===== 4. ACTIVE NAV LINK ON SCROLL + CLICK =====
+  // ===== 4. ACTIVE NAV LINK =====
   const sections = document.querySelectorAll('section[id]');
   const allNavLinks = document.querySelectorAll('.nav-link[href^="#"]');
 
@@ -91,7 +95,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
 
-      // Τέλος σελίδας → Contact active
       if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 180) {
         currentSection = 'contact';
       }
@@ -104,10 +107,8 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     };
 
-    // Μόνο ένας scroll listener
     window.addEventListener('scroll', updateActiveLink, { passive: true });
 
-    // Click → άμεσο active + flag προστασίας + αφαίρεση από logo
     allNavLinks.forEach(link => {
       link.addEventListener('click', () => {
         if (!link.getAttribute('href').startsWith('#')) return;
@@ -116,73 +117,49 @@ document.addEventListener('DOMContentLoaded', () => {
         allNavLinks.forEach(l => l.classList.remove('active'));
         link.classList.add('active');
 
-        // Αφαίρεσε active από logo όταν πατάς section
-        const navLogo = document.querySelector('.nav-logo');
-        if (navLogo) {
-          navLogo.classList.remove('active');
-        }
-
         setTimeout(() => {
           isScrollingFromClick = false;
           updateActiveLink();
-        }, 800); // χρόνος smooth scroll
+        }, 800);
       });
     });
 
-    // Αρχική εκτέλεση
     updateActiveLink();
   }
 
-  // ===== ΝΕΑ: Logo active ΜΟΝΟ όταν είμαστε στην κορυφή / χωρίς hash =====
-  const updateLogoActive = () => {
-    const navLogo = document.querySelector('.nav-logo');
-    if (!navLogo) return;
-
-    // Ενεργό όταν:
-    // - Δεν υπάρχει hash (δεν είμαστε σε section)
-    // - ΚΑΙ scrollY < 400px (έτσι μένει μπλε ακόμα και με λίγο scroll στο hero)
-    if (!window.location.hash && window.scrollY < 400) {
-      navLogo.classList.add('active');
-    } else {
-      navLogo.classList.remove('active');
-    }
-  };
-
-  // Τρέξε το αρχικά
-  updateLogoActive();
-
-  // Τρέξε το όταν σκρολάρεις ή αλλάζει hash
-  window.addEventListener('scroll', updateLogoActive, { passive: true });
-  window.addEventListener('hashchange', updateLogoActive);
-
-  // ===== 5. VIDEO PERFORMANCE — Pause off-screen videos =====
+  // ===== 5. VIDEO PERFORMANCE =====
   const videos = document.querySelectorAll('.project-media[autoplay]');
+
   if (videos.length > 0 && 'IntersectionObserver' in window) {
     const videoObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         const video = entry.target;
         if (entry.isIntersecting) {
-          video.play().catch(() => {}); // catch autoplay errors silently
+          video.play().catch(() => {});
         } else {
           video.pause();
         }
       });
-    }, {
-      threshold: 0.25
-    });
+    }, { threshold: 0.25 });
+
     videos.forEach(video => videoObserver.observe(video));
   }
 
-  // ===== 6. SMOOTH SCROLL FALLBACK (older browsers) =====
+  // ===== 6. SMOOTH SCROLL =====
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       const targetId = this.getAttribute('href');
       if (targetId === '#') return;
+
       const target = document.querySelector(targetId);
       if (target) {
         e.preventDefault();
-        const navHeight = parseInt(getComputedStyle(document.documentElement)
-          .getPropertyValue('--nav-height')) || 64;
+
+        const navHeight = parseInt(
+          getComputedStyle(document.documentElement)
+            .getPropertyValue('--nav-height')
+        ) || 64;
+
         window.scrollTo({
           top: target.offsetTop - navHeight,
           behavior: 'smooth'
@@ -190,67 +167,68 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
-});
-// ===== HERO DUST PARTICLES =====
-const canvas = document.getElementById("dustCanvas");
 
-if (canvas) {
-  const ctx = canvas.getContext("2d");
+  // ===== 7. HERO DUST PARTICLES =====
+  const canvas = document.getElementById("dustCanvas");
 
-  let particles = [];
-  const particleCount = 50;
+  if (canvas) {
+    const ctx = canvas.getContext("2d");
+    let particles = [];
+    const particleCount = 50;
 
-  function resizeCanvas() {
-    canvas.width = canvas.offsetWidth;
-    canvas.height = canvas.offsetHeight;
-  }
-
-  window.addEventListener("resize", resizeCanvas);
-  resizeCanvas();
-
-  class Particle {
-    constructor() {
-      this.reset();
+    function resizeCanvas() {
+      canvas.width = canvas.offsetWidth;
+      canvas.height = canvas.offsetHeight;
     }
 
-    reset() {
-      this.x = Math.random() * canvas.width;
-      this.y = Math.random() * canvas.height;
-      this.size = Math.random() * 2 + 0.5;
-      this.speedY = Math.random() * 0.3 + 0.1;
-      this.opacity = Math.random() * 0.4 + 0.1;
-    }
+    window.addEventListener("resize", resizeCanvas);
+    resizeCanvas();
 
-    update() {
-      this.y -= this.speedY;
-      if (this.y < 0) {
-        this.y = canvas.height;
+    class Particle {
+      constructor() {
+        this.reset();
+      }
+
+      reset() {
         this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 2 + 0.5;
+        this.speedY = Math.random() * 0.3 + 0.1;
+        this.opacity = Math.random() * 0.4 + 0.1;
+      }
+
+      update() {
+        this.y -= this.speedY;
+        if (this.y < 0) {
+          this.y = canvas.height;
+          this.x = Math.random() * canvas.width;
+        }
+      }
+
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255,255,255,${this.opacity})`;
+        ctx.fill();
       }
     }
 
-    draw() {
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(255,255,255,${this.opacity})`;
-      ctx.fill();
+    for (let i = 0; i < particleCount; i++) {
+      particles.push(new Particle());
     }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      particles.forEach(p => {
+        p.update();
+        p.draw();
+      });
+
+      requestAnimationFrame(animate);
+    }
+
+    animate();
   }
 
-  for (let i = 0; i < particleCount; i++) {
-    particles.push(new Particle());
-  }
-
-  function animate() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    particles.forEach(p => {
-      p.update();
-      p.draw();
-    });
-
-    requestAnimationFrame(animate);
-  }
-
-  animate();
-}
+});
