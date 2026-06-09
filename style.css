@@ -162,6 +162,7 @@ img, video {
 .hero-tagline {
   font-size: 1.2rem;
   color: var(--text-secondary);
+  font-weight: 700;   /* ✅ bold */
 }
 
 .hero-icons {
