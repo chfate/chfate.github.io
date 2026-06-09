@@ -978,8 +978,6 @@ a.project-item:hover .project-media {
 }
 
 /* Move hero subtitle & CTA lower */
-.hero-content {
-  margin-top: 90px;
 }
 .nav-link.active::after {
   width: 100% !important;
