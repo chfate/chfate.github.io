@@ -3,21 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Lab Run — A 4-week Unity school project focused on fast-paced arcade gameplay. By Christos Moiras."/>
+  <meta name="description" content="Lab Run — A 4-week Unity project focused on fast-paced arcade gameplay. By Christos Moiras."/>
 
   <title>Lab Run | Christos Moiras</title>
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 
-  <!-- Global Styles -->
   <link rel="stylesheet" href="../style.css"/>
   <link rel="stylesheet" href="../project-page.css"/>
 
   <style>
-    /* LIGHTBOX */
+    /* ===== LIGHTBOX ===== */
 
     .gallery-grid img {
       cursor: pointer;
@@ -29,20 +27,20 @@
     }
 
     .lightbox {
-      display: none;
       position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.95);
+      display: none;
+      align-items: center;
+      justify-content: center;
       z-index: 9999;
-      padding-top: 60px;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.95);
+    }
+
+    .lightbox.active {
+      display: flex;
     }
 
     .lightbox-content {
-      margin: auto;
-      display: block;
       max-width: 90%;
       max-height: 85%;
       border-radius: 8px;
@@ -52,191 +50,174 @@
       position: absolute;
       top: 25px;
       right: 40px;
-      color: #fff;
       font-size: 40px;
       font-weight: 300;
+      color: #fff;
       cursor: pointer;
+    }
+
+    .project-links {
+      padding-top: 60px;
+      padding-bottom: 0;
+      text-align: center;
+    }
+
+    .links-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
     }
   </style>
 </head>
 
 <body class="project-page">
 
-  <!-- ===== BACK LINK ===== -->
-  <a href="../index.html#games" class="back-link">
-    <span class="back-arrow">←</span>
-    <span>Back to Portfolio</span>
-  </a>
+<a href="../index.html#work" class="back-link">
+  <span class="back-arrow">←</span>
+  <span>Back to Portfolio</span>
+</a>
 
-  <!-- ================= HERO ================= -->
-  <header class="project-hero">
-    <video class="project-hero-video" autoplay muted loop playsinline>
-      <source src="../videos/labrun.mp4" type="video/mp4"/>
-    </video>
+<header class="project-hero">
+  <video class="project-hero-video" autoplay muted loop playsinline>
+    <source src="../videos/labrun.mp4" type="video/mp4"/>
+  </video>
 
-    <div class="project-hero-overlay"></div>
+  <div class="project-hero-overlay"></div>
 
-    <div class="project-hero-content">
-      <h1>Lab Run</h1>
-      <p class="project-tagline">2D Mobile Endless Runner</p>
+  <div class="project-hero-content">
+    <h1>Lab Run</h1>
+    <p class="project-tagline">2D Mobile Endless Runner</p>
 
-      <div class="project-meta">
-        <span>School Project</span>
-        <span>4 Weeks</span>
-        <span>Unity</span>
-      </div>
+    <div class="project-meta">
+      <span>School Project</span>
+      <span>4 Weeks</span>
+      <span>Unity</span>
     </div>
-  </header>
+  </div>
+</header>
 
-  <!-- ✅ BUTTONS MOVED HERE -->
-  <section class="project-section project-links fade-in" style="padding-top: 60px; padding-bottom: 0;">
-    <div class="links-buttons">
+<section class="project-section project-links fade-in">
+  <div class="links-buttons">
+    <a href="https://futuregames.itch.io/projecttrash"
+       target="_blank"
+       class="btn btn-primary">
+       🎮 Play on itch.io
+    </a>
 
-      <a href="https://futuregames.itch.io/projecttrash"
-         target="_blank"
-         rel="noopener noreferrer"
-         class="btn btn-primary">
-         🎮 Play on itch.io
-      </a>
+    <a href="https://www.youtube.com/watch?v=DhRqxG2k_oM"
+       target="_blank"
+       class="btn btn-secondary">
+       ▶ Watch Trailer
+    </a>
+  </div>
+</section>
 
-      <a href="https://www.youtube.com/watch?v=DhRqxG2k_oM"
-         target="_blank"
-         rel="noopener noreferrer"
-         class="btn btn-secondary">
-         ▶ Watch Trailer
-      </a>
+<main class="project-content">
 
-    </div>
-  </section>
+<section class="project-section fade-in">
+  <h2>Overview</h2>
 
-  <!-- ================= MAIN ================= -->
-  <main class="project-content">
+  <p>
+    Lab Run is a 2D endless runner mobile game developed in Unity during a 4-week school production cycle.
+  </p>
 
-    <!-- ===== OVERVIEW ===== -->
-    <section class="project-section fade-in">
-      <h2>Overview</h2>
+  <ul class="takeaways-list">
+    <li><strong>3 Unique Biomes</strong> with distinct visuals and obstacles</li>
+    <li><strong>Animal Fusion System</strong> combining abilities for strategic variation</li>
+    <li><strong>Procedural Obstacles</strong> ensuring dynamic replayability</li>
+    <li><strong>Upgradeable Skill Tree</strong> driven by collectible currency</li>
+  </ul>
+</section>
 
-      <p>
-        Lab Run is a 2D endless runner mobile game developed in Unity during a 4 week school project.
-      </p>
+<section class="project-section fade-in">
+  <h2>My Contribution</h2>
 
-      <p><strong>What's special:</strong></p>
+  <ul class="takeaways-list">
+    <li><strong>Gameplay Prototyping:</strong> Implemented core mechanics and validated early gameplay feel</li>
+    <li><strong>Level Design:</strong> Designed progression pacing and obstacle composition</li>
+    <li><strong>Lighting & Post-Processing:</strong> Enhanced clarity and atmosphere</li>
+    <li><strong>Documentation:</strong> Contributed to structured GDD communication</li>
+    <li><strong>FMOD Integration:</strong> Assisted with sound implementation</li>
+  </ul>
 
-      <ul class="takeaways-list">
-        <li>3 Unique Biomes – Each with distinct visuals & obstacles</li>
-        <li>Animal Fusion System – Mix 2 animals for game-changing abilities</li>
-        <li>Procedural Obstacles – Never the same run twice</li>
-        <li>Collect Coins and Progress the Skill Tree – Upgrade the animals</li>
-      </ul>
-
-    </section>
-
-    <!-- ===== MY ROLE ===== -->
-    <section class="project-section fade-in">
-      <h2>My Role</h2>
-
-      <p>
-        In this project, I was a Game Designer and primarily responsible for:
-      </p>
-
-      <ul class="takeaways-list">
-        <li><strong>Prototyping:</strong> Implemented the core game mechanics and allowed the team to gain an early understanding of the game's overall look and feel.</li>
-        <li><strong>Level Design:</strong> Responsible for creating the different levels in the game.</li>
-        <li><strong>Lighting:</strong> Added lighting and post process effects to bring the levels to life.</li>
-        <li><strong>Documentation:</strong> Helped shape the GDD for clear communication within the team.</li>
-        <li><strong>Sound Implementation:</strong> Integrated FMOD and contributed to sound effects implementation.</li>
-      </ul>
-
-      <h3 class="sub-gallery-title">Production</h3>
-      <div class="gallery-grid stage-group">
-        <img src="../images/L1.jpg" alt="Early prototype layout" loading="lazy"/>
-        <img src="../images/L2.jpg" alt="Mid production iteration" loading="lazy"/>
-        <img src="../images/L3.jpg" alt="Gameplay refinement phase" loading="lazy"/>
-      </div>
-
-      <h3 class="sub-gallery-title" style="margin-top:3rem;">Final Product</h3>
-      <div class="gallery-grid stage-group">
-        <img src="../images/L4.jpg" alt="Final environment" loading="lazy"/>
-        <img src="../images/L5.jpg" alt="Final gameplay look" loading="lazy"/>
-      </div>
-
-    </section>
-
-    <!-- ===== CONCLUSION ===== -->
-    <section class="project-section fade-in">
-      <h2>Reflection</h2>
-
-      <p>
-        This project taught me how important it is to stick to deadlines and keep production on track.
-As a team, we struggled to meet our milestones which caused us to fall behind schedule. This experience gave me valuable insight into why staying on timeline matters and the consequences both for the project and the team when deadlines are missed.
-      </p>
-
-      <p>
-        It also taught me the value of taking initiative and showed me how important it is to be a solid, reliable team member.
-      </p>
-
-      <p>
-        Overall, this project showed me how to step up when needed, why working closely with other departments matters so much, and the real value of sticking to production timelines.
-      </p>
-
-    </section>
-
-  </main>
-
-  <!-- ================= FOOTER ================= -->
-  <footer class="site-footer">
-    <div class="footer-content">
-      <div class="footer-links">
-        <span>📧 chmoiras@hotmail.com</span>	
-        <a href="https://www.linkedin.com/in/christos-moiras" target="_blank">LinkedIn</a>
-      </div>
-      <p class="copyright">© 2026 Christos Moiras</p>
-    </div>
-  </footer>
-
-  <!-- LIGHTBOX -->
-  <div id="lightbox" class="lightbox">
-    <span class="lightbox-close">&times;</span>
-    <img class="lightbox-content" id="lightbox-img">
+  <h3 class="sub-gallery-title">Production Iterations</h3>
+  <div class="gallery-grid">
+    <img src="../images/L1.jpg" alt="Prototype layout" loading="lazy"/>
+    <img src="../images/L2.jpg" alt="Mid production iteration" loading="lazy"/>
+    <img src="../images/L3.jpg" alt="Refinement phase" loading="lazy"/>
   </div>
 
-  <script>
-  document.addEventListener("DOMContentLoaded", function () {
+  <h3 class="sub-gallery-title" style="margin-top:3rem;">Final Product</h3>
+  <div class="gallery-grid">
+    <img src="../images/L4.jpg" alt="Final environment" loading="lazy"/>
+    <img src="../images/L5.jpg" alt="Final gameplay look" loading="lazy"/>
+  </div>
+</section>
 
-    const images = document.querySelectorAll(".gallery-grid img");
-    const lightbox = document.getElementById("lightbox");
-    const lightboxImg = document.getElementById("lightbox-img");
-    const closeBtn = document.querySelector(".lightbox-close");
+<section class="project-section fade-in">
+  <h2>Reflection</h2>
 
-    images.forEach(img => {
-      img.addEventListener("click", function () {
-        lightbox.style.display = "block";
-        lightboxImg.src = this.src;
-      });
-    });
+  <p>
+    This project highlighted the importance of production timelines and milestone discipline. 
+    Falling behind schedule demonstrated how quickly team momentum can shift when delivery goals are missed.
+  </p>
 
-    closeBtn.addEventListener("click", function () {
-      lightbox.style.display = "none";
-    });
+  <p>
+    It reinforced the importance of initiative, cross-discipline communication, and reliable contribution within a team environment.
+  </p>
+</section>
 
-    lightbox.addEventListener("click", function (e) {
-      if (e.target === lightbox) {
-        lightbox.style.display = "none";
-      }
-    });
+</main>
 
-    document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape") {
-        lightbox.style.display = "none";
-      }
-    });
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-links">
+      <span>📧 chmoiras@hotmail.com</span>	
+      <a href="https://www.linkedin.com/in/christos-moiras" target="_blank">LinkedIn</a>
+    </div>
+    <p class="copyright">© 2026 Christos Moiras</p>
+  </div>
+</footer>
 
-  });
-  </script>
+<!-- LIGHTBOX -->
+<div id="lightbox" class="lightbox">
+  <span class="lightbox-close">&times;</span>
+  <img class="lightbox-content" id="lightbox-img">
+</div>
+
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-  const elements = document.querySelectorAll('.fade-in');
+document.addEventListener("DOMContentLoaded", () => {
 
+  // ===== LIGHTBOX =====
+  const images = document.querySelectorAll(".gallery-grid img");
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+  const closeBtn = document.querySelector(".lightbox-close");
+
+  images.forEach(img => {
+    img.addEventListener("click", () => {
+      lightbox.classList.add("active");
+      lightboxImg.src = img.src;
+    });
+  });
+
+  const closeLightbox = () => {
+    lightbox.classList.remove("active");
+  };
+
+  closeBtn.addEventListener("click", closeLightbox);
+
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeLightbox();
+  });
+
+  // ===== FADE IN =====
+  const elements = document.querySelectorAll('.fade-in');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -249,5 +230,6 @@ document.addEventListener('DOMContentLoaded', () => {
   elements.forEach(el => observer.observe(el));
 });
 </script>
+
 </body>
 </html>

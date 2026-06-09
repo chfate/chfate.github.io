@@ -1,5 +1,5 @@
 /* ============================================
-   CHRISTOS MOIRAS — MINIMAL PORTFOLIO
+   CHRISTOS MOIRAS — CLEAN PORTFOLIO
    ============================================ */
 
 :root {
@@ -37,7 +37,7 @@ body {
   font-family: var(--font);
   background: var(--bg-primary);
   color: var(--text-primary);
-  line-height: 1.6;
+  line-height: 1.7;
   overflow-x: hidden;
 }
 
@@ -136,6 +136,7 @@ img, video {
   justify-content: center;
   position: relative;
   overflow: hidden;
+  text-align: center;
 }
 
 #dustCanvas {
@@ -148,7 +149,6 @@ img, video {
 .hero-content {
   position: relative;
   z-index: 2;
-  text-align: center;
 }
 
 .hero h1 {
@@ -187,12 +187,23 @@ img, video {
 
 section {
   padding: var(--section-padding);
+}
+
+/* ✅ IMPORTANT: Remove global centering */
+section:not(.hero) {
+  text-align: left;
+}
+
+/* ===== HOMEPAGE WORK SECTION ===== */
+
+#work {
   text-align: center;
 }
 
 .section-title {
   font-size: clamp(2rem, 4vw, 2.6rem);
   margin-bottom: 2rem;
+  text-align: center;
 }
 
 /* ===== PROJECT GRID ===== */
@@ -245,11 +256,32 @@ section {
   color: var(--text-muted);
 }
 
-/* ===== ABOUT ===== */
+/* ===== PROJECT PAGE CONTENT FIX ===== */
 
-#about p {
-  max-width: 700px;
+.project-content {
+  max-width: 900px;
   margin: 0 auto;
+}
+
+.project-section {
+  margin-bottom: 3.5rem;
+}
+
+.project-section h2 {
+  margin-bottom: 1.5rem;
+}
+
+.project-section p {
+  margin-bottom: 1.2rem;
+  color: var(--text-secondary);
+}
+
+.takeaways-list {
+  margin: 1.2rem 0 0 1.2rem;
+}
+
+.takeaways-list li {
+  margin-bottom: 0.8rem;
   color: var(--text-secondary);
 }
 
@@ -295,7 +327,7 @@ section {
     height: 70vh;
   }
 
-  .nav-links {
-    gap: 1.2rem;
+  .project-content {
+    padding: 0 1rem;
   }
 }
