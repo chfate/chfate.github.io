@@ -404,3 +404,7 @@ section:not(.hero) {
   font-size: 1.1rem;
   line-height: 1.8;
 }
+/* Reduce spacing under hero */
+#work {
+  padding-top: 1px;
+}
