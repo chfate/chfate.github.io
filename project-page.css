@@ -306,3 +306,46 @@
   backdrop-filter: blur(6px);
   color: #fff;
 }
+/* ===== PROJECT CTA BUTTONS ===== */
+
+.project-links {
+  padding-top: 60px;
+  padding-bottom: 0;
+  text-align: center;
+}
+
+.links-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn {
+  padding: 12px 26px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #000;
+}
+
+.btn-primary:hover {
+  background: #7dc0ff;
+  transform: translateY(-3px);
+}
+
+.btn-secondary {
+  background: rgba(255,255,255,0.08);
+  color: var(--text-primary);
+}
+
+.btn-secondary:hover {
+  background: rgba(255,255,255,0.18);
+  transform: translateY(-3px);
+}
