@@ -410,3 +410,16 @@ section:not(.hero) {
 #work {
   padding-top: 1px;
 }
+/* ===== ABOUT SECTION IMPROVEMENT ===== */
+
+#about {
+  text-align: center; /* κρατάμε τον τίτλο centered */
+}
+
+#about p {
+  max-width: 720px;      /* ✅ compact width */
+  margin: 0 auto;        /* ✅ κεντραρισμένο */
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
