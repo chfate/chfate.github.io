@@ -1,5 +1,5 @@
 /* ============================================
-   PROJECT PAGE — STABLE POLISHED LAYOUT
+   PROJECT PAGE — CLEAN & FIXED VERSION
    ============================================ */
 
 /* ===== HERO ===== */
@@ -7,13 +7,14 @@
 .project-hero {
   position: relative;
   min-height: 80vh;
-  
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   overflow: hidden;
 }
+
+.project-hero-video,
 .project-hero-img {
   position: absolute;
   inset: 0;
@@ -42,6 +43,7 @@
   max-width: 900px;
   padding: 0 2rem;
 }
+
 .project-hero-content h1 {
   font-size: clamp(2.8rem, 6vw, 4rem);
   margin-bottom: 1rem;
@@ -66,29 +68,21 @@
   font-size: 0.9rem;
   padding: 0.5rem 1.2rem;
   border-radius: 50px;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0,0,0,0.65);
   backdrop-filter: blur(6px);
   color: #fff;
 }
+
 /* ===== CONTENT WRAPPER ===== */
 
 .project-content {
-  max-width: 1100px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 5rem 5%;
 }
 
 .project-section {
   margin-bottom: 4rem;
-}
-
-.project-section > h2,
-.project-section > p,
-.project-section > ul,
-.project-section > h3 {
-  max-width: 850px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .project-section h2 {
@@ -146,17 +140,14 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   margin-top: 2.5rem;
-  max-width: 1100px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .gallery-grid img {
   width: 100%;
   height: auto;
   border-radius: var(--radius);
-  transition: transform 0.3s ease;
   cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
 .gallery-grid img:hover {
@@ -167,6 +158,24 @@
   .gallery-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* ===== TOPDOWN STACK FIX ===== */
+
+.topdown-stack {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.topdown-stack img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
 }
 
 /* ===== BEFORE / AFTER ===== */
@@ -223,26 +232,25 @@
   pointer-events: none;
 }
 
-/* ===== LIGHTBOX (FIXED) ===== */
+/* ===== LIGHTBOX ===== */
 
 .lightbox {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.95);
-  display: none;              /* ✅ important */
+  background: rgba(0,0,0,0.95);
+  display: none;
   align-items: center;
   justify-content: center;
   z-index: 9999;
 }
 
 .lightbox.active {
-  display: flex;              /* ✅ shows overlay */
+  display: flex;
 }
 
 .lightbox img {
   max-width: 90%;
   max-height: 85%;
-  object-fit: contain;
   border-radius: 8px;
 }
 
@@ -251,13 +259,8 @@
   top: 25px;
   right: 35px;
   font-size: 40px;
-  color: #ffffff;
+  color: #fff;
   cursor: pointer;
-  transition: opacity 0.2s ease;
-}
-
-.lightbox-close:hover {
-  opacity: 0.6;
 }
 
 /* ===== RESPONSIVE ===== */
@@ -273,40 +276,7 @@
   }
 
 }
-/* ✅ FIX: Ensure slider does not block clicks below */
-
-.before-after-slider {
-  position: relative;
-  z-index: 1;
-}
-
-.project-section {
-  position: relative;
-  z-index: 2;
-}
-/* ===== TOPDOWN IMAGE ===== */
-
-.topdown-image {
-  margin: 2.5rem auto 3rem;
-  max-width: 900px;
-}
-
-.topdown-image img {
-  width: 100%;
-  height: auto;
-  border-radius: var(--radius);
-}
-.project-hero-content h1,
-.project-hero-content p,
-.project-meta span {
-  font-size: 0.9rem;
-  padding: 0.5rem 1.2rem;
-  border-radius: 50px;
-  background: rgba(0,0,0,0.6);
-  backdrop-filter: blur(6px);
-  color: #fff;
-}
-/* ===== PROJECT CTA BUTTONS ===== */
+/* ===== PROJECT CTA BUTTONS FIX ===== */
 
 .project-links {
   padding-top: 60px;
@@ -322,12 +292,14 @@
 }
 
 .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   padding: 12px 26px;
   border-radius: 50px;
   text-decoration: none;
   font-weight: 600;
   transition: all 0.3s ease;
-  display: inline-block;
 }
 
 .btn-primary {
@@ -348,4 +320,10 @@
 .btn-secondary:hover {
   background: rgba(255,255,255,0.18);
   transform: translateY(-3px);
+}
+
+/* Optional: icon size consistency */
+.btn svg {
+  width: 18px;
+  height: 18px;
 }
