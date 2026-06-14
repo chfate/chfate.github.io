@@ -155,15 +155,15 @@ img, video {
 }
 
 .hero h1 {
-  font-size: clamp(2.8rem, 6vw, 4.5rem);
-  margin-bottom: 0.6rem;
+  font-size: clamp(3rem, 6vw, 4.8rem);
+  letter-spacing: -0.03em;
+  line-height: 1.05;
 }
-
 .hero-tagline {
-  font-size: clamp(1.4rem, 2.5vw, 1.8rem);  /* ✅ πιο μεγάλο */
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-top: 0.8rem;
+  font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+  font-weight: 600;
+  margin-top: 1rem;
+  letter-spacing: -0.01em;
 }
 
 .hero-icons {
@@ -202,7 +202,7 @@ section:not(.hero) {
 /* ===== HOMEPAGE WORK SECTION ===== */
 
 #work {
-  text-align: center;
+  padding-top: 40px;
 }
 
 .section-title {
@@ -255,6 +255,10 @@ section:not(.hero) {
   font-size: 1.2rem;
   margin-bottom: 0.4rem;
 }
+.project-section + .project-section {
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding-top: 4rem;
+}
 
 .project-info p {
   font-size: 0.9rem;
@@ -269,7 +273,10 @@ section:not(.hero) {
 }
 
 .project-section {
-  margin-bottom: 3.5rem;
+  margin-bottom: 5rem;
+}
+.project-section:not(:first-child) {
+  padding-top: 1rem;
 }
 
 .project-section h2 {
@@ -422,6 +429,9 @@ section:not(.hero) {
   font-size: 1.1rem;
   line-height: 1.8;
   color: var(--text-secondary);
+}
+.gallery-grid img {
+  box-shadow: 0 8px 30px rgba(0,0,0,0.25);
 }
 
 
