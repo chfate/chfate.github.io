@@ -8,46 +8,13 @@
 
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="stylesheet" href="style.css"/>
-
-  <style>
-    .hero {
-      min-height: 60vh;
-      height: 60vh;
-      
-      position: relative;
-    }
-
-   
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      text-align: center;
-    }
-
-    .hero h1 {
-      font-size: clamp(2.8rem, 6vw, 4.5rem);
-    }
-
-    .hero-tagline {
-      font-size: 1.2rem;
-      color: var(--text-secondary);
-      margin-top: 0.8rem;
-    }
-
-    .compact-section {
-      padding: 80px 5%;
-      text-align: center;
-    }
-  </style>
 </head>
 
 <body>
 
 <nav class="main-nav">
   <div class="nav-container">
-    <a href="/" class="nav-logo">Christos Moiras</a>
+    <a href="/" class="nav-logo">Home</a>
     <div class="nav-links">
       <a href="#work" class="nav-link">Work</a>
       <a href="#about" class="nav-link">About</a>
@@ -59,44 +26,51 @@
   <canvas id="dustCanvas"></canvas>
   <div class="hero-content">
     <h1>Christos Moiras</h1>
-    <div class="hero-tagline">
-      LEVEL DESIGNER
-   <div class="hero-icons">
+    <div class="hero-tagline">LEVEL DESIGNER</div>
 
-  <!-- Email -->
-  <a href="mailto:chmoiras@hotmail.com" aria-label="Email">
-    <svg viewBox="0 0 24 24" fill="currentColor">
-      <path d="M12 13.065L.001 4.5A2 2 0 0 1 2 3h20a2 2 0 0 1 1.999 1.5L12 13.065zM0 6.236v13.764A2 2 0 0 0 2 22h20a2 2 0 0 0 2-1.999V6.236l-12 8.565-12-8.565z"/>
-    </svg>
-  </a>
+    <div class="hero-icons">
 
-  <!-- YouTube -->
-  <a href="https://www.youtube.com/@Chris-Fate/videos" target="_blank" aria-label="YouTube">
-    <svg viewBox="0 0 24 24" fill="currentColor">
-      <path d="M23.5 6.2a2.9 2.9 0 0 0-2-2C19.6 3.8 12 3.8 12 3.8s-7.6 0-9.5.4a2.9 2.9 0 0 0-2 2A30 30 0 0 0 0 12a30 30 0 0 0 .5 5.8 2.9 2.9 0 0 0 2 2c1.9.4 9.5.4 9.5.4s7.6 0 9.5-.4a2.9 2.9 0 0 0 2-2A30 30 0 0 0 24 12a30 30 0 0 0-.5-5.8zM9.8 15.5v-7l6 3.5-6 3.5z"/>
-    </svg>
-  </a>
+      <!-- Email -->
+      <a href="mailto:chmoiras@hotmail.com" aria-label="Email">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 13.065L.001 4.5A2 2 0 0 1 2 3h20a2 2 0 0 1 1.999 1.5L12 13.065zM0 6.236v13.764A2 2 0 0 0 2 22h20a2 2 0 0 0 2-1.999V6.236l-12 8.565-12-8.565z"/>
+        </svg>
+      </a>
 
-  <!-- LinkedIn -->
-  <a href="https://www.linkedin.com/in/christos-moiras/" target="_blank" aria-label="LinkedIn">
-    <svg viewBox="0 0 24 24" fill="currentColor">
-      <path d="M4.98 3.5C4.98 4.88 3.88 6 2.49 6 1.1 6 0 4.88 0 3.5 0 2.12 1.1 1 2.49 1c1.39 0 2.49 1.12 2.49 2.5zM.24 8h4.5v16H.24V8zM8.98 8h4.31v2.18h.06c.6-1.14 2.06-2.34 4.25-2.34 4.54 0 5.38 2.99 5.38 6.88V24h-4.5v-7.98c0-1.9-.03-4.35-2.65-4.35-2.65 0-3.05 2.07-3.05 4.21V24h-4.5V8z"/>
-    </svg>
-  </a>
+      <!-- YouTube -->
+      <a href="https://www.youtube.com/@Chris-Fate/videos" target="_blank" aria-label="YouTube">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M23.5 6.2a2.9 2.9 0 0 0-2-2C19.6 3.8 12 3.8 12 3.8s-7.6 0-9.5.4a2.9 2.9 0 0 0-2 2A30 30 0 0 0 0 12a30 30 0 0 0 .5 5.8 2.9 2.9 0 0 0 2 2c1.9.4 9.5.4 9.5.4s7.6 0 9.5-.4a2.9 2.9 0 0 0 2-2A30 30 0 0 0 24 12a30 30 0 0 0-.5-5.8zM9.8 15.5v-7l6 3.5-6 3.5z"/>
+        </svg>
+      </a>
 
-</div>
-</div>
+      <!-- LinkedIn -->
+      <a href="https://www.linkedin.com/in/christos-moiras/" target="_blank" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M4.98 3.5C4.98 4.88 3.88 6 2.49 6 1.1 6 0 4.88 0 3.5 0 2.12 1.1 1 2.49 1c1.39 0 2.49 1.12 2.49 2.5zM.24 8h4.5v16H.24V8zM8.98 8h4.31v2.18h.06c.6-1.14 2.06-2.34 4.25-2.34 4.54 0 5.38 2.99 5.38 6.88V24h-4.5v-7.98c0-1.9-.03-4.35-2.65-4.35-2.65 0-3.05 2.07-3.05 4.21V24h-4.5V8z"/>
+        </svg>
+      </a>
+
+    </div>
+  </div>
 </header>
 
 <main>
 
 <!-- ================= WORK ================= -->
 <section id="work" class="compact-section">
-  <h2 class="section-title">Selected Work</h2>
+
+  <!-- FILTER TABS -->
+  <div class="filter-tabs">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="blockout">Level Blockouts</button>
+    <button class="filter-btn" data-filter="mod">Mods</button>
+    <button class="filter-btn" data-filter="team">Team Projects</button>
+  </div>
 
   <div class="projects-grid">
 
-    <a href="projects/revengeofofir.html" class="project-item">
+    <a href="projects/revengeofofir.html" class="project-item" data-category="team">
       <div class="video-wrapper">
         <img class="project-media" src="images/witcher-revenge-poster.jpg" alt="">
       </div>
@@ -106,7 +80,7 @@
       </div>
     </a>
 
-    <a href="projects/theforbiddenhike.html" class="project-item">
+    <a href="projects/theforbiddenhike.html" class="project-item" data-category="blockout">
       <div class="video-wrapper">
         <video class="project-media" autoplay muted loop playsinline poster="images/first-blockout-poster.jpg">
           <source src="videos/first-blockout-preview.mp4" type="video/mp4"/>
@@ -118,7 +92,7 @@
       </div>
     </a>
 
-    <a href="projects/doommeetsresidentevil.html" class="project-item">
+    <a href="projects/doommeetsresidentevil.html" class="project-item" data-category="mod">
       <div class="video-wrapper">
         <img class="project-media" src="images/doommeets.jpg" alt="">
       </div>
@@ -128,7 +102,7 @@
       </div>
     </a>
 
-    <a href="projects/quakemeetssilenthill.html" class="project-item">
+    <a href="projects/quakemeetssilenthill.html" class="project-item" data-category="mod">
       <div class="video-wrapper">
         <img class="project-media" src="images/quakemeets.jpg" alt="">
       </div>
@@ -138,7 +112,7 @@
       </div>
     </a>
 
-    <a href="projects/projecttrash.html" class="project-item">
+    <a href="projects/projecttrash.html" class="project-item" data-category="team">
       <div class="video-wrapper">
         <img class="project-media" src="images/trash.jpg" alt="">
       </div>
@@ -148,18 +122,15 @@
       </div>
     </a>
 
-    
   </div>
 </section>
 
 <!-- ================= ABOUT ================= -->
 <section id="about" class="compact-section">
   <h2 class="section-title">About Me</h2>
-  <p style="max-width: 700px; margin: 0 auto; color: var(--text-secondary);"> 
-   <p>Hello, my name is Christos Moiras. I’m a level designer passionate about creating intuitive and emotionally engaging player experiences.<p>
-<p>I design levels that naturally guide players while effectively teaching core mechanics. I focus on balancing clear guidance with strong emotional pacing to craft memorable and satisfying journeys.<p>
-I particularly enjoy building immersive environments that promote player agency and reward meaningful exploration.
-  </p>
+  <p>Hello, my name is Christos Moiras. I'm a level designer passionate about creating intuitive and emotionally engaging player experiences.</p>
+  <p>I design levels that naturally guide players while effectively teaching core mechanics. I focus on balancing clear guidance with strong emotional pacing to craft memorable and satisfying journeys.</p>
+  <p>I particularly enjoy building immersive environments that promote player agency and reward meaningful exploration.</p>
 </section>
 
 </main>

@@ -71,6 +71,8 @@ img, video {
 
 .nav-logo {
   font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: 0.02em;
   text-decoration: none;
   color: var(--text-primary);
   position: relative;
@@ -102,11 +104,11 @@ img, video {
   color: var(--text-secondary);
   position: relative;
   transition: color var(--transition);
-
-  font-weight: 600;   /* ✅ πιο bold */
+  font-weight: 700;
   font-size: 0.95rem;
   letter-spacing: 0.02em;
 }
+
 .nav-link::after {
   content: "";
   position: absolute;
@@ -159,6 +161,7 @@ img, video {
   letter-spacing: -0.03em;
   line-height: 1.05;
 }
+
 .hero-tagline {
   font-size: clamp(1.4rem, 2.5vw, 1.9rem);
   font-weight: 600;
@@ -194,21 +197,79 @@ section {
   padding: var(--section-padding);
 }
 
-/* ✅ IMPORTANT: Remove global centering */
 section:not(.hero) {
   text-align: left;
-}
-
-/* ===== HOMEPAGE WORK SECTION ===== */
-
-#work {
-  padding-top: 40px;
 }
 
 .section-title {
   font-size: clamp(2rem, 4vw, 2.6rem);
   margin-bottom: 2rem;
   text-align: center;
+}
+
+.compact-section {
+  padding: 80px 5%;
+  text-align: center;
+}
+
+/* ===== HOMEPAGE WORK SECTION ===== */
+
+#work {
+  padding-top: 0 !important;
+}
+
+#work .filter-tabs {
+  margin-top: 100px;
+  margin-bottom: 2.5rem;
+  position: relative;
+  z-index: 3;
+}
+
+.hero {
+  height: auto !important;
+  min-height: 0 !important;
+  padding: 60px 5% 20px;
+}
+
+/* ===== FILTER TABS ===== */
+
+.filter-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 0;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 0.55rem 1.4rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 50px;
+  background: transparent;
+  color: var(--text-secondary);
+  font-family: var(--font);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.filter-btn:hover {
+  color: var(--text-primary);
+  border-color: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.filter-btn.active {
+  color: var(--bg-primary);
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.project-item.hidden {
+  display: none;
 }
 
 /* ===== PROJECT GRID ===== */
@@ -219,6 +280,13 @@ section:not(.hero) {
   gap: 2rem;
   max-width: 1400px;
   margin: 0 auto;
+  justify-content: center;
+}
+
+.projects-grid .project-item {
+  max-width: 680px;
+  width: 100%;
+  justify-self: center;
 }
 
 .project-item {
@@ -255,17 +323,13 @@ section:not(.hero) {
   font-size: 1.2rem;
   margin-bottom: 0.4rem;
 }
-.project-section + .project-section {
-  border-top: 1px solid rgba(255,255,255,0.06);
-  padding-top: 4rem;
-}
 
 .project-info p {
   font-size: 0.9rem;
   color: var(--text-muted);
 }
 
-/* ===== PROJECT PAGE CONTENT FIX ===== */
+/* ===== PROJECT PAGE CONTENT ===== */
 
 .project-content {
   max-width: 900px;
@@ -275,17 +339,27 @@ section:not(.hero) {
 .project-section {
   margin-bottom: 5rem;
 }
+
+.project-section + .project-section {
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding-top: 4rem;
+}
+
 .project-section:not(:first-child) {
   padding-top: 1rem;
 }
 
 .project-section h2 {
   margin-bottom: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
 .project-section p {
   margin-bottom: 1.2rem;
   color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.8;
 }
 
 .takeaways-list {
@@ -294,6 +368,20 @@ section:not(.hero) {
 
 .takeaways-list li {
   margin-bottom: 0.8rem;
+  color: var(--text-secondary);
+}
+
+/* ===== ABOUT SECTION ===== */
+
+#about {
+  text-align: center;
+}
+
+#about p {
+  max-width: 720px;
+  margin: 0 auto 1rem auto;
+  font-size: 1.1rem;
+  line-height: 1.8;
   color: var(--text-secondary);
 }
 
@@ -328,22 +416,7 @@ section:not(.hero) {
   color: var(--text-muted);
 }
 
-/* ===== RESPONSIVE ===== */
-
-@media (max-width: 768px) {
-  section {
-    padding: var(--section-padding-mobile);
-  }
-
-  .hero {
-    height: 70vh;
-  }
-
-  .project-content {
-    padding: 0 1rem;
-  }
-}
-/* ================= BACK LINK ================= */
+/* ===== BACK LINK ===== */
 
 .back-link {
   position: fixed;
@@ -385,53 +458,35 @@ section:not(.hero) {
 .back-link:hover .back-arrow {
   transform: translateX(-3px);
 }
-/* ===== TYPOGRAPHY FIX ===== */
 
-.nav-link {
-  font-weight: 700;
-  font-size: 0.95rem;
-  letter-spacing: 0.02em;
-}
+/* ===== GALLERY ===== */
 
-.nav-logo {
-  font-weight: 700;
-  font-size: 1.15rem;
-  letter-spacing: 0.02em;
-}
-
-.project-section h2 {
-  font-weight: 700;
-  letter-spacing: -0.02em;
-}
-
-.project-section p {
-  font-size: 1.05rem;
-  line-height: 1.8;
-}
-
-#about p {
-  font-size: 1.1rem;
-  line-height: 1.8;
-}
-/* Reduce spacing under hero */
-#work {
-  padding-top: 1px;
-}
-/* ===== ABOUT SECTION IMPROVEMENT ===== */
-
-#about {
-  text-align: center; /* κρατάμε τον τίτλο centered */
-}
-
-#about p {
-  max-width: 720px;      /* ✅ compact width */
-  margin: 0 auto;        /* ✅ κεντραρισμένο */
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: var(--text-secondary);
-}
 .gallery-grid img {
   box-shadow: 0 8px 30px rgba(0,0,0,0.25);
 }
 
+/* ===== RESPONSIVE ===== */
 
+@media (max-width: 768px) {
+  section {
+    padding: var(--section-padding-mobile);
+  }
+
+  .hero {
+    height: 70vh;
+  }
+
+  .project-content {
+    padding: 0 1rem;
+  }
+
+  .filter-tabs {
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .filter-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+}
