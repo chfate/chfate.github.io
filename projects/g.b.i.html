@@ -145,6 +145,30 @@
       transform: scale(1.02);
     }
 
+    /* ===== YOUTUBE EMBED ===== */
+    .walkthrough-video-wrapper {
+      margin-top: 2rem;
+    }
+
+    .video-embed {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 */
+      height: 0;
+      overflow: hidden;
+      border-radius: 14px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+    }
+
+    .video-embed iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 14px;
+    }
+
     /* ===== RESPONSIVE ===== */
     @media (max-width: 768px) {
       .stage-pair {
@@ -235,6 +259,22 @@
         <li>Three unique levels designed around synergy and communication</li>
         <li>Online multiplayer using Steam's backend</li>
       </ul>
+    </section>
+
+    <!-- ===== GAME WALKTHROUGH (YouTube Embed) ===== -->
+    <section class="project-section fade-in">
+      <h2>Game Walkthrough</h2>
+      <p>A complete playthrough of the game, showcasing all levels and cooperation between players.</p>
+      <div class="walkthrough-video-wrapper">
+        <div class="video-embed">
+          <iframe
+            src="https://www.youtube.com/watch?v=f9uqeENMrUo"
+            title="G.B.I Game Walkthrough"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
     </section>
 
     <!-- ===== MY ROLE ===== -->
