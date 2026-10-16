@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="G.B.I(Ghost Buerau of Investigation — A 3-week Unity school project focused on fast-paced arcade gameplay. By Christos Moiras."/>
+  <meta name="description" content="G.B.I (Ghost Bureau of Investigation) — A 7-week Unreal Engine school project. By Christos Moiras."/>
 
-  <title>G.B.I(Ghost Buerau of Investigation | Christos Moiras</title>
+  <title>G.B.I (Ghost Bureau of Investigation) | Christos Moiras</title>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -17,8 +17,7 @@
   <link rel="stylesheet" href="../project-page.css"/>
 
   <style>
-    /* LIGHTBOX */
-
+    /* ===== LIGHTBOX ===== */
     .gallery-grid img {
       cursor: pointer;
       transition: transform 0.3s ease;
@@ -57,6 +56,115 @@
       font-weight: 300;
       cursor: pointer;
     }
+
+    /* ===== SECTION BREATHING ROOM ===== */
+    .project-section {
+      margin-bottom: 7rem !important;
+      padding-top: 2rem;
+    }
+
+    .project-section + .project-section {
+      padding-top: 5rem !important;
+    }
+.sub-gallery-title {
+  margin-top: 4rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+    /* ===== STAGE PAIRS (Blockout → Final) ===== */
+    .stage-pairs {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 4rem;
+      margin-top: 2rem;
+    }
+
+    .stage-pair {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .stage-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .stage-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+    }
+
+    .stage-item img:hover {
+      transform: scale(1.02);
+    }
+
+    .stage-caption {
+      text-align: center;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .stage-arrow {
+      font-size: 2.5rem;
+      color: var(--accent);
+      font-weight: 300;
+      user-select: none;
+    }
+
+    /* Single image row (for the last standalone image) */
+    .stage-single {
+      max-width: 60%;
+      margin: 4rem auto 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .stage-single img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+    }
+
+    .stage-single img:hover {
+      transform: scale(1.02);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .stage-pair {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .stage-arrow {
+        transform: rotate(90deg);
+        font-size: 2rem;
+      }
+
+      .stage-single {
+        max-width: 100%;
+      }
+
+      .project-section {
+        margin-bottom: 5rem !important;
+      }
+    }
   </style>
 </head>
 
@@ -77,7 +185,7 @@
     <div class="project-hero-overlay"></div>
 
     <div class="project-hero-content">
-      <h1>G.B.I (Ghost Buerau of Investigation)</h1>
+      <h1>G.B.I (Ghost Bureau of Investigation)</h1>
       <p class="project-tagline">Two Player CO-OP Puzzle Experience</p>
 
       <div class="project-meta">
@@ -99,7 +207,7 @@
          🎮 Play on itch.io
       </a>
 
-      <a href="https:///www.youtube.com/watch?v=f9uqeENMrUo"
+      <a href="https://www.youtube.com/watch?v=f9uqeENMrUo"
          target="_blank"
          rel="noopener noreferrer"
          class="btn btn-secondary">
@@ -117,7 +225,7 @@
       <h2>Overview</h2>
 
       <p>
-       G.B.I is a 2-player CO-OP Puzzle game developed in Unreal Engine during a 7-week school project.
+        G.B.I is a 2-player CO-OP Puzzle game developed in Unreal Engine during a 7-week school project.
       </p>
 
       <p><strong>What's special:</strong></p>
@@ -125,12 +233,9 @@
       <ul class="takeaways-list">
         <li>Two distinct player classes (Light & Heavy) with unique abilities that require constant cooperation</li>
         <li>Three unique levels designed around synergy and communication</li>
-        <li>Online multiplayer using Steam’s backend</li>
-       
-        
+        <li>Online multiplayer using Steam's backend</li>
       </ul>
-
-          </section>
+    </section>
 
     <!-- ===== MY ROLE ===== -->
     <section class="project-section fade-in">
@@ -141,24 +246,58 @@
       </p>
 
       <ul class="takeaways-list">
-        <li><strong></strong> Defining and owning the overall game vision and design direction</li>
-        <li><strong></strong> Leading cross-team communication between design, art and programming.</li>
-        <li><strong></strong>Designing and iterating levels with a strong focus on guidance, composition and readability.</li>
-        
+        <li>Defining and owning the overall game vision and design direction</li>
+        <li>Leading cross-team communication between design, art and programming</li>
+        <li>Designing and iterating levels with a strong focus on guidance, composition and readability</li>
       </ul>
 
-      <!-- PRE PRODUCTION -->
-      <h3 class="sub-gallery-title">From blockout to Playable Levels</h3>
-      <div class="gallery-grid stage-group" style="margin-top: 1.5rem;">
-        <img src="../images/BLOCKOUT - HOTEL LOBBY.jpg" alt="Early blockout prototype layout" loading="lazy"/>
-        <img src="../images/FINAL.jpg" alt="Expanded layout iteration" loading="lazy"/>
-        <img src="../images/blockout paintings floor.jpg" alt="Facility structure refinement" loading="lazy"/>
-        <img src="../images/FINAL2.jpg" alt="Lighting and layout polish phase" loading="lazy"/>
-        <img src="../images/BLOCKOUT 2- GOLDEN PATH.jpg" alt="Facility structure refinement" loading="lazy"/>
-        <img src="../images/planning3.jpg" alt="Lighting and layout polish phase" loading="lazy"/>
+      <!-- FROM BLOCKOUT TO PLAYABLE LEVELS -->
+      <h3 class="sub-gallery-title">From Blockout to Playable Levels</h3>
+
+      <div class="gallery-grid stage-pairs">
+
+        <!-- PAIR 1 -->
+        <div class="stage-pair">
+          <div class="stage-item">
+            <img src="../images/BLOCKOUT - HOTEL LOBBY.jpg" alt="Early blockout prototype layout" loading="lazy"/>
+            <span class="stage-caption">Early Blockout</span>
+          </div>
+          <div class="stage-arrow">→</div>
+          <div class="stage-item">
+            <img src="../images/FINAL.jpg" alt="Playable level" loading="lazy"/>
+            <span class="stage-caption">Playable Level</span>
+          </div>
+        </div>
+
+        <!-- PAIR 2 -->
+        <div class="stage-pair">
+          <div class="stage-item">
+            <img src="../images/blockout paintings floor.jpg" alt="Early blockout prototype layout" loading="lazy"/>
+            <span class="stage-caption">Early Blockout</span>
+          </div>
+          <div class="stage-arrow">→</div>
+          <div class="stage-item">
+            <img src="../images/FINAL2.jpg" alt="Playable level" loading="lazy"/>
+            <span class="stage-caption">Playable Level</span>
+          </div>
+        </div>
+
+        <!-- PAIR 3 -->
+        <div class="stage-pair">
+          <div class="stage-item">
+            <img src="../images/BLOCKOUT 2- GOLDEN PATH.jpg" alt="Golden path design" loading="lazy"/>
+            <span class="stage-caption">Golden Path Design</span>
+          </div>
+          <div class="stage-arrow">→</div>
+          <div class="stage-item">
+            <img src="../images/planning3.jpg" alt="2D top-down sketch" loading="lazy"/>
+            <span class="stage-caption">2D Top-Down Sketch</span>
+          </div>
+        </div>
+
       </div>
 
-      
+    </section>
 
     <!-- ===== CONCLUSION ===== -->
     <section class="project-section fade-in">
@@ -166,22 +305,21 @@
 
       <p>
         This game project was a personal challenge for me. It gave me the opportunity to step up, clearly communicate my ideas to the rest of the team, and handle the pressure of delivering. It showed me the importance of saying no and staying true to the design decisions I believed were best for the final product. There were ups and downs, but it proved to be a valuable experience that helped me grow as a game developer.
-      
-
+      </p>
     </section>
 
   </main>
- <!-- ================= FOOTER ================= -->
+
+  <!-- ================= FOOTER ================= -->
   <footer class="site-footer">
     <div class="footer-content">
       <div class="footer-links">
-        <span>📧 chmoiras@hotmail.com</span>	
+        <span>📧 chmoiras@hotmail.com</span>
         <a href="https://www.linkedin.com/in/christos-moiras" target="_blank">LinkedIn</a>
       </div>
       <p class="copyright">© 2026 Christos Moiras</p>
     </div>
   </footer>
-
 
   <!-- LIGHTBOX STRUCTURE -->
   <div id="lightbox" class="lightbox">
@@ -190,53 +328,54 @@
   </div>
 
   <script>
-  document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("DOMContentLoaded", function () {
 
-    const images = document.querySelectorAll(".gallery-grid img");
-    const lightbox = document.getElementById("lightbox");
-    const lightboxImg = document.getElementById("lightbox-img");
-    const closeBtn = document.querySelector(".lightbox-close");
+      const images = document.querySelectorAll(".stage-item img, .stage-single img, .gallery-grid img");
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightbox-img");
+      const closeBtn = document.querySelector(".lightbox-close");
 
-    images.forEach(img => {
-      img.addEventListener("click", function () {
-        lightbox.style.display = "block";
-        lightboxImg.src = this.src;
+      images.forEach(img => {
+        img.addEventListener("click", function () {
+          lightbox.style.display = "block";
+          lightboxImg.src = this.src;
+        });
       });
-    });
 
-    closeBtn.addEventListener("click", function () {
-      lightbox.style.display = "none";
-    });
-
-    lightbox.addEventListener("click", function (e) {
-      if (e.target === lightbox) {
+      closeBtn.addEventListener("click", function () {
         lightbox.style.display = "none";
-      }
-    });
+      });
 
-    document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape") {
-        lightbox.style.display = "none";
-      }
-    });
+      lightbox.addEventListener("click", function (e) {
+        if (e.target === lightbox) {
+          lightbox.style.display = "none";
+        }
+      });
 
-  });
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+          lightbox.style.display = "none";
+        }
+      });
+
+    });
   </script>
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const elements = document.querySelectorAll('.fade-in');
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const elements = document.querySelectorAll('.fade-in');
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      elements.forEach(el => observer.observe(el));
     });
-  }, { threshold: 0.1 });
-
-  elements.forEach(el => observer.observe(el));
-});
-</script>
+  </script>
 </body>
 </html>
