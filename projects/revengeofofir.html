@@ -3,241 +3,168 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Witcher III: Revenge of Ofir — Level Design Case Study by Christos Moiras."/>
-
-  <title>Witcher III: Revenge Of Ofir | Christos Moiras</title>
-
+  <meta name="description" content="Revenge of Ofir — A Witcher 3 fan expansion built with RedKit. By Christos Moiras."/>
+  <title>Revenge of Ofir | Christos Moiras</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
-
   <link rel="stylesheet" href="../style.css"/>
   <link rel="stylesheet" href="../project-page.css"/>
-</head>
+  <style>
+    .wip-badge {
+      display: inline-block;
+      margin-top: 1.2rem;
+      padding: 0.4rem 1.2rem;
+      background: rgba(255, 180, 50, 0.15);
+      color: #ffb432;
+      border: 1px solid rgba(255, 180, 50, 0.3);
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
 
+    .wip-section {
+      text-align: center;
+      padding: 6rem 2rem 8rem;
+    }
+
+    .wip-section h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .wip-section p {
+      max-width: 600px;
+      margin: 0 auto 1rem;
+      line-height: 1.8;
+      opacity: 0.75;
+    }
+
+    .wip-icon {
+      font-size: 3.5rem;
+      margin-bottom: 1.5rem;
+      display: block;
+      opacity: 0.6;
+    }
+
+    .wip-cta {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.75rem 2rem;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.3s ease, border-color 0.3s ease;
+    }
+
+    .wip-cta:hover {
+      background: rgba(255, 255, 255, 0.14);
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    /* ✅ HERO IMAGE */
+    .project-hero-image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+  </style>
+</head>
 <body class="project-page">
 
-<a href="../index.html#work" class="back-link">
-  <span class="back-arrow">←</span>
-  <span>Back to Portfolio</span>
-</a>
+  <a href="../index.html#projects" class="back-link">
+    <span class="back-arrow">←</span>
+    <span>Back to Portfolio</span>
+  </a>
 
-<header class="project-hero">
- <img src="../images/logo3.jpg" class="project-hero-img" alt="">
-  <div class="project-hero-overlay"></div>
-  <div class="project-hero-content">
-    <h1>Witcher III: Revenge Of Ofir</h1>
-    <p class="project-tagline">Mod Expansion in The Witcher III : Wild Hunt</p>
-    <div class="project-meta">
-      <span>Team Project</span>
-      <span>25 Developers</span>
-      <span>In Development</span>
-      <span>RedKit</span>
-    </div>
-  </div>
-</header>
-
-<main class="project-content">
-
-<section class="project-section two-column">
-
-  <div>
-    <h2>Overview</h2>
-    <p>
-      Revenge of Ofir is a large-scale fan expansion set in the eastern empire of Ofir.
-      The project introduces a new explorable region and expanded systems built using RedKit.
-    </p>
-  </div>
-
-  <div>
-    <h2>My Role</h2>
-    <ul class="takeaways-list">
-      <li>Designed and implemented explorable POIs</li>
-      <li>Structured player flow in open world spaces</li>
-      <li>Ensured environmental storytelling aligned with Witcher lore</li>
-      <li>Collaborated with narrative, quest and art teams</li>
-    </ul>
-  </div>
-
-</section>
-
-<section class="project-section">
-
-  <h2>Abandoned Village</h2>
-
-  <p>
-    Designed a monster‑infested village that becomes liberated after combat,
-    restoring civilian activity.
-  </p>
-<div class="topdown-image">
-  <img src="../images/topdown.jpg" alt="Topdown layout" loading="lazy">
-</div>
-
-  <h3>Design Goals</h3>
-
-  <ul class="takeaways-list">
-    <li>Create a readable combat arena</li>
-    <li>Communicate abandonment through environmental storytelling</li>
-    <li>Allow multiple player approaches</li>
-    <li>Use landmarks and leading lines for guidance</li>
-  </ul>
-
-  <div class="gallery-grid">
-    <img src="../images/ofir1.jpg" loading="lazy"/>
-    <img src="../images/ofir2.jpg" loading="lazy"/>
-    <img src="../images/c.jpg" loading="lazy"/>
-    <img src="../images/f.jpg" loading="lazy"/>
-    <img src="../images/ofir7.jpg" loading="lazy"/>
-  </div>
-
-</section>
-
-<section class="project-section">
-
-  <h3>Before / After</h3>
-
-  <div class="before-after-slider">
-    <div class="slider-container" id="sliderContainer">
-
-      <img src="../images/after2.jpg"
-           class="slider-image image-before"
-           alt="Before">
-
-      <div class="image-after" id="imageAfter">
-        <img src="../images/before.jpg"
-             class="slider-image"
-             alt="After">
+  <!-- ===== HERO ===== -->
+  <header class="project-hero">
+    <img class="project-hero-image" src="../images/logo3.jpg" alt="Revenge of Ofir"/>
+    <div class="project-hero-overlay"></div>
+    <div class="project-hero-content">
+      <h1>The Witcher III : Wild Hunt Revenge of Ofir</h1>
+      <p class="project-tagline">A Witcher 3 Fanmade Expansion</p>
+      <div class="project-meta">
+        <span>Team Project</span>
+        <span>25 Developers</span>
+        <span>RedKit</span>
       </div>
+      <span class="wip-badge"> Work in Progress</span>
+    </div>
+  </header>
 
-      <div class="slider-divider" id="sliderDivider">
-        <div class="slider-handle">⇆</div>
+  <main class="project-content">
+
+    <!-- ===== OVERVIEW ===== -->
+    <section class="project-section fade-in">
+      <h2>Overview</h2>
+      <p>
+        Revenge of Ofir is a large-scale fan expansion set in the eastern empire of Ofir.
+        The project introduces a new explorable region and expanded systems built using RedKit.
+      </p>
+    </section>
+
+    <!-- ===== MY ROLE ===== -->
+    <section class="project-section fade-in">
+      <h2>My Role</h2>
+      <ul class="takeaways-list">
+        <li>Designing and implementing explorable POIs</li>
+        <li>Contributing to the overall open world structure including road networks and POI placement</li>
+        <li>Designing encounters and gameplay sections within the open world</li>
+        <li>Collaborating with quest writers, environment artists and 3D artists</li>
+       
+      </ul>
+    </section>
+
+    <!-- ===== COMING SOON ===== -->
+    <section class="project-section fade-in wip-section">
+      <span class="wip-icon"></span>
+      <h2>Coming Soon</h2>
+      <p>
+        This project is currently in active development.
+        A detailed breakdown will be shared once the project reaches a presentable milestone.
+      </p>
+      <p>
+        Stay tuned or reach out if you'd like to know more.
+      </p>
+      <a href="https://www.linkedin.com/in/christos-moiras/" target="_blank" rel="noopener noreferrer" class="wip-cta">
+        💬 Let's Talk on LinkedIn
+      </a>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-links">
+        <span>📧 chmoiras@hotmail.com</span>
+        <a href="https://www.linkedin.com/in/christos-moiras/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
       </div>
-
+      <p class="copyright">© 2026 Christos Moiras</p>
     </div>
-  </div>
+  </footer>
 
-</section>
-
-<section class="project-section">
-
-  <h2>Main Village House Interiors </h2>
-
-  <p>
-    Designed and detailed 18 interiors in the main village,
-    ensuring historical authenticity and contextual coherence.
-  </p>
-
-  <ul class="takeaways-list">
-    <li>Researched Arabian & Bedouin architecture</li>
-    <li>Designed interiors based on resident roles</li>
-    <li>Prioritized realism and era‑appropriate details</li>
-  </ul>
-
-  <div class="gallery-grid">
-    <img src="../images/i1.jpg" loading="lazy"/>
-    <img src="../images/i2.jpg" loading="lazy"/>
-    <img src="../images/i3.jpg" loading="lazy"/>
-    <img src="../images/i4.jpg" loading="lazy"/>
-    <img src="../images/i5.jpg" loading="lazy"/>
-  </div>
-
-
-
-</main>
-
-<footer class="site-footer">
-  <div class="footer-content">
-    <div class="footer-links">
-      <span>📧 chmoiras@hotmail.com</span>
-      <a href="https://www.linkedin.com/in/christos-moiras/" target="_blank">LinkedIn</a>
-    </div>
-    <p class="copyright">© 2026 Christos Moiras</p>
-  </div>
-</footer>
-
-<!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox">
-  <span class="lightbox-close" id="lightboxClose">×</span>
-  <img id="lightboxImg" src="" alt="">
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-
-  /* ================= LIGHTBOX ================= */
-
-  const images = document.querySelectorAll(".gallery-grid img");
-  const lightbox = document.getElementById("lightbox");
-  const lightboxImg = document.getElementById("lightboxImg");
-  const closeBtn = document.getElementById("lightboxClose");
-
-  if (images.length && lightbox && lightboxImg) {
-
-    images.forEach(img => {
-      img.addEventListener("click", () => {
-        lightbox.classList.add("active");
-        lightboxImg.src = img.src;
-      });
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const elements = document.querySelectorAll('.fade-in');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      elements.forEach(el => observer.observe(el));
     });
-
-    const closeLightbox = () => {
-      lightbox.classList.remove("active");
-    };
-
-    closeBtn?.addEventListener("click", closeLightbox);
-
-    lightbox.addEventListener("click", (e) => {
-      if (e.target === lightbox) closeLightbox();
-    });
-
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") closeLightbox();
-    });
-  }
-
-  /* ================= SLIDER ================= */
-
-  const container = document.getElementById("sliderContainer");
-  const afterImage = document.getElementById("imageAfter");
-  const divider = document.getElementById("sliderDivider");
-
-  if (!container || !afterImage || !divider) return;
-
-  let isDragging = false;
-
-  const moveSlider = (clientX) => {
-    const rect = container.getBoundingClientRect();
-    let percent = ((clientX - rect.left) / rect.width) * 100;
-    percent = Math.max(0, Math.min(100, percent));
-
-    divider.style.left = percent + "%";
-    afterImage.style.clipPath = `inset(0 ${100 - percent}% 0 0)`;
-  };
-
-  // ✅ Set initial position to center
-  const initSlider = () => {
-    const rect = container.getBoundingClientRect();
-    moveSlider(rect.left + rect.width / 2);
-  };
-
-  // Mouse
-  divider.addEventListener("mousedown", () => isDragging = true);
-  window.addEventListener("mouseup", () => isDragging = false);
-  window.addEventListener("mousemove", (e) => {
-    if (isDragging) moveSlider(e.clientX);
-  });
-
-  // Touch
-  divider.addEventListener("touchstart", () => isDragging = true);
-  window.addEventListener("touchend", () => isDragging = false);
-  window.addEventListener("touchmove", (e) => {
-    if (isDragging) moveSlider(e.touches[0].clientX);
-  });
-
-  setTimeout(initSlider, 100);
-
-});
-</script>
-
+  </script>
 </body>
 </html>
