@@ -169,8 +169,19 @@ img, video {
   letter-spacing: -0.01em;
 }
 
+
+
+.hero-itch-btn:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--bg-primary);
+  transform: translateY(-2px);
+}
+
+/* ===== HERO ICONS ===== */
+
 .hero-icons {
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   display: flex;
   justify-content: center;
   gap: 1.8rem;
@@ -487,6 +498,11 @@ section:not(.hero) {
 
   .filter-btn {
     padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .hero-itch-btn {
+    padding: 0.6rem 1.4rem;
     font-size: 0.85rem;
   }
 }
